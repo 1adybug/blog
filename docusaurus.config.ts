@@ -3,8 +3,8 @@ import type { Config } from "@docusaurus/types"
 import type * as Preset from "@docusaurus/preset-classic"
 
 const config: Config = {
-    title: "My Site",
-    tagline: "Dinosaurs are cool",
+    title: "子虚伊人",
+    tagline: "三人行，必有我师焉",
     favicon: "img/favicon.ico",
 
     // Set the production url of your site here
@@ -38,9 +38,9 @@ const config: Config = {
                     showReadingTime: true,
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
-                    editUrl: "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-                    blogSidebarTitle: "最近发表"
-                    
+                    // editUrl: "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+                    blogSidebarTitle: "最近发表",
+                    blogTitle: "博客"
                 },
                 theme: {
                     customCss: "./src/css/custom.css"
@@ -53,7 +53,7 @@ const config: Config = {
         // Replace with your project's social card
         image: "img/docusaurus-social-card.jpg",
         navbar: {
-            title: "My Site",
+            title: "子虚伊人",
             logo: {
                 alt: "My Site Logo",
                 src: "img/logo.svg"
@@ -65,7 +65,7 @@ const config: Config = {
                     position: "left"
                 },
                 {
-                    href: "https://github.com/facebook/docusaurus",
+                    href: "https://github.com/1adybug/blog",
                     label: "GitHub",
                     position: "right"
                 }
@@ -75,37 +75,33 @@ const config: Config = {
             style: "dark",
             links: [
                 {
-                    title: "Community",
+                    title: "NPM",
                     items: [
                         {
-                            label: "Stack Overflow",
-                            href: "https://stackoverflow.com/questions/tagged/docusaurus"
+                            label: "Easy Zustand",
+                            href: "https://www.npmjs.com/package/easy-zustand"
                         },
                         {
-                            label: "Discord",
-                            href: "https://discordapp.com/invite/docusaurus"
+                            label: "Deepsea Tools",
+                            href: "https://www.npmjs.com/package/deepsea-tools"
                         },
                         {
-                            label: "Twitter",
-                            href: "https://twitter.com/docusaurus"
+                            label: "Deepsea Components",
+                            href: "https://www.npmjs.com/package/deepsea-components"
                         }
                     ]
                 },
                 {
-                    title: "More",
+                    title: "更多",
                     items: [
                         {
-                            label: "Blog",
-                            to: "/blog"
-                        },
-                        {
                             label: "GitHub",
-                            href: "https://github.com/facebook/docusaurus"
+                            href: "https://github.com/1adybug"
                         }
                     ]
                 }
             ],
-            copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`
+            copyright: `诗曰：所谓伊人，在水一方`
         },
         prism: {
             theme: prismThemes.github,
