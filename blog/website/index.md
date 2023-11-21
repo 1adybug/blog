@@ -1,0 +1,13 @@
+---
+slug: website
+title: 有用的网站
+authors: [1adybug]
+date: 2023-11-21
+toc_min_heading_level: 2
+toc_max_heading_level: 3
+tags: [website]
+---
+
+- [Visx](https://airbnb.io/visx/) 是一个基于 d3 的低阶 react 可视化原子库，主要是各类图表
+- [CSS Generators](https://css-generators.com/) 各种类型的 CSS 效果，比如绶带等，纯 CSS 实现
+- [HTMLrev](https://htmlrev.com/) 各种类型的网站模版，免费可商用
