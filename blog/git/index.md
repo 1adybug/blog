@@ -2,6 +2,7 @@
 slug: git
 title: Git 学习笔记
 authors: [1adybug]
+date: 2023-11-20
 toc_min_heading_level: 2
 toc_max_heading_level: 3
 tags: [git]
