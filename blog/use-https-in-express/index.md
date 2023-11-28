@@ -1,0 +1,26 @@
+---
+slug: use-https-in-express
+title: 在 Express 中使用 https 证书
+authors: [1adybug]
+date: 2023-11-27
+toc_min_heading_level: 2
+toc_max_heading_level: 3
+tags: [node, https, express]
+---
+
+```typescript
+import express from "express"
+import https from "https"
+import { readFileSync, readdirSync } from "fs"
+
+const app = express()
+
+app.get("/", async (req, res) => {
+    res.send("Hello, World!")
+})
+
+https.createServer({
+    key: readFileSync("../root/.acme.sh/a.deep-sea.dynv6.net_ecc/a.deep-sea.dynv6.net.key"),
+    cert: readFileSync("../root/.acme.sh/a.deep-sea.dynv6.net_ecc/fullchain.cer")
+}, app).listen(8080)
+```
