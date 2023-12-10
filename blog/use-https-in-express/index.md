@@ -3,8 +3,6 @@ slug: use-https-in-express
 title: 在 Express 中使用 https 证书
 authors: [1adybug]
 date: 2023-11-27
-toc_min_heading_level: 2
-toc_max_heading_level: 3
 tags: [node, https, express]
 ---
 

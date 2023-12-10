@@ -3,8 +3,6 @@ slug: website
 title: 有用的网站
 authors: [1adybug]
 date: 2023-11-21
-toc_min_heading_level: 2
-toc_max_heading_level: 3
 tags: [website]
 ---
 
