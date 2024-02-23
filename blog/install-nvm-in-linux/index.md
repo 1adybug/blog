@@ -1,6 +1,6 @@
 ---
 slug: install-nvm-in-linux
-title: Node 中引入 json 文件
+title: 在 linux 中安装 nvm
 authors: [1adybug]
 date: 2024-02-23
 tags: [node, nvm, linux, git]
