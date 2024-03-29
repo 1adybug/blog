@@ -3,7 +3,7 @@ slug: backslash-in-vscode-snippets-regexp
 title: 在 Vscode 的代码块的正则表达式中使用反引号 \
 authors: [1adybug]
 date: 2024-03-29
-tags: []
+tags: [backslash, vscode, snippets, regexp]
 ---
 
 Vscode 的代码块的正则表达式中使用反引号比较繁琐：
