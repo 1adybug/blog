@@ -3,7 +3,7 @@ slug: use-https-in-express
 title: 在 Express 中使用 https 证书
 authors: [1adybug]
 date: 2023-11-27
-tags: [node, https, express]
+tags: [node.js, https, express]
 ---
 
 ```typescript

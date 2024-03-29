@@ -3,7 +3,7 @@ slug: install-nvm-in-linux
 title: 在 linux 中安装 nvm
 authors: [1adybug]
 date: 2024-02-23
-tags: [node, nvm, linux, git]
+tags: [node.js, nvm, linux, git]
 ---
 
 由于国内的网络环境限制，直接安装 [nvm](https://github.com/nvm-sh/nvm) 脚本会失败：

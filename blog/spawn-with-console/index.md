@@ -3,7 +3,7 @@ slug: spawn-with-console
 title: 打印长时间运行命令的输入
 authors: [1adybug]
 date: 2024-02-23
-tags: [child_process, spawn, exec, console]
+tags: [child_process, spawn, exec, console, node.js]
 ---
 
 如果你想要实时打印长时间运行命令的输出，比如监控某个过程的日志输出，你应该使用 `child_process` 中的 `spawn` 来代替 `exec`，因为 `spawn` 提供了一个流式接口，可以让你实时接收数据。下面是一个使用 `spawn` 实时打印输出的示例：

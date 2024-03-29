@@ -3,7 +3,7 @@ slug: node-forward-request
 title: Node 转发请求
 authors: [1adybug]
 date: 2023-11-22
-tags: [http, ReadStream, response, node]
+tags: [http, ReadStream, response, node.js]
 ---
 
 ```typescript

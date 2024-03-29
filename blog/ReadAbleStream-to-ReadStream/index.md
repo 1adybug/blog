@@ -3,7 +3,7 @@ slug: ReadAbleStream-to-ReadStream
 title: ReadAbleStream 转换为 ReadStream
 authors: [1adybug]
 date: 2023-11-22
-tags: [fetch, ReadAbleStream, ReadStream, response, node]
+tags: [fetch, ReadAbleStream, ReadStream, response, node.js]
 ---
 
 ```typescript
