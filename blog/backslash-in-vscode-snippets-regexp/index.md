@@ -15,3 +15,9 @@ const slug= "${TM_DIRECTORY/[\\\\]//g}"
 // 非反引号，也需要使用[]包裹，并且使用 4 个 \
 const slug= "${TM_DIRECTORY/[^\\\\]//g}"
 ```
+
+:::tip
+
+最好使用 `[]` 将反引号包裹起来
+
+:::

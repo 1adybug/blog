@@ -12,3 +12,9 @@ tags: [regexp]
 /** 从 \w 中去除 \d */
 const reg: RegExp = /[(?!\d)\w]/
 ```
+
+:::tip
+
+使用 `[]` 将两个集合包裹起来
+
+:::

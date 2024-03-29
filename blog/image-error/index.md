@@ -59,4 +59,8 @@ window.addEventListener(
 }
 ```
 
+:::tip
+
 即使后续图片加载成功了也不用担心，伪元素会被隐藏
+
+:::

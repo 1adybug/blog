@@ -42,7 +42,11 @@ function iteratorToStream(iterator: AsyncGenerator<Buffer, void, never>): Readab
 }
 ```
 
-2024年3月29日更新：
+:::tip
+
+2024年3月29日更新
+
+:::
 
 `Node.js` 中其实自带了转换的功能
 

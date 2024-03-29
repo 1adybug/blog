@@ -25,4 +25,8 @@ const proxyAgent = new HttpsProxyAgent(proxyUrl)
 fetch(targetUrl, { agent: proxyAgent })
 ```
 
-有一点需要注意，与原生的 `fetch` 不同，`node-fetch` 的 `response.json()` 返回值类型为 `unknown`
+:::warning
+
+与原生的 `fetch` 不同，`node-fetch` 的 `response.json()` 返回值类型为 `Promise<unknown>`
+
+:::
