@@ -41,3 +41,18 @@ function iteratorToStream(iterator: AsyncGenerator<Buffer, void, never>): Readab
     })
 }
 ```
+
+2024年3月29日更新：
+
+`Node.js` 中其实自带了转换的功能
+
+```typescript
+import { Readable } from "stream"
+
+async function main() {
+    const response = await fetch("http://example.com")
+    const readable = Readable.fromWeb(response.body as any)
+}
+
+main()
+```
