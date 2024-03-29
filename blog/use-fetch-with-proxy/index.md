@@ -3,7 +3,7 @@ slug: use-fetch-with-proxy
 title: 在 Node.js 中为 fetch 配置代理
 authors: [1adybug]
 date: 2024-03-29
-tags: []
+tags: [fetch, node-fetch, https-proxy-agent, proxy, node.js]
 ---
 
 在 `Node.js` 中，原生的 `fetch` API 并不直接支持代理功能。可以使用 [node-fetch](https://www.npmjs.com/package/node-fetch) 库和 [https-proxy-agent](https://www.npmjs.com/package/https-proxy-agent) 库来实现通过代理服务器发送请求的功能：
