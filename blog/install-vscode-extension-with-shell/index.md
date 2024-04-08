@@ -15,6 +15,6 @@ code --install-extension "本地vsix插件路径"
 
 :::warning
 
-安装时，请先关闭所有 VS Code 窗口，否则某些插件安装可能会卡主
+安装时，请先关闭所有 VS Code 窗口，否则某些插件安装可能会卡住。
 
 :::
