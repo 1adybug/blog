@@ -17,3 +17,5 @@ tags: [powershell]
     ```powershell
     Remove-Item (Get-PSReadlineOption).HistorySavePath
     ```
+
+需要重启终端才能生效
