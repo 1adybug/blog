@@ -3,7 +3,7 @@ slug: slice-string-safely
 title: 安全切割字符串
 authors: [1adybug]
 date: 2024-04-11
-tags: []
+tags: [javascript, typescript, slice]
 ---
 
 在 `JavaScript` 中，由于某些 emoji 表情是使用两个 Unicode 码点组成的，也就是说它们是由一对代理对（surrogate pair）表示的。这意味着这些 emoji 表情在 `JavaScript` 字符串中实际上会占用两个字符的位置。如果直接使用 `slice()` 方法来截取包含这类 emoji 的字符串，可能会导致 emoji 被错误地切割，导致无法正确显示。
