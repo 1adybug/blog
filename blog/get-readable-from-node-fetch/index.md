@@ -17,5 +17,5 @@ const response = await fetch("http://somewhere.com")
 const readable = Readable.fromweb(response.body!)
 
 // ✅ 不会报错
-const readable = Readable.fromweb(response.body!)
+const readable = Readable.from(response.body!)
 ```
