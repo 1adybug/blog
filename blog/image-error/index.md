@@ -8,7 +8,7 @@ tags: [image, HTMLImageElement, img, onError, error]
 
 在项目中经常会使用到第三方的图床，这些图床的图片可能会出错，统一处理错误就很有必要：
 
-```typescript
+```TypeScript
 window.addEventListener(
     "error",
     e => {

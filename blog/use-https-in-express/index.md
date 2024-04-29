@@ -6,7 +6,7 @@ date: 2023-11-27
 tags: [node.js, https, express]
 ---
 
-```typescript
+```TypeScript
 import express from "express"
 import https from "https"
 import { readFileSync, readdirSync } from "fs"

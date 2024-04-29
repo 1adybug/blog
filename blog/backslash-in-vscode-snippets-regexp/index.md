@@ -8,7 +8,7 @@ tags: [backslash, vscode, snippets, regexp]
 
 VS Code 的代码块的正则表达式中使用反斜杠比较繁琐：
 
-```typescript
+```TypeScript
 // 反斜杠，需要使用[]包裹，并且使用 4 个 \
 const slug= "${TM_DIRECTORY/[\\\\]//g}"
 

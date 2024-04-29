@@ -16,7 +16,7 @@ tags: [coord, coordinate, WGS84, GCJ02, BD09]
 
 ## TypeScript
 
-```typescript
+```TypeScript
 const x_PI = (3.14159265358979324 * 3000.0) / 180.0
 const PI = 3.1415926535897932384626
 const a = 6378245.0

@@ -17,7 +17,7 @@ yarn add @types/leaflet @types/proj4 @types/proj4leaflet -D
 
 ## 使用
 
-```typescript
+```TypeScript
 import L from "leaflet"
 import "proj4leaflet"
 import "leaflet/dist/leaflet.css"

@@ -6,7 +6,7 @@ date: 2023-11-22
 tags: [fetch, ReadAbleStream, ReadStream, response, node.js]
 ---
 
-```typescript
+```TypeScript
 import { Readable } from "stream"
 
 const reader = readAbleStream.getReader()
@@ -50,7 +50,7 @@ function iteratorToStream(iterator: AsyncGenerator<Buffer, void, never>): Readab
 
 `Node.js` 中其实自带了转换的功能
 
-```typescript
+```TypeScript
 import { Readable } from "stream"
 
 async function main() {

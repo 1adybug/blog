@@ -8,7 +8,7 @@ tags: [child_process, spawn, exec, console, node.js]
 
 如果你想要实时打印长时间运行命令的输出，比如监控某个过程的日志输出，你应该使用 `child_process` 中的 `spawn` 来代替 `exec`，因为 `spawn` 提供了一个流式接口，可以让你实时接收数据。下面是一个使用 `spawn` 实时打印输出的示例：
 
-```typescript
+```TypeScript
 import { spawn } from "child_process"
 
 const child = spawn("node -v", { shell: true })
@@ -38,7 +38,7 @@ child.on("close", code => {
 
     一些命令提供了参数或环境变量来强制启用颜色输出，即使输出被重定向。例如，很多命令支持 `--color` 选项：
 
-    ```javascript
+    ```JavaScript
     import { spawn } from "child_process"
 
     const child = spawn("some-command", ["--color", "always"])
@@ -50,7 +50,7 @@ child.on("close", code => {
 
     通过在 `spawn` 中设置 `shell: true` 选项，可以在一个 `shell` 环境中执行命令。这样做可能会鼓励一些命令输出颜色，因为它们“认为”自己是在一个终端中运行：
 
-    ```javascript
+    ```JavaScript
     import { spawn } from "child_process"
 
     const child = spawn("some-command", ["arg1", "arg2"], { shell: true })
@@ -60,7 +60,7 @@ child.on("close", code => {
 
     如果你只是想要在 `Node.js` 脚本中直接查看输出（包括颜色），而不是处理输出数据，你可以将子进程的 `stdout` 和 `stderr` 直接连接到主进程的 `stdout` 和 `stderr`：
 
-    ```javascript
+    ```JavaScript
     import { spawn } from "child_process"
 
     const child = spawn("some-command", ["arg1", "arg2"], { stdio: "inherit" })
@@ -71,7 +71,7 @@ child.on("close", code => {
     示例
     假设你想要使用 `spawn` 执行 `git status` 命令，并希望输出包含颜色：
 
-    ```javascript
+    ```JavaScript
     import { spawn } from "child_process"
 
     // 注意：这里使用shell: true来确保命令在shell中执行，可能有助于保留颜色输出

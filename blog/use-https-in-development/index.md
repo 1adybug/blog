@@ -28,7 +28,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout your-key.pem -out yo
 
 ## 使用
 
-```typescript
+```TypeScript
 import express from "express"
 import { readFileSync } from "fs"
 import { createServer } from "https"
@@ -47,7 +47,7 @@ server.listen(3000)
 
 在 Node.js 中使用 `fetch` 请求接口可能会报错：
 
-```typescript
+```TypeScript
 TypeError: fetch failed
     at Object.fetch (node:internal/deps/undici/undici:11730:11)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {

@@ -8,6 +8,6 @@ tags: [node.js, import, json]
 
 在 `js` 中直接引入 `json` 文件会报错，必须加一个后缀：
 
-```typescript
+```TypeScript
 import packageJson from "../package.json" assert { type: "json" }
 ```

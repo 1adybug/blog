@@ -21,7 +21,7 @@ code --install-extension "本地vsix插件路径"
 
 使用 `JavaScript` 安装目录下所有插件：
 
-```typescript
+```TypeScript
 import { readdir } from "fs/promises"
 import { spawn } from "child_process"
 

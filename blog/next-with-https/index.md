@@ -6,7 +6,7 @@ date: 2024-02-23
 tags: [next, next.js, https]
 ---
 
-```typescript
+```TypeScript
 import { readFileSync } from "fs"
 import { createServer } from "https"
 import next from "next"
