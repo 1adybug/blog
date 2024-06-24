@@ -50,3 +50,9 @@ import "./antd.min.css"
 ```tsx
 const css = extractStyle(node => <ConfigProvider theme={{ token: { colorPrimary: "red" } }}>{node}</ConfigProvider>)
 ```
+
+:::warning
+
+这种办法只能是妥协之计，打包出来的 css 文件很大。具体的优化还需要官方实现
+
+:::
