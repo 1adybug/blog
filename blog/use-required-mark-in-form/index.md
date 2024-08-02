@@ -3,7 +3,7 @@ slug: use-required-mark-in-form
 title: Ant Design 的 Form 中 requiredMark 的使用
 authors: [1adybug]
 date: 2024-08-02
-tags: []
+tags: [antd, Ant Design, Form, requiredMark]
 ---
 
 之前一直都是使用 `css` 来实现必填组件的 `*` 号的隐藏，没想到 `Ant Design` 官方提供了修改的方法：
