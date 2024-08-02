@@ -16,8 +16,10 @@ tags: [Form, antd, Ant Design]
 
 ```tsx
 import { Button, Form, Input } from "antd"
+import { useForm } from "antd/es/form/Form"
 import FormItem from "antd/es/form/FormItem"
-import { ChangeEvent, FC, forwardRef, useState } from "react"
+import { ChangeEvent, FC, forwardRef } from "react"
+import { useInputState } from "soda-hooks"
 
 type Info = {
     name?: string
@@ -31,8 +33,9 @@ type InfoItemProps = {
 
 const InfoItem = forwardRef<HTMLDivElement, InfoItemProps>((props, ref) => {
     const { value, onChange } = props
-    const [name, setName] = useState(value?.name)
-    const [id, setId] = useState(value?.id)
+    // 推荐使用 soda-hooks 的 useInputState
+    const [name, setName] = useInputState(value?.name)
+    const [id, setId] = useInputState(value?.id)
 
     function onNameChange(e: ChangeEvent<HTMLInputElement>) {
         setName(e.target.value)
@@ -47,20 +50,28 @@ const InfoItem = forwardRef<HTMLDivElement, InfoItemProps>((props, ref) => {
 
     return (
         <div ref={ref}>
-            {/* 注意：表单元素的 value 优先使用 props 中传递的受控 value，并且只能使用 ??，不能使用 ||，因为 0 或者 "" 之类的值也会被 || 判否 */}
-            <Input value={value?.name ?? name} onChange={onNameChange} />
-            <Input value={value?.id ?? id} onChange={onIdChange} />
+            <Input value={name} onChange={onNameChange} />
+            <Input value={id} onChange={onIdChange} />
         </div>
     )
 })
 
+type FormData = {
+    info: Info
+}
+
 const App: FC = () => {
+    const [form] = useForm<FormData>()
+
     return (
-        <Form onFinish={console.dir}>
-            <FormItem name="info" initialValue={{ name: "Tom", id: "001" }}>
+        <Form<FormData> form={form} onFinish={console.dir}>
+            <FormItem<FormData> name="info">
                 <InfoItem />
             </FormItem>
-            <FormItem>
+            <FormItem<FormData>>
+                <Button onClick={() => form.setFieldsValue({ info: undefined })}>Reset</Button>
+            </FormItem>
+            <FormItem<FormData>>
                 <Button htmlType="submit">Submit</Button>
             </FormItem>
         </Form>
