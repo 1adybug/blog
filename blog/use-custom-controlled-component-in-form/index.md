@@ -80,3 +80,10 @@ const App: FC = () => {
 
 export default App
 ```
+
+:::tip
+
+1. `onChange` 是会一直变化的，所以需要获取到最新值
+2. `onChange` 与 `form.setFieldsValue` 一样，都是同步的
+
+:::
