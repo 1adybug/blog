@@ -16,7 +16,8 @@ could not connect to the development server
 
 解决方案：
 
-在虚拟机中连接 WiFi
+1. 在虚拟机中连接 WiFi
+2. 在 Android Studio 中将 `Gradle` 的 `Java` 位置设置为系统位置
 
 ## 项目编译失败
 
