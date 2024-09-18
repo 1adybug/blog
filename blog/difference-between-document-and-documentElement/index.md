@@ -1,5 +1,5 @@
 ---
-slug: difference-between-document-and-document.documentElement
+slug: difference-between-document-and-documentElement
 title: document 和 document.documentElement 之间的区别
 authors: [1adybug]
 date: 2024-09-18
