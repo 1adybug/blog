@@ -1,6 +1,6 @@
 ---
 slug: scrollbar-style
-title: 设置滚动调样式
+title: 设置滚动条样式
 authors: [1adybug]
 date: 2024-06-14
 tags: [css, scrollbar]
