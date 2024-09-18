@@ -30,4 +30,4 @@ tags: [document, documentElement]
 
 6. DOCTYPE:
    - document 包含 DOCTYPE 声明。
-   - document.documentElement 不包含 DOCTYPE,仅从 <html> 开始。
+   - document.documentElement 不包含 DOCTYPE,仅从 `<html>` 开始。
