@@ -1,6 +1,6 @@
-import { themes as prismThemes } from "prism-react-renderer"
-import type { Config } from "@docusaurus/types"
 import type * as Preset from "@docusaurus/preset-classic"
+import type { Config } from "@docusaurus/types"
+import { themes as prismThemes } from "prism-react-renderer"
 
 const config: Config = {
     title: "子虚伊人",
@@ -26,7 +26,7 @@ const config: Config = {
     // may want to replace "en" with "zh-Hans".
     i18n: {
         defaultLocale: "zh-Hans",
-        locales: ["zh-Hans"]
+        locales: ["zh-Hans"],
     },
 
     presets: [
@@ -42,13 +42,13 @@ const config: Config = {
                     // editUrl: "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
                     blogSidebarTitle: "所有文章",
                     blogSidebarCount: "ALL",
-                    blogTitle: "博客"
+                    blogTitle: "博客",
                 },
                 theme: {
-                    customCss: "./src/css/custom.css"
-                }
-            } satisfies Preset.Options
-        ]
+                    customCss: "./src/css/custom.css",
+                },
+            } satisfies Preset.Options,
+        ],
     ],
 
     themeConfig: {
@@ -58,15 +58,15 @@ const config: Config = {
             title: "子虚伊人",
             logo: {
                 alt: "My Site Logo",
-                src: "img/logo.svg"
+                src: "img/logo.svg",
             },
             items: [
                 {
                     href: "https://github.com/1adybug/blog",
                     label: "GitHub",
-                    position: "right"
-                }
-            ]
+                    position: "right",
+                },
+            ],
         },
         footer: {
             style: "dark",
@@ -76,34 +76,34 @@ const config: Config = {
                     items: [
                         {
                             label: "Easy Zustand",
-                            href: "https://www.npmjs.com/package/easy-zustand"
+                            href: "https://www.npmjs.com/package/easy-zustand",
                         },
                         {
                             label: "Deepsea Tools",
-                            href: "https://www.npmjs.com/package/deepsea-tools"
+                            href: "https://www.npmjs.com/package/deepsea-tools",
                         },
                         {
                             label: "Deepsea Components",
-                            href: "https://www.npmjs.com/package/deepsea-components"
-                        }
-                    ]
+                            href: "https://www.npmjs.com/package/deepsea-components",
+                        },
+                    ],
                 },
                 {
                     title: "更多",
                     items: [
                         {
                             label: "GitHub",
-                            href: "https://github.com/1adybug"
-                        }
-                    ]
-                }
+                            href: "https://github.com/1adybug",
+                        },
+                    ],
+                },
             ],
-            copyright: `诗曰：所谓伊人，在水一方`
+            copyright: `诗曰：所谓伊人，在水一方`,
         },
         prism: {
             theme: prismThemes.github,
-            darkTheme: prismThemes.dracula
-        }
+            darkTheme: prismThemes.dracula,
+        },
     } satisfies Preset.ThemeConfig,
     plugins: [
         [
@@ -115,22 +115,22 @@ const config: Config = {
                     {
                         tagName: "link",
                         rel: "icon",
-                        href: "/img/docusaurus.png"
+                        href: "/img/docusaurus.png",
                     },
                     {
                         tagName: "link",
                         rel: "manifest",
-                        href: "/manifest.json" // your PWA manifest
+                        href: "/manifest.json", // your PWA manifest
                     },
                     {
                         tagName: "meta",
                         name: "theme-color",
-                        content: "rgb(37, 194, 160)"
-                    }
-                ]
-            }
-        ]
-    ]
+                        content: "rgb(37, 194, 160)",
+                    },
+                ],
+            },
+        ],
+    ],
 }
 
 export default config

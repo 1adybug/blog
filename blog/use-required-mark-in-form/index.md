@@ -33,7 +33,13 @@ const App: FC = () => {
     }
 
     return (
-        <Form form={form} layout="vertical" initialValues={{ requiredMarkValue: requiredMark }} onValuesChange={onRequiredTypeChange} requiredMark={requiredMark === "customize" ? customizeRequiredMark : requiredMark}>
+        <Form
+            form={form}
+            layout="vertical"
+            initialValues={{ requiredMarkValue: requiredMark }}
+            onValuesChange={onRequiredTypeChange}
+            requiredMark={requiredMark === "customize" ? customizeRequiredMark : requiredMark}
+        >
             <FormItem label="Required Mark" name="requiredMarkValue">
                 <Radio.Group>
                     <Radio.Button value>Default</Radio.Button>

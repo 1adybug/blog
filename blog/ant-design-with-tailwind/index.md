@@ -29,7 +29,6 @@ export default App
 
 ```css
 :where(.css-bAMboO).ant-btn {
-
 }
 
 .css-bAMboO.ant-btn {

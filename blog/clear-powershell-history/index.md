@@ -6,13 +6,13 @@ date: 2024-04-07
 tags: [powershell]
 ---
 
-- 历史记录保存位置，直接删除不想要的行即可
+-   历史记录保存位置，直接删除不想要的行即可
 
     ```powershell
     echo (Get-PSReadlineOption).HistorySavePath
     ```
 
-- 或者直接删除文件
+-   或者直接删除文件
 
     ```powershell
     Remove-Item (Get-PSReadlineOption).HistorySavePath

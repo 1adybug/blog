@@ -8,26 +8,26 @@ tags: []
 
 ## 技术栈
 
-| 类型 | 要求 |
-| :----: | :----: |
-| 编辑器 | [Visual Studio Code](https://code.visualstudio.com/) |
-| 浏览器 | [Chrome](https://www.google.com/intl/en/chrome/?standalone=1) |
-| 语言 | [TypeScript](https://www.typescriptlang.org/) |
-| UI 库 | [React](https://zh-hans.react.dev/) |
-| 组件库 | [Ant Design](https://ant-design.antgroup.com/index-cn) / [Deepsea Components](https://www.npmjs.com/package/deepsea-components) |
-| 脚手架 | [Rsbuild](https://rsbuild.dev/zh/) / [Next](https://nextjs.org/) |
-| 路由 | [React Router](https://reactrouter.com/en/main) |
-| 包管理器 | [Yarn](https://yarnpkg.com/) |
-| 时间处理 | [Day.js](https://day.js.org/zh-CN/) |
-| CSS | [Tailwind](https://tailwindcss.com/docs/installation) / [Emotion](https://emotion.sh/docs/introduction) |
-| hooks | [ahooks](https://ahooks.js.org/zh-CN/) |
-| 状态共享 | [ahooks](https://ahooks.js.org/zh-CN/) / [Soda Hooks](https://www.npmjs.com/package/soda-hooks) / [React Soda](https://www.npmjs.com/package/react-soda) |
-| 网络请求 | [fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/fetch) |
-| 数据验证 | [Zod](https://zod.dev/) |
-| 数据库管理 | [Prisma](https://www.prisma.io/) |
-| 移动端 | [Capacitor](https://capacitorjs.com/) |
-| 移动端组件库 | [Ionic](https://ionicframework.com/docs/components) |
-| 代码格式化 | [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) |
+|     类型     |                                                                           要求                                                                           |
+| :----------: | :------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|    编辑器    |                                                   [Visual Studio Code](https://code.visualstudio.com/)                                                   |
+|    浏览器    |                                              [Chrome](https://www.google.com/intl/en/chrome/?standalone=1)                                               |
+|     语言     |                                                      [TypeScript](https://www.typescriptlang.org/)                                                       |
+|    UI 库     |                                                           [React](https://zh-hans.react.dev/)                                                            |
+|    组件库    |             [Ant Design](https://ant-design.antgroup.com/index-cn) / [Deepsea Components](https://www.npmjs.com/package/deepsea-components)              |
+|    脚手架    |                                             [Rsbuild](https://rsbuild.dev/zh/) / [Next](https://nextjs.org/)                                             |
+|     路由     |                                                     [React Router](https://reactrouter.com/en/main)                                                      |
+|   包管理器   |                                                               [Yarn](https://yarnpkg.com/)                                                               |
+|   时间处理   |                                                           [Day.js](https://day.js.org/zh-CN/)                                                            |
+|     CSS      |                         [Tailwind](https://tailwindcss.com/docs/installation) / [Emotion](https://emotion.sh/docs/introduction)                          |
+|    hooks     |                                                          [ahooks](https://ahooks.js.org/zh-CN/)                                                          |
+|   状态共享   | [ahooks](https://ahooks.js.org/zh-CN/) / [Soda Hooks](https://www.npmjs.com/package/soda-hooks) / [React Soda](https://www.npmjs.com/package/react-soda) |
+|   网络请求   |                                             [fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/fetch)                                              |
+|   数据验证   |                                                                 [Zod](https://zod.dev/)                                                                  |
+|  数据库管理  |                                                             [Prisma](https://www.prisma.io/)                                                             |
+|    移动端    |                                                          [Capacitor](https://capacitorjs.com/)                                                           |
+| 移动端组件库 |                                                   [Ionic](https://ionicframework.com/docs/components)                                                    |
+|  代码格式化  |                                  [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)                                  |
 
 ## 要求
 
@@ -36,35 +36,24 @@ tags: []
     ```tsx
     // 无参数组件
     import { FC } from "react"
-    
+
     const Component: FC = () => {
-    
-        return (
-            <div>
-                
-            </div>
-        )
+        return <div></div>
     }
-    
+
     export default Component
 
     // 有参数组件
     import { FC } from "react"
-    
-    export type ComponentProps = {
-    
-    }
-    
+
+    export type ComponentProps = {}
+
     const Component: FC<ComponentProps> = props => {
-        const { } = props
-    
-        return (
-            <div>
-                
-            </div>
-        )
+        const {} = props
+
+        return <div></div>
     }
-    
+
     export default Component
     ```
 
@@ -126,7 +115,7 @@ tags: []
         tabWidth: 4,
         arrowParens: "avoid",
         printWidth: 800,
-        trailingComma: "none"
+        trailingComma: "none",
     }
     ```
 

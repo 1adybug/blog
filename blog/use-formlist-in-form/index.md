@@ -107,21 +107,23 @@ export default App
 
     ```tsx
     <FormList name="persons">
-        {fields => fields.map(({name}) => (
-            <FormItem label="爱好">
-                <FormList name={[name, "hobbies"]} initialValue={["钓鱼"]}>
-                    {(fields, { add }) => (
-                        <Fragment>
-                            {fields.map(({ key, name }) => (
-                                <FormItem key={key} name={name}>
-                                    <Input />
-                                </FormItem>
-                            ))}
-                            <Button onClick={() => add()}>Add</Button>
-                        </Fragment>
-                    )}
-                </FormList>
-            </FormItem>
-        ))}
+        {fields =>
+            fields.map(({ name }) => (
+                <FormItem label="爱好">
+                    <FormList name={[name, "hobbies"]} initialValue={["钓鱼"]}>
+                        {(fields, { add }) => (
+                            <Fragment>
+                                {fields.map(({ key, name }) => (
+                                    <FormItem key={key} name={name}>
+                                        <Input />
+                                    </FormItem>
+                                ))}
+                                <Button onClick={() => add()}>Add</Button>
+                            </Fragment>
+                        )}
+                    </FormList>
+                </FormItem>
+            ))
+        }
     </FormList>
     ```

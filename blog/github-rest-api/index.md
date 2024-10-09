@@ -30,9 +30,9 @@ curl -H "Authorization: token YOUR_TOKEN" https://api.github.com/repos/octocat/H
 
 :::warning
 
-- 确保替换 YOUR_TOKEN 为你的实际 GitHub 访问令牌。
-- 如果目录很大或有很多文件，GitHub 的 API 可能会进行分页处理。这种情况下，你可能需要处理分页逻辑，通过检查响应头中的 Link 字段来获取下一页数据。
-- 为了避免过度使用 API 并受到限制，注意检查并遵守 GitHub 的速率限制政策。
+-   确保替换 YOUR_TOKEN 为你的实际 GitHub 访问令牌。
+-   如果目录很大或有很多文件，GitHub 的 API 可能会进行分页处理。这种情况下，你可能需要处理分页逻辑，通过检查响应头中的 Link 字段来获取下一页数据。
+-   为了避免过度使用 API 并受到限制，注意检查并遵守 GitHub 的速率限制政策。
 
 :::
 
