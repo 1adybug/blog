@@ -17,23 +17,23 @@ import FormList from "antd/es/form/FormList"
 import { FC, Fragment } from "react"
 
 const App: FC = () => {
-    return (
-        <Form onFinish={console.dir}>
-            <FormList name="hobbies" initialValue={["钓鱼"]}>
-                {(fields, { add }) => (
-                    <Fragment>
-                        {fields.map(({ key, name }) => (
-                            <FormItem key={key} name={name}>
-                                <Input />
-                            </FormItem>
-                        ))}
-                        <Button onClick={() => add()}>Add</Button>
-                    </Fragment>
-                )}
-            </FormList>
-            <Button htmlType="submit">Submit</Button>
-        </Form>
-    )
+  return (
+    <Form onFinish={console.dir}>
+      <FormList name="hobbies" initialValue={["钓鱼"]}>
+        {(fields, { add }) => (
+          <Fragment>
+            {fields.map(({ key, name }) => (
+              <FormItem key={key} name={name}>
+                <Input />
+              </FormItem>
+            ))}
+            <Button onClick={() => add()}>Add</Button>
+          </Fragment>
+        )}
+      </FormList>
+      <Button htmlType="submit">Submit</Button>
+    </Form>
+  )
 }
 
 export default App
@@ -70,28 +70,28 @@ import FormList from "antd/es/form/FormList"
 import { FC, Fragment } from "react"
 
 const App: FC = () => {
-    return (
-        <Form onFinish={console.dir}>
-            <FormList name="persons" initialValue={[{ name: "Tom", age: "18" }]}>
-                {(fields, { add }) => (
-                    <Fragment>
-                        {fields.map(({ key, name }) => (
-                            <Fragment key={key}>
-                                <FormItem name={[name, "name"]} label="姓名">
-                                    <Input />
-                                </FormItem>
-                                <FormItem name={[name, "age"]} label="年龄">
-                                    <Input />
-                                </FormItem>
-                            </Fragment>
-                        ))}
-                        <Button onClick={() => add()}>Add</Button>
-                    </Fragment>
-                )}
-            </FormList>
-            <Button htmlType="submit">Submit</Button>
-        </Form>
-    )
+  return (
+    <Form onFinish={console.dir}>
+      <FormList name="persons" initialValue={[{ name: "Tom", age: "18" }]}>
+        {(fields, { add }) => (
+          <Fragment>
+            {fields.map(({ key, name }) => (
+              <Fragment key={key}>
+                <FormItem name={[name, "name"]} label="姓名">
+                  <Input />
+                </FormItem>
+                <FormItem name={[name, "age"]} label="年龄">
+                  <Input />
+                </FormItem>
+              </Fragment>
+            ))}
+            <Button onClick={() => add()}>Add</Button>
+          </Fragment>
+        )}
+      </FormList>
+      <Button htmlType="submit">Submit</Button>
+    </Form>
+  )
 }
 
 export default App
@@ -105,25 +105,25 @@ export default App
 
 3. `FormList` 也可以再次嵌套 `FormList`：
 
-    ```tsx
-    <FormList name="persons">
-        {fields =>
-            fields.map(({ name }) => (
-                <FormItem label="爱好">
-                    <FormList name={[name, "hobbies"]} initialValue={["钓鱼"]}>
-                        {(fields, { add }) => (
-                            <Fragment>
-                                {fields.map(({ key, name }) => (
-                                    <FormItem key={key} name={name}>
-                                        <Input />
-                                    </FormItem>
-                                ))}
-                                <Button onClick={() => add()}>Add</Button>
-                            </Fragment>
-                        )}
-                    </FormList>
-                </FormItem>
-            ))
-        }
-    </FormList>
-    ```
+   ```tsx
+   <FormList name="persons">
+     {fields =>
+       fields.map(({ name }) => (
+         <FormItem label="爱好">
+           <FormList name={[name, "hobbies"]} initialValue={["钓鱼"]}>
+             {(fields, { add }) => (
+               <Fragment>
+                 {fields.map(({ key, name }) => (
+                   <FormItem key={key} name={name}>
+                     <Input />
+                   </FormItem>
+                 ))}
+                 <Button onClick={() => add()}>Add</Button>
+               </Fragment>
+             )}
+           </FormList>
+         </FormItem>
+       ))
+     }
+   </FormList>
+   ```

@@ -18,47 +18,47 @@ import React, { FC, Fragment, useState } from "react"
 type RequiredMark = boolean | "optional" | "customize"
 
 const customizeRequiredMark = (label: React.ReactNode, { required }: { required: boolean }) => (
-    <Fragment>
-        {required ? <Tag color="error">Required</Tag> : <Tag color="warning">optional</Tag>}
-        {label}
-    </Fragment>
+  <Fragment>
+    {required ? <Tag color="error">Required</Tag> : <Tag color="warning">optional</Tag>}
+    {label}
+  </Fragment>
 )
 
 const App: FC = () => {
-    const [form] = useForm()
-    const [requiredMark, setRequiredMarkType] = useState<RequiredMark>("optional")
+  const [form] = useForm()
+  const [requiredMark, setRequiredMarkType] = useState<RequiredMark>("optional")
 
-    const onRequiredTypeChange = ({ requiredMarkValue }: { requiredMarkValue: RequiredMark }) => {
-        setRequiredMarkType(requiredMarkValue)
-    }
+  const onRequiredTypeChange = ({ requiredMarkValue }: { requiredMarkValue: RequiredMark }) => {
+    setRequiredMarkType(requiredMarkValue)
+  }
 
-    return (
-        <Form
-            form={form}
-            layout="vertical"
-            initialValues={{ requiredMarkValue: requiredMark }}
-            onValuesChange={onRequiredTypeChange}
-            requiredMark={requiredMark === "customize" ? customizeRequiredMark : requiredMark}
-        >
-            <FormItem label="Required Mark" name="requiredMarkValue">
-                <Radio.Group>
-                    <Radio.Button value>Default</Radio.Button>
-                    <Radio.Button value="optional">Optional</Radio.Button>
-                    <Radio.Button value={false}>Hidden</Radio.Button>
-                    <Radio.Button value="customize">Customize</Radio.Button>
-                </Radio.Group>
-            </FormItem>
-            <FormItem label="Field A" required tooltip="This is a required field">
-                <Input placeholder="input placeholder" />
-            </FormItem>
-            <FormItem label="Field B" tooltip={{ title: "Tooltip with customize icon", icon: <InfoCircleOutlined /> }}>
-                <Input placeholder="input placeholder" />
-            </FormItem>
-            <FormItem>
-                <Button type="primary">Submit</Button>
-            </FormItem>
-        </Form>
-    )
+  return (
+    <Form
+      form={form}
+      layout="vertical"
+      initialValues={{ requiredMarkValue: requiredMark }}
+      onValuesChange={onRequiredTypeChange}
+      requiredMark={requiredMark === "customize" ? customizeRequiredMark : requiredMark}
+    >
+      <FormItem label="Required Mark" name="requiredMarkValue">
+        <Radio.Group>
+          <Radio.Button value>Default</Radio.Button>
+          <Radio.Button value="optional">Optional</Radio.Button>
+          <Radio.Button value={false}>Hidden</Radio.Button>
+          <Radio.Button value="customize">Customize</Radio.Button>
+        </Radio.Group>
+      </FormItem>
+      <FormItem label="Field A" required tooltip="This is a required field">
+        <Input placeholder="input placeholder" />
+      </FormItem>
+      <FormItem label="Field B" tooltip={{ title: "Tooltip with customize icon", icon: <InfoCircleOutlined /> }}>
+        <Input placeholder="input placeholder" />
+      </FormItem>
+      <FormItem>
+        <Button type="primary">Submit</Button>
+      </FormItem>
+    </Form>
+  )
 }
 
 export default App

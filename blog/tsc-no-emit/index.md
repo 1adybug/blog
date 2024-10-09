@@ -10,8 +10,8 @@ tags: [TypeScript, tsconfig, noEmit]
 
 ```json
 {
-    "compilerOptions": {
-        "noEmit": true
-    }
+  "compilerOptions": {
+    "noEmit": true
+  }
 }
 ```

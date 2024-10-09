@@ -17,9 +17,9 @@ import { FC } from "react"
 // `hashPriority` 默认为 `low`，配置为 `high` 后，
 // 会移除 `:where` 选择器封装
 const App: FC = () => (
-    <StyleProvider hashPriority="high">
-        <MyApp />
-    </StyleProvider>
+  <StyleProvider hashPriority="high">
+    <MyApp />
+  </StyleProvider>
 )
 
 export default App
@@ -32,6 +32,6 @@ export default App
 }
 
 .css-bAMboO.ant-btn {
-    color: #fff;
+  color: #fff;
 }
 ```

@@ -23,9 +23,9 @@ yarn why @types/react
 
 ```json
 {
-    "resolutions": {
-        "@types/react": "^18.2.79"
-    }
+  "resolutions": {
+    "@types/react": "^18.2.79"
+  }
 }
 ```
 
@@ -41,9 +41,9 @@ yarn why @types/react
 
 ```json
 {
-    "resolutions": {
-        "string-width": "^4"
-    }
+  "resolutions": {
+    "string-width": "^4"
+  }
 }
 ```
 

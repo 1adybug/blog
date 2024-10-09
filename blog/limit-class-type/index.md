@@ -10,48 +10,48 @@ tags: [class, typescript]
 
 1. 使用 `typeof`：
 
-    ```TypeScript
-    class Person {
-        constructor(public name: string) {}
-    }
+   ```TypeScript
+   class Person {
+       constructor(public name: string) {}
+   }
 
-    function createPerson(constructor: typeof Person) {
-        return new constructor("Tom")
-    }
+   function createPerson(constructor: typeof Person) {
+       return new constructor("Tom")
+   }
 
-    const person = createPerson(Person)
-    ```
+   const person = createPerson(Person)
+   ```
 
 2. 使用 `new`：
 
-    ```TypeScript
-    class Person {
-        constructor(public name: string) {}
-    }
+   ```TypeScript
+   class Person {
+       constructor(public name: string) {}
+   }
 
-    function createPerson(constructor: new (name: string) => Person){
-        return new constructor("Tom")
-    }
+   function createPerson(constructor: new (name: string) => Person){
+       return new constructor("Tom")
+   }
 
-    const person = createPerson(Person)
-    ```
+   const person = createPerson(Person)
+   ```
 
-    或者，扩展一下：
+   或者，扩展一下：
 
-    ```TypeScript
-    interface Animal {
-        name: string
-    }
+   ```TypeScript
+   interface Animal {
+       name: string
+   }
 
-    class Person {
-        constructor(public name: string) {}
-    }
+   class Person {
+       constructor(public name: string) {}
+   }
 
-    function createAnimal(constructor: new (name: string) => Animal){
-        return new constructor("Tom")
-    }
+   function createAnimal(constructor: new (name: string) => Animal){
+       return new constructor("Tom")
+   }
 
-    const person = createAnimal(Person)
-    ```
+   const person = createAnimal(Person)
+   ```
 
 这里我们可以学到，只要在一个函数类型的前面加一个 `new` 关键字，便变成了构造函数

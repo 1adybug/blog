@@ -27,35 +27,35 @@ window.addEventListener(
 
 ```css
 [data-error-image] {
-    position: relative;
+  position: relative;
 }
 
 [data-error-image]::before {
-    content: "视图库服务器";
-    font-family: "AlibabaPuHuiTi";
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    background-color: brown;
-    left: 0;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  content: "视图库服务器";
+  font-family: "AlibabaPuHuiTi";
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background-color: brown;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 [data-error-image]::after {
-    content: "传递图片失败";
-    font-family: "AlibabaPuHuiTi";
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    background-color: brown;
-    left: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+  content: "传递图片失败";
+  font-family: "AlibabaPuHuiTi";
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background-color: brown;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 ```
 
