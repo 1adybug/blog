@@ -10,17 +10,17 @@ tags: [class, prototype, function, typescript]
 
 1. 接口扩展
 
-   ```TypeScript
+   ```ts
    interface Person {
-       sayName(): void
+     sayName(): void
    }
 
    class Person {
-       constructor(public name: string) {}
+     constructor(public name: string) {}
    }
 
    Person.prototype.sayName = function sayName() {
-       console.log(this.name)
+     console.log(this.name)
    }
 
    const person = new Person("Tom")
@@ -30,17 +30,17 @@ tags: [class, prototype, function, typescript]
 
 2. 声明合并
 
-   ```TypeScript
+   ```ts
    class Person {
-       constructor(public name: string) {}
+     constructor(public name: string) {}
    }
 
    interface Person {
-       sayName(): void
+     sayName(): void
    }
 
    Person.prototype.sayName = function sayName() {
-       console.log(this.name)
+     console.log(this.name)
    }
 
    const person = new Person("Tom")
@@ -84,7 +84,7 @@ tags: [class, prototype, function, typescript]
 
 现在可以直接声明属性了：
 
-```TypeScript
+```ts
 const Bar = () => console.log("Hello World")
 
 Bar.color = "red"

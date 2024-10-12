@@ -16,9 +16,9 @@ Warning: Instance created by \`useForm\` is not connected to any Form element. F
 
 如果确定传递了 `form` 属性，那么一般是由于调用 `form` 实例的方法时，`Form` 表单还没有被渲染的原因，常见于 `Modal` 中嵌套的 `Form`，解决办法为监听弹窗是否被打开：
 
-```TypeScript
+```ts
 useEffect(() => {
-    if (!open) return
-    form.setFieldsValue({})
+  if (!open) return
+  form.setFieldsValue({})
 }, [open, form])
 ```

@@ -158,7 +158,7 @@ tags: [selecto.js]
 
 **示例代码：**
 
-```javascript
+```js
 const selecto = new Selecto({
   container: document.querySelector(".selecto-area"),
   dragContainer: window,
@@ -283,7 +283,7 @@ const selecto = new Selecto({
 
 **示例代码：**
 
-```javascript
+```js
 const selecto = new Selecto({
   // 定义可被选择的元素所在的容器
   container: ".items-container",

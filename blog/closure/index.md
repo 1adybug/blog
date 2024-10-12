@@ -8,14 +8,14 @@ tags: []
 
 在 JavaScript 中，很多时候我们总是认为：一个变量如果无法被访问到了，那么它就会被垃圾回收，然而事实却并非如此：
 
-```TypeScript
+```ts
 function bar() {
-    const a = 1
-    const b = 2
-    function log() {
-        console.log(a)
-    }
-    return log
+  const a = 1
+  const b = 2
+  function log() {
+    console.log(a)
+  }
+  return log
 }
 const log = bar()
 console.dir(log)
@@ -33,17 +33,17 @@ console.dir(log)
 
 但是如果我们再创建一个函数 `log2`，并且引用了变量 `b`：
 
-```TypeScript
+```ts
 function bar() {
-    const a = 1
-    const b = 2
-    function log() {
-        console.log(a)
-    }
-    function log2() {
-        console.log(b)
-    }
-    return log
+  const a = 1
+  const b = 2
+  function log() {
+    console.log(a)
+  }
+  function log2() {
+    console.log(b)
+  }
+  return log
 }
 const log = bar()
 console.dir(log)

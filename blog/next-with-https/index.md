@@ -6,7 +6,7 @@ date: 2024-02-23
 tags: [next, next.js, https]
 ---
 
-```TypeScript
+```ts
 import { readFileSync } from "fs"
 import { createServer } from "https"
 import next from "next"
@@ -21,8 +21,8 @@ const cert = readFileSync(join("/etc/letsencrypt/live", "yourdomain.com", "cert.
 const ca = readFileSync(join("/etc/letsencrypt/live", "yourdomain.com", "chain.pem"), "utf8")
 
 app.prepare().then(() => {
-    createServer({ key, cert, ca }, (req, res) => {
-        handle(req, res)
-    }).listen(3000)
+  createServer({ key, cert, ca }, (req, res) => {
+    handle(req, res)
+  }).listen(3000)
 })
 ```

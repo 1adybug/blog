@@ -8,20 +8,20 @@ tags: [image, HTMLImageElement, img, onError, error]
 
 在项目中经常会使用到第三方的图床，这些图床的图片可能会出错，统一处理错误就很有必要：
 
-```TypeScript
+```ts
 window.addEventListener(
-    "error",
-    e => {
-        const { target } = e
-        // 判断是否是图片元素的错误
-        if (!(target instanceof HTMLImageElement))  return
-        const url = new URL(target.src)
-        // 判断是否是第三方的图片
-        if (url.origin === location.origin) return
-        // 添加 data-error-image 属性
-        target.dataset.errorImage = ""
-    },
-    true
+  "error",
+  e => {
+    const { target } = e
+    // 判断是否是图片元素的错误
+    if (!(target instanceof HTMLImageElement)) return
+    const url = new URL(target.src)
+    // 判断是否是第三方的图片
+    if (url.origin === location.origin) return
+    // 添加 data-error-image 属性
+    target.dataset.errorImage = ""
+  },
+  true,
 )
 ```
 

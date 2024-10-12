@@ -6,7 +6,7 @@ date: 2023-11-27
 tags: [node.js, https, express]
 ---
 
-```TypeScript
+```ts
 import express from "express"
 import https from "https"
 import { readFileSync, readdirSync } from "fs"
@@ -14,11 +14,16 @@ import { readFileSync, readdirSync } from "fs"
 const app = express()
 
 app.get("/", async (req, res) => {
-    res.send("Hello, World!")
+  res.send("Hello, World!")
 })
 
-https.createServer({
-    key: readFileSync("../root/.acme.sh/a.deep-sea.dynv6.net_ecc/a.deep-sea.dynv6.net.key"),
-    cert: readFileSync("../root/.acme.sh/a.deep-sea.dynv6.net_ecc/fullchain.cer")
-}, app).listen(8080)
+https
+  .createServer(
+    {
+      key: readFileSync("../root/.acme.sh/a.deep-sea.dynv6.net_ecc/a.deep-sea.dynv6.net.key"),
+      cert: readFileSync("../root/.acme.sh/a.deep-sea.dynv6.net_ecc/fullchain.cer"),
+    },
+    app,
+  )
+  .listen(8080)
 ```

@@ -8,129 +8,133 @@ tags: [winget, github]
 
 [winget](https://github.com/microsoft/winget-pkgs) 的所有软件清单都保存在 [manifests](https://github.com/microsoft/winget-pkgs/tree/master/manifests) 目录中。下一层的目录便是软件作者名称的首字母，比如 [Google.Chrome](https://github.com/microsoft/winget-pkgs/tree/master/manifests/g/Google/Chrome) 便是保存在 [manifests/g](https://github.com/microsoft/winget-pkgs/tree/master/manifests/g) 目录中 接下来使用 [GitHub REST API](/github-rest-api) 获取目录即可：
 
-```TypeScript
+```ts
 import { HttpsProxyAgent } from "https-proxy-agent"
 import fetch from "node-fetch"
 import YAML from "yaml"
 
 export namespace Winget {
-    export interface Package {
-        PackageIdentifier: string
-        PackageVersion: string
-        InstallerType: string
-        InstallModes: string[]
-        InstallerSwitches: InstallerSwitches
-        ExpectedReturnCodes: ExpectedReturnCode[]
-        UpgradeBehavior: string
-        Protocols: string[]
-        FileExtensions: string[]
-        AppsAndFeaturesEntries: AppsAndFeaturesEntry[]
-        Installers: Installer[]
-        ManifestType: string
-        ManifestVersion: string
-    }
+  export interface Package {
+    PackageIdentifier: string
+    PackageVersion: string
+    InstallerType: string
+    InstallModes: string[]
+    InstallerSwitches: InstallerSwitches
+    ExpectedReturnCodes: ExpectedReturnCode[]
+    UpgradeBehavior: string
+    Protocols: string[]
+    FileExtensions: string[]
+    AppsAndFeaturesEntries: AppsAndFeaturesEntry[]
+    Installers: Installer[]
+    ManifestType: string
+    ManifestVersion: string
+  }
 
-    export interface Installer {
-        Architecture: string
-        Scope: string
-        InstallerUrl: string
-        InstallerSha256: string
-        InstallerSwitches: InstallerSwitches2
-        ProductCode: string
-    }
+  export interface Installer {
+    Architecture: string
+    Scope: string
+    InstallerUrl: string
+    InstallerSha256: string
+    InstallerSwitches: InstallerSwitches2
+    ProductCode: string
+  }
 
-    export interface InstallerSwitches2 {
-        Custom: string
-    }
+  export interface InstallerSwitches2 {
+    Custom: string
+  }
 
-    export interface AppsAndFeaturesEntry {
-        UpgradeCode: string
-        InstallerType: string
-    }
+  export interface AppsAndFeaturesEntry {
+    UpgradeCode: string
+    InstallerType: string
+  }
 
-    export interface ExpectedReturnCode {
-        InstallerReturnCode: number
-        ReturnResponse: string
-    }
+  export interface ExpectedReturnCode {
+    InstallerReturnCode: number
+    ReturnResponse: string
+  }
 
-    export interface InstallerSwitches {
-        Log: string
-    }
+  export interface InstallerSwitches {
+    Log: string
+  }
 }
 
 export type WingetDownloadInfo = {
-    name: string
-    id: string
-    dir: string
-    architecture?: "x64" | "x86" | "all"
+  name: string
+  id: string
+  dir: string
+  architecture?: "x64" | "x86" | "all"
 }
 
 export interface GithubContent {
-    name: string
-    path: string
-    sha: string
-    size: number
-    url: string
-    html_url: string
-    git_url: string
-    download_url?: string | null
-    type: string
-    _links: Links
+  name: string
+  path: string
+  sha: string
+  size: number
+  url: string
+  html_url: string
+  git_url: string
+  download_url?: string | null
+  type: string
+  _links: Links
 }
 
 export interface Links {
-    self: string
-    git: string
-    html: string
+  self: string
+  git: string
+  html: string
 }
 
 export type WingetItem = {
-    filename: string
-    version: string
-    ext: string
-    architecture: string
+  filename: string
+  version: string
+  ext: string
+  architecture: string
 }
 
 export async function downloadFromWinget({ name, id, dir, architecture = "x64" }: WingetDownloadInfo) {
-    const firstLetter = id[0].toLowerCase()
-    const path = id.replace(/\./g, "/")
-    const response = await fetch(`https://api.github.com/repos/microsoft/winget-pkgs/contents/manifests/${firstLetter}/${path}`, { agent })
-    const data: GithubContent[] = (await response.json()) as any
-    const reg2 = /^\d+(\.\d+?)*$/
-    const stables = data.filter(item => reg2.test(item.name))
-    stables.sort((a, b) => {
-        const avs = a.name.split(".")
-        const bvs = b.name.split(".")
-        const max = Math.max(avs.length, bvs.length)
-        for (let i = 0; i < max; i++) {
-            const av = avs[i] ? parseInt(avs[i]) : 0
-            const bv = bvs[i] ? parseInt(bvs[i]) : 0
-            if (av < bv) return 1
-            if (av > bv) return -1
-        }
-        return 0
-    })
-    const response2 = await fetch(`https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/${firstLetter}/${path}/${stables[0].name}/${id}.installer.yaml`, { agent })
-    const yaml = await response2.text()
-    const pkg: Winget.Package = YAML.parse(yaml)
-    const installers = pkg.Installers.filter((item, index) => {
-        if (item.Architecture !== "x64" && item.Architecture !== "x86") return false
-        if (architecture !== "all" && item.Architecture !== architecture) return false
-        if (!item.InstallerUrl.endsWith(".exe") && !item.InstallerUrl.endsWith(".msi")) return false
-        if (item.InstallerUrl.endsWith(".msi") && pkg.Installers.some(item2 => item2.Architecture === item.Architecture && item2.InstallerUrl.endsWith(".exe"))) return false
-        if (pkg.Installers.findIndex(item2 => item2.Architecture === item.Architecture) !== index) return false
-        return true
-    })
-    const result: WingetItem[] = []
-    for (const { InstallerUrl, Architecture } of installers) {
-        if (Architecture !== "x64" && Architecture !== "x86") continue
-        const filename = await download(InstallerUrl, dir)
-        result.push({ filename, version: pkg.PackageVersion, ext: InstallerUrl.endsWith(".exe") ? "exe" : "msi", architecture: Architecture })
+  const firstLetter = id[0].toLowerCase()
+  const path = id.replace(/\./g, "/")
+  const response = await fetch(`https://api.github.com/repos/microsoft/winget-pkgs/contents/manifests/${firstLetter}/${path}`, { agent })
+  const data: GithubContent[] = (await response.json()) as any
+  const reg2 = /^\d+(\.\d+?)*$/
+  const stables = data.filter(item => reg2.test(item.name))
+  stables.sort((a, b) => {
+    const avs = a.name.split(".")
+    const bvs = b.name.split(".")
+    const max = Math.max(avs.length, bvs.length)
+    for (let i = 0; i < max; i++) {
+      const av = avs[i] ? parseInt(avs[i]) : 0
+      const bv = bvs[i] ? parseInt(bvs[i]) : 0
+      if (av < bv) return 1
+      if (av > bv) return -1
     }
-    for (const { version, filename, architecture, ext } of result) {
-        await sleep(100)
-        await rename(join(dir, filename), join(dir, `${name}_${version}_${architecture}.${ext}`))
-    }
+    return 0
+  })
+  const response2 = await fetch(
+    `https://raw.githubusercontent.com/microsoft/winget-pkgs/master/manifests/${firstLetter}/${path}/${stables[0].name}/${id}.installer.yaml`,
+    { agent },
+  )
+  const yaml = await response2.text()
+  const pkg: Winget.Package = YAML.parse(yaml)
+  const installers = pkg.Installers.filter((item, index) => {
+    if (item.Architecture !== "x64" && item.Architecture !== "x86") return false
+    if (architecture !== "all" && item.Architecture !== architecture) return false
+    if (!item.InstallerUrl.endsWith(".exe") && !item.InstallerUrl.endsWith(".msi")) return false
+    if (item.InstallerUrl.endsWith(".msi") && pkg.Installers.some(item2 => item2.Architecture === item.Architecture && item2.InstallerUrl.endsWith(".exe")))
+      return false
+    if (pkg.Installers.findIndex(item2 => item2.Architecture === item.Architecture) !== index) return false
+    return true
+  })
+  const result: WingetItem[] = []
+  for (const { InstallerUrl, Architecture } of installers) {
+    if (Architecture !== "x64" && Architecture !== "x86") continue
+    const filename = await download(InstallerUrl, dir)
+    result.push({ filename, version: pkg.PackageVersion, ext: InstallerUrl.endsWith(".exe") ? "exe" : "msi", architecture: Architecture })
+  }
+  for (const { version, filename, architecture, ext } of result) {
+    await sleep(100)
+    await rename(join(dir, filename), join(dir, `${name}_${version}_${architecture}.${ext}`))
+  }
 }
 ```
 

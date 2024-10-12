@@ -10,9 +10,9 @@ tags: ["typescript"]
 
 在 `.d.ts` 或者 `ts` 文件中：
 
-```TypeScript
+```ts
 declare global {
-    var tip: string
+  var tip: string
 }
 ```
 
@@ -25,13 +25,13 @@ declare global {
 
 对于浏览器打包的项目，还可以添加 window 上的变量
 
-```TypeScript
+```ts
 declare global {
-    var tip: string
+  var tip: string
 
-    interface Window {
-        tip: string
-    }
+  interface Window {
+    tip: string
+  }
 }
 
 window.tip = "This is a tip."

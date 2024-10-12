@@ -12,7 +12,7 @@ tags: [javascript, typescript, slice]
 
 以下是一个示例代码，展示了如何安全地截取包含 emoji 的字符串：
 
-```TypeScript
+```ts
 // 原始字符串，其中包含占用两个字符位置的 emoji
 const originalString = "Hello 👋 World 🌍!"
 

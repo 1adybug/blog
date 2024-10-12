@@ -21,26 +21,26 @@ code --install-extension "本地vsix插件路径"
 
 使用 `JavaScript` 安装目录下所有插件：
 
-```TypeScript
+```ts
 import { readdir } from "fs/promises"
 import { spawn } from "child_process"
 
 function spawnAsync(command: string) {
-    return new Promise<void>((resolve, reject) => {
-        const child = spawn(command, { shell: true, stdio: "inherit" })
-        child.on("exit", code => {
-            if (code !== 0) return reject(new Error(`Command failed with code ${code}`))
-            resolve()
-        })
+  return new Promise<void>((resolve, reject) => {
+    const child = spawn(command, { shell: true, stdio: "inherit" })
+    child.on("exit", code => {
+      if (code !== 0) return reject(new Error(`Command failed with code ${code}`))
+      resolve()
     })
+  })
 }
 
 async function main() {
-    const dir = await readdir("./")
-    const exts = dir.filter(name => name.endsWith(".vsix"))
-    for (const ext of exts) {
-        await spawnAsync(`code --install-extension "${ext}"`)
-    }
+  const dir = await readdir("./")
+  const exts = dir.filter(name => name.endsWith(".vsix"))
+  for (const ext of exts) {
+    await spawnAsync(`code --install-extension "${ext}"`)
+  }
 }
 
 main()

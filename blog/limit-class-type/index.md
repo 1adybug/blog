@@ -10,13 +10,13 @@ tags: [class, typescript]
 
 1. 使用 `typeof`：
 
-   ```TypeScript
+   ```ts
    class Person {
-       constructor(public name: string) {}
+     constructor(public name: string) {}
    }
 
    function createPerson(constructor: typeof Person) {
-       return new constructor("Tom")
+     return new constructor("Tom")
    }
 
    const person = createPerson(Person)
@@ -24,13 +24,13 @@ tags: [class, typescript]
 
 2. 使用 `new`：
 
-   ```TypeScript
+   ```ts
    class Person {
-       constructor(public name: string) {}
+     constructor(public name: string) {}
    }
 
-   function createPerson(constructor: new (name: string) => Person){
-       return new constructor("Tom")
+   function createPerson(constructor: new (name: string) => Person) {
+     return new constructor("Tom")
    }
 
    const person = createPerson(Person)
@@ -38,17 +38,17 @@ tags: [class, typescript]
 
    或者，扩展一下：
 
-   ```TypeScript
+   ```ts
    interface Animal {
-       name: string
+     name: string
    }
 
    class Person {
-       constructor(public name: string) {}
+     constructor(public name: string) {}
    }
 
-   function createAnimal(constructor: new (name: string) => Animal){
-       return new constructor("Tom")
+   function createAnimal(constructor: new (name: string) => Animal) {
+     return new constructor("Tom")
    }
 
    const person = createAnimal(Person)
