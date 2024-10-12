@@ -21,7 +21,7 @@ yarn why @types/react
 
 这时我们可以在 `package.json` 中配置 `resolutions` 统一 `@types/react` 版本：
 
-```json
+```javascripton
 {
   "resolutions": {
     "@types/react": "^18.2.79"
@@ -39,7 +39,7 @@ yarn why @types/react
 
 将依赖项 `string-width` 版本改为 `^4`：
 
-```json
+```javascripton
 {
   "resolutions": {
     "string-width": "^4"

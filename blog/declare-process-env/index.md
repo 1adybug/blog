@@ -6,7 +6,7 @@ date: 2024-08-21
 tags: [node, process, env]
 ---
 
-```ts
+```typescript
 declare namespace NodeJS {
   interface ProcessEnv {
     TOKEN?: string

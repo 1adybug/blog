@@ -23,7 +23,7 @@ Node.js 的 `child_process` 模块允许你从 Node.js 应用程序内部运行�
 
 `exec` 用于执行一个命令并且将结果以回调函数的形式返回。它适合用于那些产生少量输出的情况
 
-```js
+```javascript
 const { exec } = require("child_process")
 
 exec("ls", (error, stdout, stderr) => {
@@ -74,7 +74,7 @@ exec("ls", (error, stdout, stderr) => {
 
 与 `exec` 相比，`spawn` 会返回一个流（`Stream`），这使得它更适用于需要处理大量数据的情况。
 
-```js
+```javascript
 const { spawn } = require("child_process")
 
 const child = spawn("find", ["."])
@@ -96,7 +96,7 @@ child.on("close", code => {
 
 这个函数是特别为 Node.js 模块设计的。它允许你创建一个 Node.js 进程，并运行一个模块。这对于在后台执行一个任务特别有用，而不必担心阻塞主事件循环。
 
-```js
+```javascript
 const { fork } = require("child_process")
 
 const child = fork("some-module.js")

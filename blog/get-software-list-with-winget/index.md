@@ -8,7 +8,7 @@ tags: [winget, github]
 
 [winget](https://github.com/microsoft/winget-pkgs) 的所有软件清单都保存在 [manifests](https://github.com/microsoft/winget-pkgs/tree/master/manifests) 目录中。下一层的目录便是软件作者名称的首字母，比如 [Google.Chrome](https://github.com/microsoft/winget-pkgs/tree/master/manifests/g/Google/Chrome) 便是保存在 [manifests/g](https://github.com/microsoft/winget-pkgs/tree/master/manifests/g) 目录中 接下来使用 [GitHub REST API](/github-rest-api) 获取目录即可：
 
-```ts
+```typescript
 import { HttpsProxyAgent } from "https-proxy-agent"
 import fetch from "node-fetch"
 import YAML from "yaml"

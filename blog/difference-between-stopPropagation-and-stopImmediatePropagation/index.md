@@ -12,7 +12,7 @@ tags: []
 
 `stopPropagation` 方法用于阻止事件冒泡到下一个元素，但允许其他事件处理程序在当前元素上继续执行。例如，如果你在一个按钮的点击事件中调用 `stopPropagation`，点击事件将不会冒泡到按钮的父元素，但该按钮上的其他点击事件处理程序仍然会被执行。
 
-```ts
+```typescript
 element.addEventListener("click", function (event) {
   event.stopPropagation()
   console.log("Button clicked")
@@ -23,7 +23,7 @@ element.addEventListener("click", function (event) {
 
 `stopImmediatePropagation` 方法不仅阻止事件冒泡，还阻止当前元素上所有后续的事件处理程序执行。这意味着一旦调用了 `stopImmediatePropagation`，当前元素上的其他事件处理程序将不会被触发。
 
-```ts
+```typescript
 element.addEventListener("click", function (event) {
   event.stopImmediatePropagation()
   console.log("Button clicked")

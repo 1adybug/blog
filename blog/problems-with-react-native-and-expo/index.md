@@ -33,7 +33,7 @@ could not connect to the development server
 
 解决方案：
 
-```ts
+```typescript
 /** 初始值 */
 const fromValue = 0
 

@@ -10,7 +10,7 @@ tags: [class, typescript]
 
 1. 使用 `typeof`：
 
-   ```ts
+   ```typescript
    class Person {
      constructor(public name: string) {}
    }
@@ -24,7 +24,7 @@ tags: [class, typescript]
 
 2. 使用 `new`：
 
-   ```ts
+   ```typescript
    class Person {
      constructor(public name: string) {}
    }
@@ -38,7 +38,7 @@ tags: [class, typescript]
 
    或者，扩展一下：
 
-   ```ts
+   ```typescript
    interface Animal {
      name: string
    }

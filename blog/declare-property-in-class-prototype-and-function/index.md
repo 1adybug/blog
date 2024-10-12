@@ -10,7 +10,7 @@ tags: [class, prototype, function, typescript]
 
 1. 接口扩展
 
-   ```ts
+   ```typescript
    interface Person {
      sayName(): void
    }
@@ -30,7 +30,7 @@ tags: [class, prototype, function, typescript]
 
 2. 声明合并
 
-   ```ts
+   ```typescript
    class Person {
      constructor(public name: string) {}
    }
@@ -48,7 +48,7 @@ tags: [class, prototype, function, typescript]
    person.sayName()
    ```
 
-方法1和方法2看起来似乎只是 `class` 和 `interface` 的顺序区别，以下是 `claude` 给出的解释：
+方法 1 和方法 2 看起来似乎只是 `class` 和 `interface` 的顺序区别，以下是 `claude` 给出的解释：
 主要区别：
 
 1. 声明顺序：
@@ -84,7 +84,7 @@ tags: [class, prototype, function, typescript]
 
 现在可以直接声明属性了：
 
-```ts
+```typescript
 const Bar = () => console.log("Hello World")
 
 Bar.color = "red"

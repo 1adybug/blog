@@ -8,7 +8,7 @@ tags: [TypeScript, tsconfig, noEmit]
 
 在 `tsconfig.json` 中设置：
 
-```json
+```javascripton
 {
   "compilerOptions": {
     "noEmit": true

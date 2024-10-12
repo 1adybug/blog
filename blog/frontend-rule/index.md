@@ -59,7 +59,7 @@ tags: []
 
 2. 全局共享状态优先使用 [ahooks](https://ahooks.js.org/zh-CN/) 实现，其次 [React Soda](https://www.npmjs.com/package/react-soda) ：
 
-   ```ts
+   ```typescript
    import { useRequest } from "ahooks"
 
    export function useCount() {
@@ -75,7 +75,7 @@ tags: []
 
    :::
 
-   ```ts
+   ```typescript
    import createStore from "react-soda"
 
    export const useCount = createStore(0)
@@ -93,7 +93,7 @@ tags: []
 4. 对于 [Ant Design](https://ant-design.antgroup.com/index-cn) 的样式修改尽量通过修改[主题](https://ant-design.antgroup.com/docs/react/customize-theme-cn)来实现
 5. 对于表单查询的参数使用 [Soda Hooks](https://www.npmjs.com/package/soda-hooks) 中的 `useQueryState` 来存储和控制
 
-   ```ts
+   ```typescript
    import { useQueryState } from "soda-hooks"
 
    const [query, setQuery] = useQueryState({
@@ -106,7 +106,7 @@ tags: []
 
 6. 在项目根目录配置 [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)：
 
-   ```js
+   ```javascript
    // prettier.config.cjs
    module.exports = {
      // tailwind 格式化插件

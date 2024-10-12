@@ -8,7 +8,7 @@ tags: [node-fetch, node, readable, readableStream]
 
 `node-fetch` 的 `response.body` 虽然类型标记为 `ReadableStream`，但实际上并不是，被 `Readable.fromweb` 调用时会报错，此时改为使用 `Readable.from` 即可成功。
 
-```ts
+```typescript
 import fetch from "node-fetch"
 
 const response = await fetch("http://somewhere.com")
