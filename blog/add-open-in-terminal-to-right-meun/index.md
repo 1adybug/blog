@@ -15,20 +15,20 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CLASSES_ROOT\Directory\Background\shell\wt]
 @="在此处打开 Windows Terminal"
-"Icon"="C:\Users\lenovo\Pictures\terminal.ico"
+"Icon"="C:\\Users\\lenovo\\Pictures\\terminal.ico"
 
 [HKEY_CLASSES_ROOT\Directory\Background\shell\wt\command]
 @="wt.exe -d \"%V\""
 
 [HKEY_CLASSES_ROOT\Directory\shell\wt]
 @="在此处打开 Windows Terminal"
-"Icon"="C:\Users\lenovo\Pictures\terminal.ico"
+"Icon"="C:\\Users\\lenovo\\Pictures\\terminal.ico"
 
 [HKEY_CLASSES_ROOT\Directory\shell\wt\command]
 @="wt.exe -d \"%V\""
 ```
 
-将 `C:\Users\lenovo\Pictures\terminal.ico` 替换为你的 `Windows Terminal` 程序或者 `.ico` 文件图标路径。
+将 `C:\\Users\\lenovo\\Pictures\\terminal.ico` 替换为你的 `Windows Terminal` 程序或者 `.ico` 文件图标路径。
 
 :::warning
 
