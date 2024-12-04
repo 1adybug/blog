@@ -1,6 +1,6 @@
 ---
 slug: body-scroll-with-antd-modal
-title: body 设置为 overflow: scroll 时，antd modal 打开后会被改为 overflow: hidden
+title: body 设置为 overflow:scroll 时，antd Modal 打开后会被改为 overflow:hidden
 authors: [1adybug]
 date: 2024-12-03
 tags: [antd]
