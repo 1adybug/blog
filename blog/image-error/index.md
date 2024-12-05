@@ -10,52 +10,52 @@ tags: [image, HTMLImageElement, img, onError, error]
 
 ```typescript
 window.addEventListener(
-  "error",
-  e => {
-    const { target } = e
-    // 判断是否是图片元素的错误
-    if (!(target instanceof HTMLImageElement)) return
-    const url = new URL(target.src)
-    // 判断是否是第三方的图片
-    if (url.origin === location.origin) return
-    // 添加 data-error-image 属性
-    target.dataset.errorImage = ""
-  },
-  true,
+    "error",
+    e => {
+        const { target } = e
+        // 判断是否是图片元素的错误
+        if (!(target instanceof HTMLImageElement)) return
+        const url = new URL(target.src)
+        // 判断是否是第三方的图片
+        if (url.origin === location.origin) return
+        // 添加 data-error-image 属性
+        target.dataset.errorImage = ""
+    },
+    true,
 )
 ```
 
 ```css
 [data-error-image] {
-  position: relative;
+    position: relative;
 }
 
 [data-error-image]::before {
-  content: "视图库服务器";
-  font-family: "AlibabaPuHuiTi";
-  position: absolute;
-  width: 100%;
-  height: 50%;
-  background-color: brown;
-  left: 0;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+    content: "视图库服务器";
+    font-family: "AlibabaPuHuiTi";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: brown;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 [data-error-image]::after {
-  content: "传递图片失败";
-  font-family: "AlibabaPuHuiTi";
-  position: absolute;
-  width: 100%;
-  height: 50%;
-  background-color: brown;
-  left: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+    content: "传递图片失败";
+    font-family: "AlibabaPuHuiTi";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: brown;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 ```
 

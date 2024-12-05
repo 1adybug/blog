@@ -9,8 +9,8 @@ tags: [next, next.js, https]
 ```typescript
 import { readFileSync } from "fs"
 import { createServer } from "https"
-import next from "next"
 import { join } from "path"
+import next from "next"
 
 const app = next({})
 const handle = app.getRequestHandler()
@@ -21,8 +21,8 @@ const cert = readFileSync(join("/etc/letsencrypt/live", "yourdomain.com", "cert.
 const ca = readFileSync(join("/etc/letsencrypt/live", "yourdomain.com", "chain.pem"), "utf8")
 
 app.prepare().then(() => {
-  createServer({ key, cert, ca }, (req, res) => {
-    handle(req, res)
-  }).listen(3000)
+    createServer({ key, cert, ca }, (req, res) => {
+        handle(req, res)
+    }).listen(3000)
 })
 ```

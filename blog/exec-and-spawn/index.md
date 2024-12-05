@@ -27,12 +27,12 @@ Node.js 的 `child_process` 模块允许你从 Node.js 应用程序内部运行�
 const { exec } = require("child_process")
 
 exec("ls", (error, stdout, stderr) => {
-  if (error) {
-    console.error(`执行的错误: ${error}`)
-    return
-  }
-  console.log(`stdout: ${stdout}`)
-  console.error(`stderr: ${stderr}`)
+    if (error) {
+        console.error(`执行的错误: ${error}`)
+        return
+    }
+    console.log(`stdout: ${stdout}`)
+    console.error(`stderr: ${stderr}`)
 })
 ```
 
@@ -44,15 +44,15 @@ exec("ls", (error, stdout, stderr) => {
 
 1. command (必须): 你想要执行的命令字符串。
 2. options (可选): 一个对象，可以用来定制操作的各种设置，例如：
-   - `cwd`：指定子进程的当前工作目录。
-   - `env`：环境变量键值对。
-   - `encoding`：输出的编码。
-   - `timeout`：超时时间，过了这个时间子进程会被杀掉。
-   - `shell`：要使用的 shell，如果不指定，默认在 UNIX 上是 `/bin/sh`，在 Windows 上是 `cmd.exe`。
+    - `cwd`：指定子进程的当前工作目录。
+    - `env`：环境变量键值对。
+    - `encoding`：输出的编码。
+    - `timeout`：超时时间，过了这个时间子进程会被杀掉。
+    - `shell`：要使用的 shell，如果不指定，默认在 UNIX 上是 `/bin/sh`，在 Windows 上是 `cmd.exe`。
 3. callback (可选): 当进程终止或有错误发生时调用的回调函数，其参数包括：
-   - `error`：错误对象或者 `null`。
-   - `stdout`：子进程的标准输出。
-   - `stderr`：子进程的标准错误输出。
+    - `error`：错误对象或者 `null`。
+    - `stdout`：子进程的标准输出。
+    - `stderr`：子进程的标准错误输出。
 
 ## execFile
 
@@ -80,15 +80,15 @@ const { spawn } = require("child_process")
 const child = spawn("find", ["."])
 
 child.stdout.on("data", data => {
-  console.log(`stdout: ${data}`)
+    console.log(`stdout: ${data}`)
 })
 
 child.stderr.on("data", data => {
-  console.error(`stderr: ${data}`)
+    console.error(`stderr: ${data}`)
 })
 
 child.on("close", code => {
-  console.log(`子进程退出码：${code}`)
+    console.log(`子进程退出码：${code}`)
 })
 ```
 
@@ -102,7 +102,7 @@ const { fork } = require("child_process")
 const child = fork("some-module.js")
 
 child.on("message", message => {
-  console.log("收到消息:", message)
+    console.log("收到消息:", message)
 })
 
 child.send({ hello: "world" })

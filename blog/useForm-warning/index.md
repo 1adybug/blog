@@ -18,7 +18,7 @@ Warning: Instance created by \`useForm\` is not connected to any Form element. F
 
 ```typescript
 useEffect(() => {
-  if (!open) return
-  form.setFieldsValue({})
+    if (!open) return
+    form.setFieldsValue({})
 }, [open, form])
 ```

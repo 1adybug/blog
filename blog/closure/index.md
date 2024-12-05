@@ -10,12 +10,12 @@ tags: []
 
 ```typescript
 function bar() {
-  const a = 1
-  const b = 2
-  function log() {
-    console.log(a)
-  }
-  return log
+    const a = 1
+    const b = 2
+    function log() {
+        console.log(a)
+    }
+    return log
 }
 const log = bar()
 console.dir(log)
@@ -35,15 +35,15 @@ console.dir(log)
 
 ```typescript
 function bar() {
-  const a = 1
-  const b = 2
-  function log() {
-    console.log(a)
-  }
-  function log2() {
-    console.log(b)
-  }
-  return log
+    const a = 1
+    const b = 2
+    function log() {
+        console.log(a)
+    }
+    function log2() {
+        console.log(b)
+    }
+    return log
 }
 const log = bar()
 console.dir(log)

@@ -8,20 +8,20 @@ tags: []
 
 1. 设置用户名和邮箱
 
-   ```shell
-   git config --global user.name "Your Name"
-   git config --global user.email "your_email@example.com"
-   ```
+    ```shell
+    git config --global user.name "Your Name"
+    git config --global user.email "your_email@example.com"
+    ```
 
 2. 生成 ssh 密钥
 
-   ```shell
-   ssh-keygen -t ed25519 -C "your_email@example.com"
-   ```
+    ```shell
+    ssh-keygen -t ed25519 -C "your_email@example.com"
+    ```
 
 3. 设置代理
 
-   ```shell
-   git config --global http.proxy http://proxyusername:proxypassword@proxy.server.com:port
-   git config --global https.proxy https://proxyusername:proxypassword@proxy.server.com:port
-   ```
+    ```shell
+    git config --global http.proxy http://proxyusername:proxypassword@proxy.server.com:port
+    git config --global https.proxy https://proxyusername:proxypassword@proxy.server.com:port
+    ```

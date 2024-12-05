@@ -12,9 +12,9 @@ tags: [react, change]
 import { FC } from "react"
 
 const App: FC = () => {
-  const [value, setValue] = useState("")
+    const [value, setValue] = useState("")
 
-  return <input value={value} onChange={e => setValue(e.target.value)} />
+    return <input value={value} onChange={e => setValue(e.target.value)} />
 }
 
 export default App
@@ -26,17 +26,17 @@ export default App
 import { FC, useState } from "react"
 
 const App: FC = () => {
-  const [value, setValue] = useState("")
+    const [value, setValue] = useState("")
 
-  return (
-    <div>
-      <div>
-        <label htmlFor="input">input:</label>
-        <input id="input" value={value} onChange={e => setValue(e.target.value)} />
-      </div>
-      <div>value:{value}</div>
-    </div>
-  )
+    return (
+        <div>
+            <div>
+                <label htmlFor="input">input:</label>
+                <input id="input" value={value} onChange={e => setValue(e.target.value)} />
+            </div>
+            <div>value:{value}</div>
+        </div>
+    )
 }
 
 export default App

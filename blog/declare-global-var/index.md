@@ -12,7 +12,7 @@ tags: ["typescript"]
 
 ```typescript
 declare global {
-  var tip: string
+    var tip: string
 }
 ```
 
@@ -27,11 +27,11 @@ declare global {
 
 ```typescript
 declare global {
-  var tip: string
+    var tip: string
 
-  interface Window {
-    tip: string
-  }
+    interface Window {
+        tip: string
+    }
 }
 
 window.tip = "This is a tip."

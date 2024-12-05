@@ -56,18 +56,18 @@ const stopValue = useRef(fromValue)
 const status = useRef(false)
 
 function onClick() {
-  // 如果暂停值已经达到目标值，说明动画已经完成
-  if (stopValue.current === toValue) return
-  // 如果动画处于播放状态，暂停动画，并且将当前值赋予给暂停值
-  if (status.current) translateX.stopAnimation(value => (stopValue.current = value))
-  // 否则播放动画
-  else
-    Animated.timing(translateX, {
-      toValue,
-      duration: (toValue - stopValue.current) / speed,
-      useNativeDriver: true,
-      easing: Easing.linear,
-    }).start(({ finished }) => finished && (stopValue.current = toValue))
-  status.current = !status.current
+    // 如果暂停值已经达到目标值，说明动画已经完成
+    if (stopValue.current === toValue) return
+    // 如果动画处于播放状态，暂停动画，并且将当前值赋予给暂停值
+    if (status.current) translateX.stopAnimation(value => (stopValue.current = value))
+    // 否则播放动画
+    else
+        Animated.timing(translateX, {
+            toValue,
+            duration: (toValue - stopValue.current) / speed,
+            useNativeDriver: true,
+            easing: Easing.linear,
+        }).start(({ finished }) => finished && (stopValue.current = toValue))
+    status.current = !status.current
 }
 ```

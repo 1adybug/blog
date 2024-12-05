@@ -8,7 +8,7 @@ tags: [interview]
 
 1. `JavaScript` 中有哪些数据类型
 
-   `string`、`number`、`boolean`、`bigInt`、`null`、`undefined`、`symbol`、`object`
+    `string`、`number`、`boolean`、`bigInt`、`null`、`undefined`、`symbol`、`object`
 
 2. 谈一谈 `requestAnimationFrame`
 

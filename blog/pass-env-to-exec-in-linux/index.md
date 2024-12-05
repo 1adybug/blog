@@ -16,10 +16,10 @@ exec("node -v")
 
 // 报错，提示找不到 node 命令
 exec("node -v", {
-  env: {
-    NODE_ENV: "production",
-    NAME: "Tom",
-  },
+    env: {
+        NODE_ENV: "production",
+        NAME: "Tom",
+    },
 })
 ```
 
@@ -27,11 +27,11 @@ exec("node -v", {
 
 ```typescript
 exec("node -v", {
-  env: {
-    ...process.env,
-    NODE_ENV: "production",
-    NAME: "Tom",
-  },
+    env: {
+        ...process.env,
+        NODE_ENV: "production",
+        NAME: "Tom",
+    },
 })
 ```
 

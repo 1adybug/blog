@@ -9,8 +9,8 @@ tags: [fetch, node-fetch, https-proxy-agent, proxy, node.js]
 在 `Node.js` 中，原生的 `fetch` API 并不直接支持代理功能。可以使用 [node-fetch](https://www.npmjs.com/package/node-fetch) 库和 [https-proxy-agent](https://www.npmjs.com/package/https-proxy-agent) 库来实现通过代理服务器发送请求的功能：
 
 ```typescript
-import fetch from "node-fetch"
 import { HttpsProxyAgent } from "https-proxy-agent"
+import fetch from "node-fetch"
 
 // 代理服务器的URL
 const proxyUrl = "http://your-proxy-server:port"

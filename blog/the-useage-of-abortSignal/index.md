@@ -12,9 +12,9 @@ tags: [abortSignal]
 const controller = new AbortController()
 const signal = controller.signal
 fetch(url, { signal })
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error(error))
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error))
 
 // 取消请求
 controller.abort()
@@ -24,12 +24,12 @@ controller.abort()
 
 ```typescript
 useEffect(() => {
-  const controller = new AbortController()
-  const signal = controller.signal
-  window.addEventListener("click", () => console.log("click"), { signal })
-  return () => {
-    controller.abort()
-  }
+    const controller = new AbortController()
+    const signal = controller.signal
+    window.addEventListener("click", () => console.log("click"), { signal })
+    return () => {
+        controller.abort()
+    }
 }, [])
 ```
 

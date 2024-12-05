@@ -17,9 +17,9 @@ tags: []
 
 ```css
 .element {
-  width: 100px;
-  padding: 10px;
-  border: 5px solid black;
+    width: 100px;
+    padding: 10px;
+    border: 5px solid black;
 }
 ```
 

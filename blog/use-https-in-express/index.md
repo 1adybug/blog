@@ -7,23 +7,23 @@ tags: [node.js, https, express]
 ---
 
 ```typescript
-import express from "express"
-import https from "https"
 import { readFileSync, readdirSync } from "fs"
+import https from "https"
+import express from "express"
 
 const app = express()
 
 app.get("/", async (req, res) => {
-  res.send("Hello, World!")
+    res.send("Hello, World!")
 })
 
 https
-  .createServer(
-    {
-      key: readFileSync("../root/.acme.sh/a.deep-sea.dynv6.net_ecc/a.deep-sea.dynv6.net.key"),
-      cert: readFileSync("../root/.acme.sh/a.deep-sea.dynv6.net_ecc/fullchain.cer"),
-    },
-    app,
-  )
-  .listen(8080)
+    .createServer(
+        {
+            key: readFileSync("../root/.acme.sh/a.deep-sea.dynv6.net_ecc/a.deep-sea.dynv6.net.key"),
+            cert: readFileSync("../root/.acme.sh/a.deep-sea.dynv6.net_ecc/fullchain.cer"),
+        },
+        app,
+    )
+    .listen(8080)
 ```

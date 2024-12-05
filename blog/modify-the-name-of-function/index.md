@@ -38,8 +38,8 @@ console.log(bar.name)
 
 ```typescript
 const obj = {
-  foo: function () {},
-  bar: () => 0,
+    foo: function () {},
+    bar: () => 0,
 }
 // 打印 "foo"
 console.log(obj.foo.name)
@@ -66,7 +66,7 @@ console.log(obj.bar.name)
 ```typescript
 const name = "foo"
 const obj = {
-  [name]: function () {},
+    [name]: function () {},
 }
 // 打印 "foo"
 console.log(obj[name].name)

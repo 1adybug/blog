@@ -14,8 +14,8 @@ tags: []
 
 ```typescript
 element.addEventListener("click", function (event) {
-  event.stopPropagation()
-  console.log("Button clicked")
+    event.stopPropagation()
+    console.log("Button clicked")
 })
 ```
 
@@ -25,12 +25,12 @@ element.addEventListener("click", function (event) {
 
 ```typescript
 element.addEventListener("click", function (event) {
-  event.stopImmediatePropagation()
-  console.log("Button clicked")
+    event.stopImmediatePropagation()
+    console.log("Button clicked")
 })
 
 element.addEventListener("click", function (event) {
-  console.log("This will not be logged")
+    console.log("This will not be logged")
 })
 ```
 

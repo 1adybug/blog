@@ -8,8 +8,8 @@ tags: [node, process, env]
 
 ```typescript
 declare namespace NodeJS {
-  interface ProcessEnv {
-    TOKEN?: string
-  }
+    interface ProcessEnv {
+        TOKEN?: string
+    }
 }
 ```

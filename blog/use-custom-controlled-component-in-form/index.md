@@ -22,60 +22,60 @@ import { ChangeEvent, FC, forwardRef } from "react"
 import { useInputState } from "soda-hooks"
 
 type Info = {
-  name?: string
-  id?: string
+    name?: string
+    id?: string
 }
 
 type InfoItemProps = {
-  value?: Info
-  onChange?: (value: Info) => void
+    value?: Info
+    onChange?: (value: Info) => void
 }
 
 const InfoItem = forwardRef<HTMLDivElement, InfoItemProps>((props, ref) => {
-  const { value, onChange } = props
-  // 推荐使用 soda-hooks 的 useInputState
-  const [name, setName] = useInputState(value?.name)
-  const [id, setId] = useInputState(value?.id)
+    const { value, onChange } = props
+    // 推荐使用 soda-hooks 的 useInputState
+    const [name, setName] = useInputState(value?.name)
+    const [id, setId] = useInputState(value?.id)
 
-  function onNameChange(e: ChangeEvent<HTMLInputElement>) {
-    setName(e.target.value)
-    // 将变化之后的 value 传递给外部，优先级为 state < props < 最新的变化的 value
-    onChange?.({ id, ...value, name: e.target.value })
-  }
+    function onNameChange(e: ChangeEvent<HTMLInputElement>) {
+        setName(e.target.value)
+        // 将变化之后的 value 传递给外部，优先级为 state < props < 最新的变化的 value
+        onChange?.({ id, ...value, name: e.target.value })
+    }
 
-  function onIdChange(e: ChangeEvent<HTMLInputElement>) {
-    setId(e.target.value)
-    onChange?.({ name, ...value, id: e.target.value })
-  }
+    function onIdChange(e: ChangeEvent<HTMLInputElement>) {
+        setId(e.target.value)
+        onChange?.({ name, ...value, id: e.target.value })
+    }
 
-  return (
-    <div ref={ref}>
-      <Input value={name} onChange={onNameChange} />
-      <Input value={id} onChange={onIdChange} />
-    </div>
-  )
+    return (
+        <div ref={ref}>
+            <Input value={name} onChange={onNameChange} />
+            <Input value={id} onChange={onIdChange} />
+        </div>
+    )
 })
 
 type FormData = {
-  info: Info
+    info: Info
 }
 
 const App: FC = () => {
-  const [form] = useForm<FormData>()
+    const [form] = useForm<FormData>()
 
-  return (
-    <Form<FormData> form={form} onFinish={console.dir}>
-      <FormItem<FormData> name="info">
-        <InfoItem />
-      </FormItem>
-      <FormItem<FormData>>
-        <Button onClick={() => form.setFieldsValue({ info: undefined })}>Reset</Button>
-      </FormItem>
-      <FormItem<FormData>>
-        <Button htmlType="submit">Submit</Button>
-      </FormItem>
-    </Form>
-  )
+    return (
+        <Form<FormData> form={form} onFinish={console.dir}>
+            <FormItem<FormData> name="info">
+                <InfoItem />
+            </FormItem>
+            <FormItem<FormData>>
+                <Button onClick={() => form.setFieldsValue({ info: undefined })}>Reset</Button>
+            </FormItem>
+            <FormItem<FormData>>
+                <Button htmlType="submit">Submit</Button>
+            </FormItem>
+        </Form>
+    )
 }
 
 export default App

@@ -31,8 +31,9 @@ yarn add cross-env tsx -D
 
 ```tsx
 import fs from "fs"
-import { extractStyle } from "@ant-design/static-style-extract"
 import { ConfigProvider } from "antd"
+
+import { extractStyle } from "@ant-design/static-style-extract"
 
 const outputPath = "./app/antd.min.css"
 

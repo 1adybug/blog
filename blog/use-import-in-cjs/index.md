@@ -10,7 +10,7 @@ tags: [common js, cjs, es module, esm, require, import, dynamic import, node.js]
 
 ```typescript
 async function main() {
-  const { default: A } = await import("a")
+    const { default: A } = await import("a")
 }
 ```
 

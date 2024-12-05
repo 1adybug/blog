@@ -33,90 +33,90 @@ tags: []
 
 1. 所有 `React` 组件必须使用以下形式书写：
 
-   ```tsx
-   // 无参数组件
-   import { FC } from "react"
+    ```tsx
+    // 无参数组件
+    import { FC } from "react"
 
-   const Component: FC = () => {
-     return <div></div>
-   }
+    const Component: FC = () => {
+      return <div></div>
+    }
 
-   export default Component
+    export default Component
 
-   // 有参数组件
-   import { FC } from "react"
+    // 有参数组件
+    import { FC } from "react"
 
-   export type ComponentProps = {}
+    export type ComponentProps = {}
 
-   const Component: FC<ComponentProps> = props => {
-     const {} = props
+    const Component: FC<ComponentProps> = props => {
+      const {} = props
 
-     return <div></div>
-   }
+      return <div></div>
+    }
 
-   export default Component
-   ```
+    export default Component
+    ```
 
 2. 全局共享状态优先使用 [ahooks](https://ahooks.js.org/zh-CN/) 实现，其次 [React Soda](https://www.npmjs.com/package/react-soda) ：
 
-   ```typescript
-   import { useRequest } from "ahooks"
+    ```typescript
+    import { useRequest } from "ahooks"
 
-   export function useCount() {
-     return useRequest(() => Promise.resolve(Math.random()), {
-       cacheKey: "abc",
-     })
-   }
-   ```
+    export function useCount() {
+        return useRequest(() => Promise.resolve(Math.random()), {
+            cacheKey: "abc",
+        })
+    }
+    ```
 
-   :::warning
+    :::warning
 
-   [ahooks](https://ahooks.js.org/zh-CN/) 在 `StrictMode` 下有 Bug，需要关闭严格模式
+    [ahooks](https://ahooks.js.org/zh-CN/) 在 `StrictMode` 下有 Bug，需要关闭严格模式
 
-   :::
+    :::
 
-   ```typescript
-   import createStore from "react-soda"
+    ```typescript
+    import createStore from "react-soda"
 
-   export const useCount = createStore(0)
-   ```
+    export const useCount = createStore(0)
+    ```
 
 3. CSS 样式优先使用 [Tailwind](https://tailwindcss.com/docs/installation) 实现，其次 [Emotion](https://emotion.sh/docs/introduction) 或者行内样式实现。
 
-   :::warning
+    :::warning
 
-   - [Tailwind](https://tailwindcss.com/docs/installation) 不支持动态属性，如 \`bg-$\{color\}\`
-   - 尽量不要在 [Emotion](https://emotion.sh/docs/introduction) 中书写动态样式，[Emotion](https://emotion.sh/docs/introduction) 生成的样式不会被自动清除。如果有动态需求，可以使用 CSS 变量 `var(--name)` 搭配行内样式实现
+    - [Tailwind](https://tailwindcss.com/docs/installation) 不支持动态属性，如 \`bg-$\{color\}\`
+    - 尽量不要在 [Emotion](https://emotion.sh/docs/introduction) 中书写动态样式，[Emotion](https://emotion.sh/docs/introduction) 生成的样式不会被自动清除。如果有动态需求，可以使用 CSS 变量 `var(--name)` 搭配行内样式实现
 
-   :::
+    :::
 
 4. 对于 [Ant Design](https://ant-design.antgroup.com/index-cn) 的样式修改尽量通过修改[主题](https://ant-design.antgroup.com/docs/react/customize-theme-cn)来实现
 5. 对于表单查询的参数使用 [Soda Hooks](https://www.npmjs.com/package/soda-hooks) 中的 `useQueryState` 来存储和控制
 
-   ```typescript
-   import { useQueryState } from "soda-hooks"
+    ```typescript
+    import { useQueryState } from "soda-hooks"
 
-   const [query, setQuery] = useQueryState({
-     keys: ["name", "unit"],
-     parse: {
-       age: value => (value ? Number(value) : undefined),
-     },
-   })
-   ```
+    const [query, setQuery] = useQueryState({
+        keys: ["name", "unit"],
+        parse: {
+            age: value => (value ? Number(value) : undefined),
+        },
+    })
+    ```
 
 6. 在项目根目录配置 [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)：
 
-   ```javascript
-   // prettier.config.cjs
-   module.exports = {
-     // tailwind 格式化插件
-     plugins: ["prettier-plugin-tailwindcss"],
-     semi: false,
-     tabWidth: 4,
-     arrowParens: "avoid",
-     printWidth: 800,
-     trailingComma: "none",
-   }
-   ```
+    ```javascript
+    // prettier.config.cjs
+    module.exports = {
+        // tailwind 格式化插件
+        plugins: ["prettier-plugin-tailwindcss"],
+        semi: false,
+        tabWidth: 4,
+        arrowParens: "avoid",
+        printWidth: 800,
+        trailingComma: "none",
+    }
+    ```
 
 7. [命令规范](/naming-convention)

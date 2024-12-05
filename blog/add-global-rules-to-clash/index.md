@@ -12,8 +12,8 @@ tags: [clash]
 // Define main function (script entry)
 
 function main(config, profileName) {
-  config.rules.unshift("DOMAIN-SUFFIX,bing.com,DIRECT")
-  return config
+    config.rules.unshift("DOMAIN-SUFFIX,bing.com,DIRECT")
+    return config
 }
 ```
 

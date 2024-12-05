@@ -8,10 +8,10 @@ tags: [Grid, Flow]
 
 ```css
 .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 100px); /* 固定宽度为 100px */
-  grid-auto-rows: 100px; /* 固定高度为 100px */
-  gap: 10px; /* 网格间距 */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px); /* 固定宽度为 100px */
+    grid-auto-rows: 100px; /* 固定高度为 100px */
+    gap: 10px; /* 网格间距 */
 }
 ```
 
