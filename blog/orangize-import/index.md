@@ -36,8 +36,8 @@ tags: [prettier, import]
     const assetQueryRegStr = "(\\?[a-zA-Z0-9]+)?"
 
     /**
-    * @type {import("prettier").Options}
-    */
+     * @type {import("prettier").Options}
+     */
     const config = {
         semi: false,
         tabWidth: 4,
