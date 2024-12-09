@@ -1,7 +1,7 @@
-import { themes as prismThemes } from "prism-react-renderer"
-
 import type * as Preset from "@docusaurus/preset-classic"
+import npm2yarn from "@docusaurus/remark-plugin-npm2yarn"
 import type { Config } from "@docusaurus/types"
+import { themes as prismThemes } from "prism-react-renderer"
 
 const config: Config = {
     title: "子虚伊人",
@@ -44,6 +44,15 @@ const config: Config = {
                     blogSidebarTitle: "所有文章",
                     blogSidebarCount: "ALL",
                     blogTitle: "博客",
+                    remarkPlugins: [
+                        [
+                            npm2yarn,
+                            {
+                                sync: true,
+                                converters: ["yarn", "pnpm", ["bun", (code: string) => code.replace(/npm/g, "bun").replace(/npx/g, "bunx")]],
+                            },
+                        ],
+                    ],
                 },
                 theme: {
                     customCss: "./src/css/custom.css",

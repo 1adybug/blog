@@ -22,11 +22,11 @@ tags: [prettier, import]
     import { globSync } from "glob"
 
     /**
-    * 数组去重
-    * @template T - 数组的元素类型
-    * @param {T[]} array - 输入的数组
-    * @return {T[]} 新数组
-    */
+     * 数组去重
+     * @template T - 数组的元素类型
+     * @param {T[]} array - 输入的数组
+     * @return {T[]} 新数组
+     */
     function unique(array) {
         return Array.from(new Set(array))
     }
@@ -65,8 +65,8 @@ tags: [prettier, import]
     )
 
     /**
-    * @type {import("prettier").Options}
-    */
+     * @type {import("prettier").Options}
+     */
     const config = {
         semi: false,
         tabWidth: 4,

@@ -1,6 +1,6 @@
 ---
 slug: use-ant-design-in-remix
-title: 在 Remix.js 中使用 Ant Design
+title: 在 Remix 中使用 Ant Design
 authors: [1adybug]
 date: 2024-06-24
 tags: ["antd", "ant design", "remix"]
