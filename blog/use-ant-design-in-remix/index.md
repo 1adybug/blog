@@ -8,9 +8,9 @@ tags: ["antd", "ant design", "remix"]
 
 在 `Remix.js` 中使用 `Ant Design` 会出现首次渲染样式丢失的问题，参考 `Ant Design` 官方的解决方案 [整体导出](https://ant-design.antgroup.com/docs/react/server-side-rendering-cn#%E6%95%B4%E4%BD%93%E5%AF%BC%E5%87%BA)
 
-```shell
-yarn add @ant-design/static-style-extract
-yarn add cross-env tsx -D
+```bash npm2yarn
+npm i @ant-design/static-style-extract
+npm i cross-env tsx -D
 ```
 
 ```package.json

@@ -10,9 +10,9 @@ tags: [leaflet, 百度, 百度地图, 地图, 瓦片图]
 
 安装 `leaflet`, `proj4`, `proj4leaflet`：
 
-```shell
-yarn add leaflet proj4 proj4leaflet
-yarn add @types/leaflet @types/proj4 @types/proj4leaflet -D
+```bash npm2yarn
+npm i leaflet proj4 proj4leaflet
+npm i @types/leaflet @types/proj4 @types/proj4leaflet -D
 ```
 
 ## 使用
