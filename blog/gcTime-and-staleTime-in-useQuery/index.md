@@ -13,4 +13,4 @@ tags: ["@tanstack/query", react-query, useQuery]
 
 `staleTime` 表示缓存数据新鲜时间。默认为 `0`。在该时间间隔内，认为数据是新鲜的，不会重新发请求。如果设置为 `Infinity`，则表示数据永远新鲜。
 
-之前也分析过 `ahooks` 中的 `useRequest`（参考[useRequest 中的 cacheTime 和 staleTime](/cacheTime-and-staleTime-in-useReuest))，规则复杂，心智负担严重，且在严格模式下数据不一致。`@tanstack/query` 中的 `useQuery` 明显更加优雅，且设计合理。
+之前也分析过 `ahooks` 中的 `useRequest`（参考[useRequest 中的 cacheTime 和 staleTime](/cacheTime-and-staleTime-in-useRequest))，规则复杂，心智负担严重，且在严格模式下数据不一致。`@tanstack/query` 中的 `useQuery` 明显更加优雅，且设计合理。
