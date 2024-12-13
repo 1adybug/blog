@@ -1,6 +1,6 @@
 ---
 slug: gcTime-and-staleTime-in-useQuery
-title: useQuery 中的 cacheTime 和 staleTime
+title: useQuery 中的 gcTime 和 staleTime
 authors: [1adybug]
 date: 2024-12-13
 tags: ["@tanstack/query", react-query, useQuery]
