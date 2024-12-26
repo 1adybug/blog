@@ -3,7 +3,7 @@ slug: gcTime-and-staleTime-in-useQuery
 title: useQuery 中的 gcTime 和 staleTime
 authors: [1adybug]
 date: 2024-12-13
-tags: ["@tanstack/query", react-query, useQuery]
+tags: ["@tanstack/react-query", react-query, useQuery]
 ---
 
 `gcTime` 表示所有缓存数据回收时间。默认为 5 分钟。如果设置为 `Infinity`, 则表示缓存数据永不过期。如果存在多个 `gcTime` 值，则取缓存周期中的最大值。如果所有引用这个 `queryKey` 的 `hooks` 都被销毁了，那么这个 `queryKey` 的缓存数据也会被销毁。如果在销毁之后，又有新的 `hooks` 使用了这个 `queryKey`，分为两种情况：
