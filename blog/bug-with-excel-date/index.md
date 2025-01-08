@@ -193,3 +193,19 @@ console.log(date)
     "u": 0
 }
 ```
+
+配合 `zod` 实现的解析：
+
+```typescript
+import { parse_date_code } from "ssf"
+import { z } from "zod"
+
+export const schema = z
+    .string({ message: "无效的日期" })
+    .trim()
+    .regex(/^[1-9]\d*$/, "无效的日期")
+    .transform(value => {
+        const { y, m, d } = parse_date_code(Number(value))
+        return new Date(y, m - 1, d)
+    })
+```
