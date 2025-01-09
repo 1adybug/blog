@@ -22,8 +22,8 @@ async function main() {
     const path = join(userDir, "AppData/Roaming/Code/User/snippets/global.code-snippets")
     await copyFile(path, "static/global.code-snippets")
     if (await hasChangeNoCommit(".")) {
-        await execAsync("git add static/global.code-snippets")
-        await execAsync("git commit -m '✨feature: 更新代码片段'")
+        await execAsync("git add .")
+        await execAsync(`git commit -m "✨feature: 更新代码片段"`)
         await execAsync("git push")
     }
 }

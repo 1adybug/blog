@@ -1320,20 +1320,6 @@
             ""
         ]
     },
-    "BookEditor": {
-        "scope": "javascript,javascriptreact,typescript,typescriptreact",
-        "prefix": "bookeditor",
-        "body": [
-            "export type ${1} = {",
-            "    id: string",
-            "    name: string",
-            "}",
-            "",
-            "export function edit${1}(${1/^([A-Z])/${1:/downcase}/}: ${1}) {",
-            "    return ${1/^([A-Z])/${1:/downcase}/}",
-            "}"
-        ]
-    },
     "autoInput": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "autoinput",
