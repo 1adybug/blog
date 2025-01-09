@@ -22,7 +22,7 @@ tags: [ssr, antd, css, remix, react router]
     npm i @ant-design/cssinjs @ant-design/static-style-extract
     ```
 
-3. 在 `root.tsx` 中放入 `__ANTD_STYLE`：
+3. 在 `root.tsx` 中放入 `__ANTD_STYLE_PLACEHOLDER__`：
 
     ```tsx
     const isBrowser = typeof window !== "undefined" && typeof window.document !== "undefined"
