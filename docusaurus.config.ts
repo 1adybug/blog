@@ -49,7 +49,7 @@ const config: Config = {
                             npm2yarn,
                             {
                                 sync: true,
-                                converters: ["yarn", "pnpm", ["bun", (code: string) => code.replace(/npm/g, "bun").replace(/npx/g, "bunx")]],
+                                converters: ["yarn", ["pnpm", (code: string) => code.replace(/^npm(?=( |$))/, "pnpm").replace(/^npx(?=( |$))/, "pnpx")], ["bun", (code: string) => code.replace(/^npm(?=( |$))/, "bun").replace(/^npx(?=( |$))/, "bunx")]],
                             },
                         ],
                     ],
