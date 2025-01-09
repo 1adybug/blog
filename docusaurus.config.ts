@@ -82,19 +82,11 @@ const config: Config = {
             style: "dark",
             links: [
                 {
-                    title: "NPM",
+                    title: "资源",
                     items: [
                         {
-                            label: "Easy Zustand",
-                            href: "https://www.npmjs.com/package/easy-zustand",
-                        },
-                        {
-                            label: "Deepsea Tools",
-                            href: "https://www.npmjs.com/package/deepsea-tools",
-                        },
-                        {
-                            label: "Deepsea Components",
-                            href: "https://www.npmjs.com/package/deepsea-components",
+                            label: "代码片段",
+                            href: "/code-snippets",
                         },
                     ],
                 },
