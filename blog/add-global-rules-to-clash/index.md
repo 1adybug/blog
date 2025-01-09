@@ -12,20 +12,20 @@ tags: [clash]
 // Define main function (script entry)
 
 /**
- * @param {object} config 
- * @param {string[]} config.rules 
- * @param {string} profileName 
+ * @param {object} config
+ * @param {string[]} config.rules
+ * @param {string} profileName
  */
 function main(config, profileName) {
-  config.rules.unshift("DOMAIN-SUFFIX,axshare.com,DIRECT")
-  config.rules.unshift("DOMAIN-SUFFIX,bing.com,DIRECT")
-  config.rules.unshift("DOMAIN-SUFFIX,codesandbox.io,DIRECT")
-  config.rules.unshift("DOMAIN-SUFFIX,csbops.io,DIRECT")
-  config.rules.unshift("DOMAIN-SUFFIX,csb.app,DIRECT")
-  config.rules.unshift("DOMAIN-SUFFIX,gallerycdn.vsassets.io,节点选择")
-  config.rules.unshift("DOMAIN-SUFFIX,gallery.vsassets.io,节点选择")
-  config.rules.unshift("DOMAIN-SUFFIX,marketplace.visualstudio.com,节点选择")
-  return config;
+    config.rules.unshift("DOMAIN-SUFFIX,axshare.com,DIRECT")
+    config.rules.unshift("DOMAIN-SUFFIX,bing.com,DIRECT")
+    config.rules.unshift("DOMAIN-SUFFIX,codesandbox.io,DIRECT")
+    config.rules.unshift("DOMAIN-SUFFIX,csbops.io,DIRECT")
+    config.rules.unshift("DOMAIN-SUFFIX,csb.app,DIRECT")
+    config.rules.unshift("DOMAIN-SUFFIX,gallerycdn.vsassets.io,节点选择")
+    config.rules.unshift("DOMAIN-SUFFIX,gallery.vsassets.io,节点选择")
+    config.rules.unshift("DOMAIN-SUFFIX,marketplace.visualstudio.com,节点选择")
+    return config
 }
 ```
 

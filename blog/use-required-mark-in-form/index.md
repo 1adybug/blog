@@ -9,12 +9,11 @@ tags: [antd, Ant Design, Form, requiredMark]
 之前一直都是使用 `css` 来实现必填组件的 `*` 号的隐藏，没想到 `Ant Design` 官方提供了修改的方法：
 
 ```tsx
+import React, { FC, Fragment, useState } from "react"
+import { InfoCircleOutlined } from "@ant-design/icons"
 import { Button, Form, Input, Radio, Tag } from "antd"
 import { useForm } from "antd/es/form/Form"
 import FormItem from "antd/es/form/FormItem"
-import React, { FC, Fragment, useState } from "react"
-
-import { InfoCircleOutlined } from "@ant-design/icons"
 
 type RequiredMark = boolean | "optional" | "customize"
 

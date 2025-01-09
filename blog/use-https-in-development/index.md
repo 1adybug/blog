@@ -63,6 +63,6 @@ TypeError: fetch failed
 
 指定环境变量 `NODE_TLS_REJECT_UNAUTHORIZED='0'` 即可
 
-```PowerShell
+```bash npm2yarn
 npx cross-env NODE_TLS_REJECT_UNAUTHORIZED='0' node index.js
 ```

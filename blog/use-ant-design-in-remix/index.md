@@ -31,9 +31,8 @@ npm i cross-env tsx -D
 
 ```tsx
 import fs from "fs"
-import { ConfigProvider } from "antd"
-
 import { extractStyle } from "@ant-design/static-style-extract"
+import { ConfigProvider } from "antd"
 
 const outputPath = "./app/antd.min.css"
 

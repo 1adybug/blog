@@ -8,7 +8,7 @@ tags: [npm, yarn, react, jsx, node_modules, package.json]
 
 有时候，项目中可能会存在某个隐藏的依赖，又或者存在同一个依赖的多个版本，这时候我们可以通过以下命令来检查依赖来源：
 
-```powershell
+```bash
 # 推荐：npm
 npm ls @types/react
 # yarn

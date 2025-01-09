@@ -8,7 +8,7 @@ tags: [git]
 
 有的时候我们会不小心误操作，将某些文件(夹)加入了 git 的提交记录，这并不是我们想要的，即使再添加进 gitignore 也无济于事，以下是解决办法：
 
-```powershell
+```powershell npm2yarn
 # 将 secrets.txt 替换为要删除的文件
 git filter-branch --force --index-filter "git rm --cached --ignore-unmatch secrets.txt" --prune-empty --tag-name-filter cat -- --all
 # 或者添加 -r 参数，删除文件夹

@@ -15,10 +15,10 @@ tags: [Form, antd, Ant Design]
 3. 转发 `ref` 或者传递 `id` 属性到 `dom` 以支持 `scrollToField` 方法。
 
 ```tsx
+import { ChangeEvent, FC, forwardRef } from "react"
 import { Button, Form, Input } from "antd"
 import { useForm } from "antd/es/form/Form"
 import FormItem from "antd/es/form/FormItem"
-import { ChangeEvent, FC, forwardRef } from "react"
 import { useInputState } from "soda-hooks"
 
 type Info = {

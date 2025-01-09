@@ -6,7 +6,7 @@ date: 2024-04-08
 tags: [vscode]
 ---
 
-```powershell
+```bash
 # 在线安装
 code --install-extension ms-python.python
 # 本地安装

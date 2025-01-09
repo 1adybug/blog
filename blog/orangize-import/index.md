@@ -8,8 +8,8 @@ tags: [prettier, import]
 
 1. 安装插件
 
-    ```bash
-    bun i @ianvs/prettier-plugin-sort-imports glob -D
+    ```bash npm2yarn
+    npm i @ianvs/prettier-plugin-sort-imports glob -D
     ```
 
 2. 写入配置文件 `prettier.config.mjs`：

@@ -11,10 +11,10 @@ tags: []
 ## 简单的动态表单
 
 ```tsx
+import { FC, Fragment } from "react"
 import { Button, Form, Input } from "antd"
 import FormItem from "antd/es/form/FormItem"
 import FormList from "antd/es/form/FormList"
-import { FC, Fragment } from "react"
 
 const App: FC = () => {
     return (
@@ -64,10 +64,10 @@ export default App
 ## 嵌套的动态表单
 
 ```tsx
+import { FC, Fragment } from "react"
 import { Button, Form, Input } from "antd"
 import FormItem from "antd/es/form/FormItem"
 import FormList from "antd/es/form/FormList"
-import { FC, Fragment } from "react"
 
 const App: FC = () => {
     return (

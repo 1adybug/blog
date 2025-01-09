@@ -13,6 +13,7 @@ tags: [ubuntu]
     ```
 
     常见的版本代号：
+
     - 16.04 xenial
     - 18.04 bionic
     - 20.04 focal

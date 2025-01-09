@@ -49,7 +49,19 @@ const config: Config = {
                             npm2yarn,
                             {
                                 sync: true,
-                                converters: ["yarn", ["pnpm", (code: string) => code.replace(/^npm(?=( |$))/, "pnpm").replace(/^npx(?=( |$))/, "pnpx")], ["bun", (code: string) => code.replace(/^npm(?=( |$))/, "bun").replace(/^npx(?=( |$))/, "bunx")]],
+                                converters: [
+                                    ["bun", (code: string) => code.replace(/(?<=(^| ))npm(?=( |$))/gim, "bun").replace(/(?<=(^| ))npx(?=( |$))/gim, "bunx")],
+                                    ["pnpm", (code: string) => code.replace(/(?<=(^| ))npm(?=( |$))/gim, "pnpm").replace(/(?<=(^| ))npx(?=( |$))/gim, "pnpx")],
+                                    [
+                                        "yarn",
+                                        (code: string) =>
+                                            code
+                                                .replace(/(?<=(^| ))npm (i|install)/gim, "yarn add")
+                                                .replace(/(?<=(^| ))npm uninstall/gim, "yarn remove")
+                                                .replace(/(?<=(^| ))npm(?=( |$))/gim, "yarn")
+                                                .replace(/(?<=(^| ))npx(?=( |$))/gim, "yarn dlx"),
+                                    ],
+                                ],
                             },
                         ],
                     ],
@@ -105,6 +117,7 @@ const config: Config = {
         prism: {
             theme: prismThemes.github,
             darkTheme: prismThemes.dracula,
+            additionalLanguages: ["powershell", "bash", "java"],
         },
     } satisfies Preset.ThemeConfig,
     plugins: [

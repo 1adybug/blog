@@ -61,9 +61,8 @@ tags: [ssr, antd, css, remix, react router]
     ```tsx
     import { StrictMode, startTransition } from "react"
     import { hydrateRoot } from "react-dom/client"
-    import { HydratedRouter } from "react-router/dom"
-
     import { StyleProvider, legacyLogicalPropertiesTransformer } from "@ant-design/cssinjs"
+    import { HydratedRouter } from "react-router/dom"
 
     startTransition(() => {
         hydrateRoot(
@@ -80,13 +79,12 @@ tags: [ssr, antd, css, remix, react router]
 5. 修改 `entry.server.tsx`：
 
     ```tsx
-    import { PassThrough } from "node:stream"
-    import { isbot } from "isbot"
     import { renderToPipeableStream, type RenderToPipeableStreamOptions } from "react-dom/server"
-    import { ServerRouter, type AppLoadContext, type EntryContext } from "react-router"
-
+    import { PassThrough } from "node:stream"
     import { StyleProvider, createCache, extractStyle } from "@ant-design/cssinjs"
     import { createReadableStreamFromReadable } from "@react-router/node"
+    import { isbot } from "isbot"
+    import { ServerRouter, type AppLoadContext, type EntryContext } from "react-router"
 
     const ABORT_DELAY = 5_000
 
