@@ -21,11 +21,14 @@ async function main() {
     const userDir = homedir()
     const path = join(userDir, "AppData/Roaming/Code/User/snippets/global.code-snippets")
     await copyFile(path, "static/global.code-snippets")
-    if (await hasChangeNoCommit(".")) {
-        await execAsync("git add .")
-        await execAsync(`git commit -m "✨feature: 更新代码片段"`)
-        await execAsync("git push")
+    if (!(await hasChangeNoCommit("."))) {
+        console.error("没有发现代码片段的变化")
+        return
     }
+    await execAsync("git add .")
+    await execAsync(`git commit -m "✨feature: 更新代码片段"`)
+    await execAsync("git push")
+    console.log("代码片段同步成功")
 }
 
 main()
