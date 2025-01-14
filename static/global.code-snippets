@@ -1357,7 +1357,7 @@
             "",
             "import { FC } from \"react\"",
             "import { useQuery } from \"@tanstack/react-query\"",
-            "import { NiceSearch } from \"soda-antd\"",
+            "import { NiceSearch, NiceSearchProps } from \"soda-antd\"",
             "",
             "import { getAll${TM_FILENAME_BASE/^([a-zA-Z])(.+)Select$/${1:/upcase}$2/}sAction } from \"@/actions/getAll${TM_FILENAME_BASE/^([a-zA-Z])(.+)Select$/${1:/upcase}$2/}s\"",
             "",
@@ -1371,8 +1371,28 @@
             "        queryFn: getDataRequest(() => getAll${TM_FILENAME_BASE/^([a-zA-Z])(.+)Select$/${1:/upcase}$2/}sAction()),",
             "    })",
             "",
-            "    return <NiceSearch data={data} labelField=\"name\" valueField=\"id\" {...props} />",
+            "    return <NiceSearch data={data} labelField={item => item} valueField={item => item} {...props} />",
             "}",
+            "",
+            "export default ${TM_FILENAME_BASE/^([a-zA-Z])(.+)Select$/${1:/upcase}$2/}Select",
+            ""
+        ]
+    },
+    "EnumSelect": {
+        "scope": "javascript,javascriptreact,typescript,typescriptreact",
+        "prefix": "enumselect",
+        "body": [
+            "\"use client\"",
+            "",
+            "import { ComponentProps, FC } from \"react\"",
+            "import { Select } from \"antd\"",
+            "import { getEnumOptions } from \"deepsea-tools\"",
+            "",
+            "import { ${TM_FILENAME_BASE/^([a-zA-Z])(.+)Select$/${1:/upcase}$2/} } from \"@/constant\"",
+            "",
+            "export interface ${TM_FILENAME_BASE/^([a-zA-Z])(.+)Select$/${1:/upcase}$2/}SelectProps extends Omit<ComponentProps<typeof Select<${TM_FILENAME_BASE/^([a-zA-Z])(.+)Select$/${1:/upcase}$2/}>>, \"options\"> {}",
+            "",
+            "const ${TM_FILENAME_BASE/^([a-zA-Z])(.+)Select$/${1:/upcase}$2/}Select: FC<${TM_FILENAME_BASE/^([a-zA-Z])(.+)Select$/${1:/upcase}$2/}SelectProps> = props => <Select options={getEnumOptions(${TM_FILENAME_BASE/^([a-zA-Z])(.+)Select$/${1:/upcase}$2/})} {...props} />",
             "",
             "export default ${TM_FILENAME_BASE/^([a-zA-Z])(.+)Select$/${1:/upcase}$2/}Select",
             ""
