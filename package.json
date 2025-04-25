@@ -14,7 +14,7 @@
         "write-translations": "docusaurus write-translations",
         "write-heading-ids": "docusaurus write-heading-ids",
         "typecheck": "tsc",
-        "lint": "prettier --write .",
+        "format": "prettier --write .",
         "sync-snippets": "node scripts/syncSnippets.mjs",
         "ss": "npm run sync-snippets"
     },

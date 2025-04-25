@@ -19,7 +19,7 @@ async function main() {
         return
     }
     const userDir = homedir()
-    const path = join(userDir, "AppData/Roaming/Code/User/snippets/global.code-snippets")
+    const path = join(userDir, "AppData/Roaming/Cursor/User/snippets/global.code-snippets")
     await copyFile(path, "static/global.code-snippets")
     if (!(await hasChangeNoCommit("."))) {
         console.error("没有发现代码片段的变化")
