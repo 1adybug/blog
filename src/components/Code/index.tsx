@@ -1,16 +1,20 @@
 import { FC, useEffect, useState } from "react"
 import CodeBlock from "@theme/CodeBlock"
 
-const Snippets: FC = () => {
+export interface CodeProps {
+    url: string
+}
+
+const Code: FC<CodeProps> = ({ url }) => {
     const [code, setCode] = useState(undefined)
 
     useEffect(() => {
-        fetch("/global.code-snippets")
+        fetch(url)
             .then(response => response.text())
             .then(setCode)
-    }, [])
+    }, [url])
 
     return <CodeBlock language="json">{code}</CodeBlock>
 }
 
-export default Snippets
+export default Code

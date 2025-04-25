@@ -97,8 +97,8 @@ const config: Config = {
                     title: "资源",
                     items: [
                         {
-                            label: "代码片段",
-                            href: "/code-snippets",
+                            label: "Cursor 设置",
+                            href: "/cursor-setting",
                         },
                     ],
                 },
