@@ -1704,5 +1704,183 @@
             "    form.handleSubmit()",
             "}"
         ]
+    },
+    "Code in JavaScript": {
+        "scope": "markdown",
+        "prefix": "cj",
+        "body": [
+            "```javascript",
+            "$0",
+            "```"
+        ],
+        "description": "Code in JavaScript"
+    },
+    "Code in Html": {
+        "scope": "markdown",
+        "prefix": "ch",
+        "body": [
+            "```html",
+            "$0",
+            "```"
+        ],
+        "description": "Code in Html"
+    },
+    "Code in MySQL": {
+        "scope": "markdown",
+        "prefix": "cm",
+        "body": [
+            "```mysql",
+            "$0",
+            "```"
+        ],
+        "description": "Code in MySQL"
+    },
+    "code in JSX": {
+        "scope": "markdown",
+        "prefix": "cjsx",
+        "body": [
+            "```jsx",
+            "$0",
+            "```"
+        ],
+        "description": "Code in JSX"
+    },
+    "Code in TypeScript": {
+        "scope": "markdown",
+        "prefix": "cts",
+        "body": [
+            "```typescript",
+            "$0",
+            "```"
+        ],
+        "description": "Code in TypeScript"
+    },
+    "Code in Json": {
+        "scope": "markdown",
+        "prefix": "cjson",
+        "body": [
+            "```json",
+            "$0",
+            "```"
+        ],
+        "description": "Code in JSON"
+    },
+    "tj": {
+        "scope": "markdown",
+        "prefix": "tj",
+        "body": [
+            "在 `$0` 中添加如下内容："
+        ],
+        "description": "添加内容"
+    },
+    "cg": {
+        "scope": "markdown",
+        "prefix": "cg",
+        "body": [
+            "```git",
+            "$0",
+            "```"
+        ],
+        "description": "Code in Git"
+    },
+    "code in TSX": {
+        "scope": "markdown",
+        "prefix": "ctsx",
+        "body": [
+            "```tsx",
+            "$0",
+            "```"
+        ],
+        "description": "Code in TSX"
+    },
+    "code in Shell": {
+        "scope": "markdown",
+        "prefix": "cshell",
+        "body": [
+            "```shell",
+            "$0",
+            "```"
+        ],
+        "description": "Code in Shell"
+    },
+    "code in PowerShell": {
+        "scope": "markdown",
+        "prefix": "cp",
+        "body": [
+            "```powershell",
+            "$0",
+            "```"
+        ],
+        "description": "Code in PowerShell"
+    },
+    "code in vue": {
+        "scope": "markdown",
+        "prefix": "cv",
+        "body": [
+            "```vue",
+            "$0",
+            "```"
+        ],
+        "description": "Code in Vue"
+    },
+    "code in Java": {
+        "scope": "markdown",
+        "prefix": "cjava",
+        "body": [
+            "```java",
+            "$0",
+            "```"
+        ],
+        "description": "Code in Java"
+    },
+    "react router page route": {
+        "scope": "javascript,javascriptreact,typescript,typescriptreact",
+        "prefix": "rrr",
+        "body": [
+            "import { FC } from \"react\"",
+            "",
+            "import { Route } from \"@/route-types/${TM_FILENAME_BASE}\"",
+            "",
+            "export async function loader({ request, params, context }: Route.LoaderArgs) {",
+            "",
+            "}",
+            "",
+            "export async function action({ request, params, context }: Route.ActionArgs) {",
+            "",
+            "}",
+            "",
+            "const Page: FC<Route.ComponentProps> = ({ loaderData }) => {",
+            "    return <div></div>",
+            "}",
+            "",
+            "export default Page",
+            ""
+        ]
+    },
+    "api router": {
+        "scope": "javascript,javascriptreact,typescript,typescriptreact",
+        "prefix": "ar",
+        "body": [
+            "import { ${TM_FILENAME_BASE/^api\\.([^-]+)$|^api\\.([^-]+)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$/$1$2${3:/upcase}$4$5${6:/upcase}$7${8:/upcase}$9$10${11:/upcase}$12${13:/upcase}$14${15:/upcase}$16$17${18:/upcase}$19${20:/upcase}$21${22:/upcase}$23${24:/upcase}$25$26${27:/upcase}$28${29:/upcase}$30${31:/upcase}$32${33:/upcase}$34${35:/upcase}$36/}Schema } from \"@/schema/${TM_FILENAME_BASE/^api\\.([^-]+)$|^api\\.([^-]+)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$/$1$2${3:/upcase}$4$5${6:/upcase}$7${8:/upcase}$9$10${11:/upcase}$12${13:/upcase}$14${15:/upcase}$16$17${18:/upcase}$19${20:/upcase}$21${22:/upcase}$23${24:/upcase}$25$26${27:/upcase}$28${29:/upcase}$30${31:/upcase}$32${33:/upcase}$34${35:/upcase}$36/}\"",
+            "",
+            "import { ${TM_FILENAME_BASE/^api\\.([^-]+)$|^api\\.([^-]+)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$/$1$2${3:/upcase}$4$5${6:/upcase}$7${8:/upcase}$9$10${11:/upcase}$12${13:/upcase}$14${15:/upcase}$16$17${18:/upcase}$19${20:/upcase}$21${22:/upcase}$23${24:/upcase}$25$26${27:/upcase}$28${29:/upcase}$30${31:/upcase}$32${33:/upcase}$34${35:/upcase}$36/} } from \"@/server/${TM_FILENAME_BASE/^api\\.([^-]+)$|^api\\.([^-]+)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$/$1$2${3:/upcase}$4$5${6:/upcase}$7${8:/upcase}$9$10${11:/upcase}$12${13:/upcase}$14${15:/upcase}$16$17${18:/upcase}$19${20:/upcase}$21${22:/upcase}$23${24:/upcase}$25$26${27:/upcase}$28${29:/upcase}$30${31:/upcase}$32${33:/upcase}$34${35:/upcase}$36/}\"",
+            "",
+            "import { Route } from \"@/route-types/${TM_FILENAME_BASE}\"",
+            "",
+            "export async function action({ request }: Route.ActionArgs) {",
+            "    const json = await request.json()",
+            "    const input = ${TM_FILENAME_BASE/^api\\.([^-]+)$|^api\\.([^-]+)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$/$1$2${3:/upcase}$4$5${6:/upcase}$7${8:/upcase}$9$10${11:/upcase}$12${13:/upcase}$14${15:/upcase}$16$17${18:/upcase}$19${20:/upcase}$21${22:/upcase}$23${24:/upcase}$25$26${27:/upcase}$28${29:/upcase}$30${31:/upcase}$32${33:/upcase}$34${35:/upcase}$36/}Schema.parse(json)",
+            "    const output = await ${TM_FILENAME_BASE/^api\\.([^-]+)$|^api\\.([^-]+)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$/$1$2${3:/upcase}$4$5${6:/upcase}$7${8:/upcase}$9$10${11:/upcase}$12${13:/upcase}$14${15:/upcase}$16$17${18:/upcase}$19${20:/upcase}$21${22:/upcase}$23${24:/upcase}$25$26${27:/upcase}$28${29:/upcase}$30${31:/upcase}$32${33:/upcase}$34${35:/upcase}$36/}(input)",
+            "    return output",
+            "}",
+            ""
+        ]
+    },
+    "test": {
+        "scope": "javascript,javascriptreact,typescript,typescriptreact",
+        "prefix": "test",
+        "body": [
+            "${TM_FILENAME_BASE/^api\\.([^-]+)$|^api\\.([^-]+)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$/$1$2${3:/upcase}$4$5${6:/upcase}$7${8:/upcase}$9$10${11:/upcase}$12${13:/upcase}$14${15:/upcase}$16$17${18:/upcase}$19${20:/upcase}$21${22:/upcase}$23${24:/upcase}$25$26${27:/upcase}$28${29:/upcase}$30${31:/upcase}$32${33:/upcase}$34${35:/upcase}$36/}",
+        ]
     }
 }
