@@ -31,7 +31,7 @@ wsl --shutdown
 
 代理可能需要重新设置，或者重启代理软件或者主机
 
-如果要在 `NAT` 模式下使用 `clash` 代理，可以参考 [获取 Windows 在 wsl 中的 ip](get-windows-ip-in-wsl) 这篇文章
+如果要在 `NAT` 模式下使用 `clash` 代理，可以参考 [获取 Windows 在 wsl 中的 ip](/get-windows-ip-in-wsl) 这篇文章
 
 ```shell
 vi ~/.bashrc
