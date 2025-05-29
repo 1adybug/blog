@@ -6,4 +6,4 @@ date: 2025-05-29
 tags: [certbot, letsencrypt, ssl, https]
 ---
 
-删除 `/etc/letsencrypt/renewal/` 相应的配置文件，如果有必要的话，删除 `/etc/letsencrypt/live/` 目录下的证书文件夹。
+删除 `/etc/letsencrypt/renewal/` 相应的配置文件，如果有必要的话，删除 `/etc/letsencrypt/live/` 和 `/etc/letsencrypt/archive/` 目录下的证书文件夹。
