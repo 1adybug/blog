@@ -32,3 +32,5 @@ tags: [nextjs, node, middleware, edge]
     ```typescript
     export const runtime = "nodejs"
     ```
+
+当然，最好的做法是不使用 `Node.js` 作为中间件的运行时，而是使用 `Edge` 作为中间件的运行时，尽量使用 `Edge` 的 API 来实现中间件的功能。
