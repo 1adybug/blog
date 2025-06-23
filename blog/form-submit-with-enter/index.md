@@ -3,7 +3,7 @@ slug: form-submit-with-enter
 title: 回车键提交表单
 authors: [1adybug]
 date: 2025-06-23
-tags: []
+tags: [html, enter, claude]
 ---
 
 _以下内容均为 `Claude 4 sonnet` 生成_
