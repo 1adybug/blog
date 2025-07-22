@@ -38,4 +38,12 @@ tags: [css, scrollbar]
     /* 滚动条轨道的圆角 */
     border-radius: 6px;
 }
+
+/* 滚动条角落的颜色 */
+::-webkit-scrollbar-corner {
+    /* 滚动条角落的颜色 */
+    background: rgba(0, 0, 0, 0.05);
+}
 ```
+
+如何这些样式不生效，还有可能是元素设置了 `scrollbar-color` 和 `scrollbar-width` 属性，导致浏览器默认样式覆盖了我们的样式，所以需要将这些属性设置为 `auto` 。
