@@ -12,6 +12,6 @@ gemini:
 
 claude:
     name: claude
-    title: Claude
+    title: Anthropic Claude
     url: https://claude.ai
     image_url: /img/avatars/claude.svg
