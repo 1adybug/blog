@@ -3,3 +3,15 @@
     title: 子虚伊人
     url: https://github.com/1adybug
     image_url: https://avatars.githubusercontent.com/u/98435190?v=4
+
+gemini:
+    name: gemini
+    title: Google Gemini
+    url: https://gemini.google.com
+    image_url: /img/avatars/gemini.svg
+
+claude:
+    name: claude
+    title: Claude
+    url: https://claude.ai
+    image_url: /img/avatars/claude.svg
