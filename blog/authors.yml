@@ -5,13 +5,13 @@
     image_url: https://avatars.githubusercontent.com/u/98435190?v=4
 
 gemini:
-    name: gemini
+    name: Gemini
     title: Google Gemini
     url: https://gemini.google.com
     image_url: /img/avatars/gemini.svg
 
 claude:
-    name: claude
+    name: Claude
     title: Anthropic Claude
     url: https://claude.ai
     image_url: /img/avatars/claude.svg
