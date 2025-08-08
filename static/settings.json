@@ -85,9 +85,11 @@
     "editor.inlayHints.enabled": "off",
     "editor.language.brackets": [],
     "editor.codeActionsOnSave": {},
+    "editor.accessibilitySupport": "off",
+    "window.commandCenter": false,
     "editor.unicodeHighlight.includeStrings": false,
     "code-runner.executorMap": {
-        "javascript": "bun run",
+        "javascript": "node",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
         "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "zig": "zig run",
@@ -139,8 +141,7 @@
         "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "sml": "cd $dir && sml $fileName",
-        "mojo": "mojo run",
-        "tsx": "bun run"
+        "mojo": "mojo run"
     },
     "remote.SSH.remotePlatform": {
         "148.135.80.114": "linux",
@@ -161,15 +162,13 @@
         "plaintext": true
     },
     "markdownlint.config": {
-        "MD033": false,
-        "MD007": false,
-        "MD024": false
+        "MD033": false
     },
     "editor.stickyScroll.enabled": false,
     "hediet.vscode-drawio.resizeImages": null,
     "json.maxItemsComputed": 1000000,
     "editor.unicodeHighlight.ambiguousCharacters": false,
-    "editor.fontFamily": "'Fira Code', 'Monaspace Neon Var', 'JetBrains Mono', Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "'fira code', 'Monaspace Neon Var', 'JetBrains Mono', Consolas, 'Courier New', monospace",
     "vscodeGitCommit.variables": {
         "prefix": "keke"
     },
@@ -193,6 +192,7 @@
     "terminal.integrated.env.windows": {},
     "github.copilot.chat.localeOverride": "zh-CN",
     "workbench.iconTheme": "bearded-icons",
+    "workbench.colorTheme": "Bearded Theme Arc",
     "github.copilot.chat.copilotDebugCommand.enabled": false,
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cursorStyleInactive": "none",
@@ -215,9 +215,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "deno.lint": false,
-    "workbench.colorTheme": "SynthWave '84",
     "workbench.editorAssociations": {
         "*.svg": "default"
-    },
-    "diffEditor.hideUnchangedRegions.enabled": true
+    }
 }
