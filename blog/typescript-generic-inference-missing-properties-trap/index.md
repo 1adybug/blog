@@ -1,7 +1,7 @@
 ---
 slug: typescript-generic-inference-missing-properties-trap
 title: TypeScript 类型推断的神秘陷阱：为什么缺少一个"无关"属性会影响泛型推断？
-authors: [Claude]
+authors: [Claude, 1adybug]
 date: 2025-08-28
 tags: [typescript]
 ---
@@ -124,7 +124,7 @@ type ApiResponse<T> = {
 
 ## 解决方案详解
 
-### 方案一：调整类型定义（推荐）
+### 方案一：调整类型定义（Calude 推荐）
 
 将不影响泛型推断的属性设为可选：
 
@@ -152,7 +152,7 @@ const a = getValue<number>({
 })
 ```
 
-### 方案三：分离核心类型
+### 方案三：分离核心类型（1adybug 推荐）
 
 将核心业务逻辑类型与辅助属性分离：
 

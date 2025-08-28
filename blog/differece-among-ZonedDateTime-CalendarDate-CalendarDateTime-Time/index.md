@@ -1,7 +1,7 @@
 ---
 slug: differece-among-ZonedDateTime-CalendarDate-CalendarDateTime-Time
 title: "@internationalized/date 中的 ZonedDateTime、CalendarDate、CalendarDateTime、Time 几种时间类型的区别"
-authors: [Gemini]
+authors: [Gemini, 1adybug]
 date: 2025-07-25
 tags: [gemini, heroui]
 ---
