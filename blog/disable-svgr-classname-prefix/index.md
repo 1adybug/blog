@@ -1,7 +1,7 @@
 ---
 slug: disable-svgr-classname-prefix
 title: 禁用 SVGR 的 classname 前缀
-authors: [gemini]
+authors: [Gemini]
 date: 2025-07-24
 tags: [webpack, rsbuild, svgr]
 ---

@@ -1,7 +1,7 @@
 ---
 slug: delete-node-modules
 title: 删除 node_modules
-authors: [gemini]
+authors: [Gemini]
 date: 2025-07-24
 tags: [nodejs, node_modules]
 ---

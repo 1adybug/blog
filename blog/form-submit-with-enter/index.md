@@ -1,7 +1,7 @@
 ---
 slug: form-submit-with-enter
 title: 回车键提交表单
-authors: [claude]
+authors: [Claude]
 date: 2025-06-23
 tags: [html, enter, claude]
 ---
