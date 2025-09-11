@@ -1,6 +1,6 @@
 // @ts-check
 
-import { copyFile } from "fs/promises"
+import { copyFile, writeFile } from "fs/promises"
 import { homedir } from "os"
 import { join } from "path"
 import { execAsync } from "soda-nodejs"
@@ -23,6 +23,9 @@ async function main() {
     await copyFile(path, "static/global.code-snippets")
     const path2 = join(userDir, "AppData/Roaming/Cursor/User/settings.json")
     await copyFile(path2, "static/settings.json")
+    const cursorOutput = await execAsync("cursor --list-extensions")
+    const cursorExtensions = cursorOutput.split("\n").map(item => item.trim()).filter(Boolean)
+    await writeFile("static/extensions.json", JSON.stringify(cursorExtensions, null, 4))
     if (!(await hasChangeNoCommit("."))) {
         console.error("没有发现 Cursor 设置的变化")
         return
