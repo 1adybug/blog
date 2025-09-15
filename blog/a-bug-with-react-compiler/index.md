@@ -6,6 +6,8 @@ date: 2025-09-01
 tags: [react, react-compiler]
 ---
 
+_以下内容均为 `Claude 4 sonnet` 生成_
+
 ## 问题背景
 
 最近在项目中启用了 React Compiler 后，遇到了一个令人困惑的问题。一段看似正常的代码在没有启用 React Compiler 时运行良好，但启用后却会在渲染阶段直接崩溃。
