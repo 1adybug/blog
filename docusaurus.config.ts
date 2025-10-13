@@ -44,6 +44,7 @@ const config: Config = {
                     blogSidebarTitle: "所有文章",
                     blogSidebarCount: "ALL",
                     blogTitle: "博客",
+                    showLastUpdateTime: true,
                     remarkPlugins: [
                         [
                             npm2yarn,
