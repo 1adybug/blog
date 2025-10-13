@@ -19,26 +19,26 @@
         "sc": "npm run sync-cursor"
     },
     "dependencies": {
-        "@docusaurus/core": "^3.8.1",
-        "@docusaurus/plugin-pwa": "^3.8.1",
-        "@docusaurus/preset-classic": "^3.8.1",
-        "@docusaurus/remark-plugin-npm2yarn": "^3.8.1",
+        "@docusaurus/core": "^3.9.1",
+        "@docusaurus/plugin-pwa": "^3.9.1",
+        "@docusaurus/preset-classic": "^3.9.1",
+        "@docusaurus/remark-plugin-npm2yarn": "^3.9.1",
         "@mdx-js/react": "^3.1.1",
         "clsx": "^2.1.1",
         "prism-react-renderer": "^2.4.1",
-        "react": "^19.1.1",
-        "react-dom": "^19.1.1",
-        "soda-nodejs": "^0.8.3"
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0",
+        "soda-nodejs": "^0.8.5"
     },
     "devDependencies": {
-        "@docusaurus/module-type-aliases": "^3.8.1",
-        "@docusaurus/tsconfig": "^3.8.1",
-        "@docusaurus/types": "^3.8.1",
+        "@docusaurus/module-type-aliases": "^3.9.1",
+        "@docusaurus/tsconfig": "^3.9.1",
+        "@docusaurus/types": "^3.9.1",
         "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
         "glob": "^11.0.3",
         "prettier": "^3.6.2",
         "prettier-plugin-lint-md": "^1.0.1",
-        "typescript": "~5.9.2"
+        "typescript": "~5.9.3"
     },
     "browserslist": {
         "production": [
