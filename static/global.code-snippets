@@ -1903,11 +1903,45 @@
             ""
         ]
     },
-    "test": {
+    "mutation": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
-        "prefix": "test",
+        "prefix": "mutation",
         "body": [
-            "${TM_FILENAME_BASE/^api\\.([^-]+)$|^api\\.([^-]+)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$/$1$2${3:/upcase}$4$5${6:/upcase}$7${8:/upcase}$9$10${11:/upcase}$12${13:/upcase}$14${15:/upcase}$16$17${18:/upcase}$19${20:/upcase}$21${22:/upcase}$23${24:/upcase}$25$26${27:/upcase}$28${29:/upcase}$30${31:/upcase}$32${33:/upcase}$34${35:/upcase}$36/}",
+            "import { UseMutationOptions, useMutation } from \"@tanstack/react-query\"",
+            "",
+            "import { ${TM_FILENAME_BASE/^use(.)/${1:/downcase}/} } from \"@/apis/${TM_FILENAME_BASE/^use(.)/${1:/downcase}/}\"",
+            "",
+            "export interface Use${TM_FILENAME_BASE/^use(.)/${1:/upcase}/}Params<TOnMutateResult = unknown>",
+            "    extends Omit<",
+            "        UseMutationOptions<Awaited<ReturnType<typeof ${TM_FILENAME_BASE/^use(.)/${1:/downcase}/}>>, Error, Parameters<typeof ${TM_FILENAME_BASE/^use(.)/${1:/downcase}/}>[0], TOnMutateResult>,",
+            "        \"mutationFn\"",
+            "    > {}",
+            "",
+            "export function use${TM_FILENAME_BASE/^use(.)/${1:/upcase}/}<TOnMutateResult = unknown>({",
+            "    onMutate,",
+            "    onSuccess,",
+            "    onError,",
+            "    onSettled,",
+            "    ...rest",
+            "}: Use${TM_FILENAME_BASE/^use(.)/${1:/upcase}/}Params<TOnMutateResult> = {}) {",
+            "    return useMutation({",
+            "        mutationFn: ${TM_FILENAME_BASE/^use(.)/${1:/downcase}/},",
+            "        onMutate(variables, context) {",
+            "            return onMutate?.(variables, context) as TOnMutateResult | Promise<TOnMutateResult>",
+            "        },",
+            "        onSuccess(data, variables, onMutateResult, context) {",
+            "            return onSuccess?.(data, variables, onMutateResult, context)",
+            "        },",
+            "        onError(error, variables, onMutateResult, context) {",
+            "            return onError?.(error, variables, onMutateResult, context)",
+            "        },",
+            "        onSettled(data, error, variables, onMutateResult, context) {",
+            "            return onSettled?.(data, error, variables, onMutateResult, context)",
+            "        },",
+            "        ...rest,",
+            "    })",
+            "}",
+            ""
         ]
     }
 }
