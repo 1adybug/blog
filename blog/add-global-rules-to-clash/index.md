@@ -31,6 +31,21 @@ function main(config, profileName) {
 
 `DOMAIN` 是指定域名，`DOMAIN-SUFFIX` 是指定域名后缀，`DIRECT` 和 `节点选择` 都是规则内的分组。
 
+| 规则类型 | 匹配逻辑 | 匹配目标 | 性能等级 | 关键注意事项 |
+| :--- | :--- | :--- | :--- | :--- |
+| `DOMAIN` | 精确域名匹配 | 域名 | 低 | 仅匹配完全相同的域名字符串。 |
+| `DOMAIN-SUFFIX` | 域名后缀匹配 | 域名 | 低 | 匹配指定后缀及其所有子域名。 |
+| `DOMAIN-KEYWORD` | 域名关键词匹配 | 域名 | 中 | 匹配域名中任何位置出现的关键词，可能产生误匹配。 |
+| `IP-CIDR` | 目标 IPv4 地址段 | 目标 IPv4 | 高 | 默认触发 DNS 解析。 |
+| `IP-CIDR6` | 目标 IPv6 地址段 | 目标 IPv6 | 高 | 默认触发 DNS 解析。 |
+| `GEOIP` | 目标 IP 地理位置 | 目标 IP | 高 | 基于 MaxMind 数据库；默认触发 DNS 解析。 |
+| `SRC-IP-CIDR` | 源 IPv4 地址段 | 源 IPv4 | 低 | 主要用于网关模式，区分局域网内不同设备。 |
+| `DST-PORT` | 目标端口 | 目标端口 | 低 | 基于 TCP/UDP 目标端口进行匹配。 |
+| `SRC-PORT` | 源端口 | 源端口 | 低 | 基于 TCP/UDP 源端口进行匹配。 |
+| `PROCESS-NAME` | 进程名称 | 进程名 | 中 | 操作系统相关；适用于 Windows, macOS, Linux, FreeBSD。 |
+| `PROCESS-PATH` | 进程路径 | 进程路径 | 中 | 操作系统相关；比进程名更精确，但可移植性差。 |
+| `IPSET` | Linux IP 集 | 目标 IP | 低 (内核) | 仅 Linux 可用；需要 ipset 工具；性能极高。 |
+
 有时候我们希望某些规则对于所有的订阅都生效，这时候我们可以右击 `全局扩展脚本`，选择编辑文件：
 
 ```javascript
