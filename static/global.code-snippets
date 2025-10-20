@@ -1938,5 +1938,61 @@
             "}",
             ""
         ]
+    },
+    "api": {
+        "scope": "javascript,javascriptreact,typescript,typescriptreact",
+        "prefix": "api",
+        "body": [
+            "import { request } from \"@/utils/request\"",
+            "",
+            "export interface ${TM_FILENAME_BASE/^(.)/${1:/upcase}/}Params {",
+            "    ",
+            "}",
+            "",
+            "",
+            "export interface ${TM_FILENAME_BASE/^(.)/${1:/upcase}/}Response {",
+            "    ",
+            "}",
+            "",
+            "export async function ${TM_FILENAME_BASE}(params: ${TM_FILENAME_BASE/^(.)/${1:/upcase}/}Params) {",
+            "    const response = await request<${TM_FILENAME_BASE/^(.)/${1:/upcase}/}Response>(\"/${TM_FILENAME_BASE}\", { body: params })",
+            "    return response",
+            "}",
+            ""
+        ]
+    },
+    "query": {
+        "scope": "javascript,javascriptreact,typescript,typescriptreact",
+        "prefix": "query",
+        "body": [
+            "import { useQuery } from \"@tanstack/react-query\"",
+            "import { ${TM_FILENAME_BASE/^use(.)/${1:/downcase}/} } from \"@/apis/${TM_FILENAME_BASE/^use(.)/${1:/downcase}/}\"",
+            "",
+            "export function ${TM_FILENAME_BASE}(params: Parameters<typeof ${TM_FILENAME_BASE/^use(.)/${1:/downcase}/}>[0]) {",
+            "    return useQuery({",
+            "        queryKey: [\"${TM_FILENAME_BASE/([A-Z])/-${1:/downcase}/g}\", params],",
+            "        queryFn: () => ${TM_FILENAME_BASE/^use(.)/${1:/downcase}/}(params),",
+            "    })",
+            "}",
+            ""
+        ]
+    },
+    "cache query": {
+        "scope": "javascript,javascriptreact,typescript,typescriptreact",
+        "prefix": "cachequery",
+        "body": [
+            "import { useQuery } from \"@tanstack/react-query\"",
+            "import { ${TM_FILENAME_BASE/^use(.)/${1:/downcase}/} } from \"@/apis/${TM_FILENAME_BASE/^use(.)/${1:/downcase}/}\"",
+            "",
+            "export function ${TM_FILENAME_BASE}(params: Parameters<typeof ${TM_FILENAME_BASE/^use(.)/${1:/downcase}/}>[0]) {",
+            "    return useQuery({",
+            "        queryKey: [\"${TM_FILENAME_BASE/([A-Z])/-${1:/downcase}/g}\", params],",
+            "        queryFn: () => ${TM_FILENAME_BASE/^use(.)/${1:/downcase}/}(params),",
+            "        staleTime: Infinity,",
+            "        gcTime: Infinity,",
+            "    })",
+            "}",
+            ""
+        ]
     }
 }
