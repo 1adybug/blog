@@ -103,7 +103,7 @@ true true
 以下是 `React` 官网的解释：
 
 ```markdown
-### StrictMode changes 
+### StrictMode changes
 
 React 19 includes several fixes and improvements to Strict Mode.
 
@@ -112,10 +112,10 @@ When double rendering in Strict Mode in development, useMemo and useCallback wil
 As with all Strict Mode behaviors, these features are designed to proactively surface bugs in your components during development so you can fix them before they are shipped to production. For example, during development, Strict Mode will double-invoke ref callback functions on initial mount, to simulate what happens when a mounted component is replaced by a Suspense fallback.
 ```
 
-| 区别 | React 18 | React 19 |
-| --- | :---: | :---: |
-| 组件额外渲染一次 | √ | √ |
-| `state`、`ref`、`memo` 额外重新获取一次值 | √ | √ |
-| `render` 阶段获取到的 `state`、`ref`、`memo` 值 | 旧值/新值 | 旧值/旧值 |
-| `Effect` 在首次渲染时额外运行一次并且立即执行卸载 | √ | √ |
-| `Effect` 阶段获取到的 `state`、`ref`、`memo` 值 | 新值/新值 | 旧值/旧值 |
+| 区别                                              | React 18  | React 19  |
+| ------------------------------------------------- | :-------: | :-------: |
+| 组件额外渲染一次                                  |     √     |     √     |
+| `state`、`ref`、`memo` 额外重新获取一次值         |     √     |     √     |
+| `render` 阶段获取到的 `state`、`ref`、`memo` 值   | 旧值/新值 | 旧值/旧值 |
+| `Effect` 在首次渲染时额外运行一次并且立即执行卸载 |     √     |     √     |
+| `Effect` 阶段获取到的 `state`、`ref`、`memo` 值   | 新值/新值 | 旧值/旧值 |

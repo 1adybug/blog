@@ -10,9 +10,9 @@ tags: [snippets, keyword-replace]
 
 | 烤肉串式命名法 (Kebab-case) | 驼峰式命名法 (CamelCase) |
 | --------------------------- | ------------------------ |
-| `api.my-file`                   | `myFile`             |
-| `api.another-example-file`      | `anotherExampleFile`     |
-| `api.yet-another-one`           | `yetAnotherOne`          |
+| `api.my-file`               | `myFile`                 |
+| `api.another-example-file`  | `anotherExampleFile`     |
+| `api.yet-another-one`       | `yetAnotherOne`          |
 
 这种替换的难点在我们无法确定 `-` 的数量为多少
 
@@ -39,12 +39,19 @@ const replacer = Array(max)
                 (acc.at(-1)?.at(-1) ?? 0) + 1,
                 ...Array(index * 2)
                     .fill(0)
-                    .map((item2, index2) => (acc.at(-1)?.at(-1) ?? 0) + 1 + index2 + 1),
+                    .map(
+                        (item2, index2) =>
+                            (acc.at(-1)?.at(-1) ?? 0) + 1 + index2 + 1,
+                    ),
             ],
         ],
         [],
     )
-    .map(item => item.map((item2, index2) => (index2 % 2 === 0 ? `$${item2}` : `$\{${item2}:/upcase}`)).join(""))
+    .map(item =>
+        item
+            .map((item2, index2) =>
+                index2 % 2 === 0 ? `$${item2}` : `$\{${item2}:/upcase}`)
+            .join(""))
     .join("")
 
 const body = `\${TM_FILENAME_BASE/${regExp}/${replacer}/}`

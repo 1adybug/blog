@@ -28,8 +28,10 @@ import { readdir } from "fs/promises"
 function spawnAsync(command: string) {
     return new Promise<void>((resolve, reject) => {
         const child = spawn(command, { shell: true, stdio: "inherit" })
+
         child.on("exit", code => {
-            if (code !== 0) return reject(new Error(`Command failed with code ${code}`))
+            if (code !== 0)
+                return reject(new Error(`Command failed with code ${code}`))
             resolve()
         })
     })
@@ -38,6 +40,7 @@ function spawnAsync(command: string) {
 async function main() {
     const dir = await readdir("./")
     const exts = dir.filter(name => name.endsWith(".vsix"))
+
     for (const ext of exts) {
         await spawnAsync(`code --install-extension "${ext}"`)
     }

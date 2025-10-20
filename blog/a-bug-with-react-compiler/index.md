@@ -26,7 +26,7 @@ const App: FC = () => {
     const [info, setInfo] = useState<Info | undefined>(undefined)
 
     function onClick() {
-        console.log(info!.name)  // 使用了非空断言
+        console.log(info!.name) // 使用了非空断言
     }
 
     return <div onClick={onClick} />
@@ -67,12 +67,12 @@ React Compiler 在分析 `onClick` 函数时，发现它引用了 `info.name`，
 // 编译器可能生成类似这样的代码
 const App: FC = () => {
     const [info, setInfo] = useState<Info | undefined>(undefined)
-    
+
     // 编译器为了依赖收集，可能在渲染时就访问了 info.name
     const onClick = useCallback(() => {
         console.log(info!.name)
-    }, [info?.name])  // 注意这里的依赖
-    
+    }, [info?.name]) // 注意这里的依赖
+
     return <div onClick={onClick} />
 }
 ```
@@ -83,7 +83,7 @@ const App: FC = () => {
 
 ```tsx
 function onClick() {
-    console.log(info?.name)  // 使用可选链
+    console.log(info?.name) // 使用可选链
 }
 ```
 
@@ -100,7 +100,7 @@ function onClick() {
 ### 方案三：使用默认值
 
 ```tsx
-const [info, setInfo] = useState<Info>({ name: '', age: 0 })
+const [info, setInfo] = useState<Info>({ name: "", age: 0 })
 ```
 
 ## 经验总结

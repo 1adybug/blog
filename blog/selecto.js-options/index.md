@@ -9,67 +9,56 @@ tags: [selecto.js]
 `Selecto.js` 是一个用于在网页上进行拖拽选择的 `JavaScript` 库，允许用户通过绘制选择框来选择页面上的元素。通过配置选项，您可以自定义 `Selecto` 的行为和功能。以下是每个配置选项的详细说明：
 
 1. **container**
-
     - **类型**：`HTMLElement | string`
     - **默认值**：`document.body`
     - **作用**：指定选择区域的容器元素。`Selecto` 会在该容器内检测和选择元素。可以直接传入 `DOM` 元素或选择器字符串。
 
 2. **dragContainer**
-
     - **类型**：`HTMLElement | string`
     - **默认值**：`container`
     - **作用**：指定触发拖拽事件的容器。通常用于在特定区域内启用或禁用拖拽选择。
 
 3. **selectableTargets**
-
     - **类型**：`string[]`
     - **默认值**：`[]`
     - **作用**：定义可被选择的目标元素的选择器数组。只有匹配这些选择器的元素才会响应选择操作。
 
 4. **hitRate**
-
     - **类型**：`number`
     - **默认值**：`100`
     - **作用**：设置元素被选择所需的覆盖率（百分比）。值为 0-100，表示选择框覆盖元素的比例达到该值时，元素即被选中。
 
 5. **selectByClick**
-
     - **类型**：`boolean`
     - **默认值**：`true`
     - **作用**：是否允许通过单击来选择元素。设置为 `true` 时，用户可以直接点击元素进行选择。
 
 6. **selectFromInside**
-
     - **类型**：`boolean`
     - **默认值**：`true`
     - **作用**：是否允许从被选择元素的内部开始拖拽选择。设置为 `false` 时，用户无法从目标元素内部开始绘制选择框。
 
 7. **continueSelect**
-
     - **类型**：`boolean`
     - **默认值**：`false`
     - **作用**：是否在新的选择操作中保留之前选中的元素。设置为 `true`，新的选择结果会累加到已有的选择中。
 
 8. **toggleContinueSelect**
-
     - **类型**：`string | string[]`
     - **默认值**：`null`
     - **作用**：指定用于切换 `continueSelect` 状态的按键。当按下指定的键时，`continueSelect` 状态会被激活或关闭。例如：`'shift'`、`['ctrl', 'meta']`。
 
 9. **keyContainer**
-
     - **类型**：`HTMLElement | Document | Window`
     - **默认值**：`window`
     - **作用**：指定用于监听键盘事件的容器。当使用 `toggleContinueSelect` 功能时，需要监听键盘事件以切换选择模式。
 
 10. **ratio**
-
     - **类型**：`number`
     - **默认值**：`0`
     - **作用**：设置选择框的固定宽高比。值为 0 时，不限制宽高比。非零值会使选择框按照指定比例缩放。
 
 11. **scrollOptions**
-
     - **类型**：`object | null`
     - **默认值**：`null`
     - **作用**：配置自动滚动选项，当选择框到达容器边缘时，容器会自动滚动。包含以下属性：
@@ -79,79 +68,66 @@ tags: [selecto.js]
         - `getScrollPosition`: 自定义获取滚动位置的方法。
 
 12. **boundContainer**
-
     - **类型**：`HTMLElement | string | null`
     - **默认值**：`null`
     - **作用**：限制选择框的活动范围。选择框无法超出指定的容器边界。
 
 13. **preventDefault**
-
     - **类型**：`boolean`
     - **默认值**：`false`
     - **作用**：是否在拖拽选择时调用 `event.preventDefault()`，以防止默认的浏览器行为（如文本选中、图片拖拽等）。
 
 14. **cspNonce**
-
     - **类型**：`string`
     - **默认值**：`null`
     - **作用**：用于 Content Security Policy（内容安全策略）的 nonce 值，确保内联样式在启用了 CSP 的环境下被正确应用。
 
 15. **checkInput**
-
     - **类型**：`boolean`
     - **默认值**：`false`
     - **作用**：是否在选择操作中检查输入元素（如 `<input>`、`<textarea>`）。设置为 `true` 时，选择操作不会影响这些输入元素的交互。
 
 16. **preventDragFromInside**
-
     - **类型**：`boolean`
     - **默认值**：`true`
     - **作用**：是否防止从目标元素内部开始拖拽选择。设置为 `true`，可以避免与内部元素的拖拽操作冲突。
 
 17. **getElementRect**
-
     - **类型**：`function`
     - **默认值**：`(el) => el.getBoundingClientRect()`
     - **作用**：自定义获取元素位置和尺寸的方法。可用于处理特殊情况或优化性能。
 
 18. **dragCondition**
-
     - **类型**：`function`
     - **默认值**：`() => true`
     - **作用**：自定义拖拽开始的条件。返回 `true` 表示允许开始拖拽选择，`false` 则阻止拖拽。
 
 19. **className**
-
     - **类型**：`string`
     - **默认值**：`''`
     - **作用**：为选择框元素添加自定义的 CSS 类名，方便进行样式定制。
 
 20. **hoverClassName**
-
     - **类型**：`string`
     - **默认值**：`''`
     - **作用**：当元素被鼠标悬停或被选择时，添加到元素上的 CSS 类名。
 
 21. **toggleContinueSelectWithoutDeselect**
-
     - **类型**：`boolean`
     - **默认值**：`false`
     - **作用**：在切换 `continueSelect` 状态时，是否保留已选中的元素而不取消选择。
 
 22. **preventClickEvent**
-
     - **类型**：`boolean`
     - **默认值**：`true`
     - **作用**：是否在选择操作中阻止点击事件的触发，避免与其他点击交互冲突。
 
 23. **appendTo**
-
     - **类型**：`HTMLElement | string`
     - **默认值**：`container`
     - **作用**：指定选择框元素添加到的容器。可用于调整选择框的层级关系。
 
 24. **dragCondition**
-
     - **类型**：`function`
     - **默认值**：`null`
     - **作用**：自定义判断是否可以开始拖拽选择的条件函数。返回 `true` 允许拖拽，`false` 阻止拖拽。
@@ -268,12 +244,10 @@ const selecto = new Selecto({
 **使用场景：**
 
 1. **默认行为（`container` 和 `dragContainer` 相同）**
-
     - 用户可以在容器内的任何位置开始拖拽选择。
     - 适用于简单的选择场景，没有特殊的交互限制。
 
 2. **不同的 `container` 和 `dragContainer`**
-
     - **场景一**：防止干扰元素的正常交互
         - **示例**：在一个图片库中，您希望用户在图片上点击时查看大图，而不是开始选择。
         - **解决**：将 `dragContainer` 设置为不包含图片的区域，如空白背景。

@@ -10,6 +10,7 @@ tags: [fetch, ReadAbleStream, ReadStream, response, node.js]
 import { Readable } from "stream"
 
 const reader = readAbleStream.getReader()
+
 const readStream = new Readable({
     read() {
         reader.read().then(({ done, value }) => {
@@ -22,16 +23,21 @@ const readStream = new Readable({
     },
 })
 
-async function* nodeStreamToIterator(stream: ReadStream): AsyncGenerator<Buffer, void, never> {
+async function* nodeStreamToIterator(
+    stream: ReadStream,
+): AsyncGenerator<Buffer, void, never> {
     for await (const chunk of stream) {
         yield chunk
     }
 }
 
-function iteratorToStream(iterator: AsyncGenerator<Buffer, void, never>): ReadableStream {
+function iteratorToStream(
+    iterator: AsyncGenerator<Buffer, void, never>,
+): ReadableStream {
     return new ReadableStream({
         async pull(controller) {
             const { value, done } = await iterator.next()
+
             if (done) {
                 controller.close()
             } else {

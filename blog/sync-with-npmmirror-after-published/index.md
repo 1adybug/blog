@@ -13,7 +13,7 @@ tags: [npm, npmmirror]
     ```javascript
     // @ts-check
 
-    import { readFile, readdir } from "fs/promises"
+    import { readFile } from "fs/promises"
 
     /**
      * 将浏览器中直接复制的 headers 转换为对象
@@ -26,10 +26,12 @@ tags: [npm, npmmirror]
         const headers = new Headers()
         const match = str.match(reg)
         if (!match) throw new Error("headers 格式错误")
+
         Array.from(match).forEach(item => {
             const match2 = item.match(reg2)
             headers.set(match2[1], match2[2])
         })
+
         return headers
     }
 
@@ -69,14 +71,17 @@ tags: [npm, npmmirror]
      * @param {string} packageName 包名
      */
     function syncPackage(packageName) {
-        return fetch(`https://registry-direct.npmmirror.com/-/package/${packageName}/syncs`, {
-            headers,
-            referrer: "https://npmmirror.com/",
-            referrerPolicy: "strict-origin-when-cross-origin",
-            method: "PUT",
-            mode: "cors",
-            credentials: "omit",
-        })
+        return fetch(
+            `https://registry-direct.npmmirror.com/-/package/${packageName}/syncs`,
+            {
+                headers,
+                referrer: "https://npmmirror.com/",
+                referrerPolicy: "strict-origin-when-cross-origin",
+                method: "PUT",
+                mode: "cors",
+                credentials: "omit",
+            },
+        )
     }
 
     async function main() {

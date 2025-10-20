@@ -18,7 +18,9 @@ _以下内容均为 `Claude 4 sonnet` 生成_
 type Item<T> = {
     key: string
     value: T
-} & (T extends number ? { render?: (value: T) => number } : { render: (value: T) => number })
+} & (T extends number
+    ? { render?: (value: T) => number }
+    : { render: (value: T) => number })
 
 function getValue<T>(item: Item<T>): number {
     return item.render ? item.render(item.value) : (item.value as number)
@@ -65,13 +67,11 @@ getValue({ value: 1, render: v => v })
 TypeScript 的类型推断实际上是一个两阶段过程：
 
 1. **阶段一：结构验证**
-
     - 检查传入的参数是否符合函数签名
     - 验证所有必需属性是否存在
     - 如果结构不完整，推断过程提前终止
 
 2. **阶段二：类型推断**
-
     - 基于已验证的结构进行类型推断
     - 从具体的属性值推断泛型参数
     - 应用条件类型逻辑
@@ -132,7 +132,9 @@ type ApiResponse<T> = {
 type Item<T> = {
     key?: string // 改为可选属性
     value: T
-} & (T extends number ? { render?: (value: T) => number } : { render: (value: T) => number })
+} & (T extends number
+    ? { render?: (value: T) => number }
+    : { render: (value: T) => number })
 
 // 现在可以正常推断了
 const a = getValue({
@@ -159,7 +161,9 @@ const a = getValue<number>({
 ```typescript
 type ItemCore<T> = {
     value: T
-} & (T extends number ? { render?: (value: T) => number } : { render: (value: T) => number })
+} & (T extends number
+    ? { render?: (value: T) => number }
+    : { render: (value: T) => number })
 
 type Item<T> = ItemCore<T> & { key: string }
 
@@ -174,7 +178,13 @@ function getValueCore<T>(item: ItemCore<T>): number {
 创建辅助函数来构造完整对象：
 
 ```typescript
-function createItem<T>(value: T, render: T extends number ? ((value: T) => number) | undefined : (value: T) => number, key?: string): Item<T> {
+function createItem<T>(
+    value: T,
+    render: T extends number
+        ? ((value: T) => number) | undefined
+        : (value: T) => number,
+    key?: string,
+): Item<T> {
     return {
         key: key || "default",
         value,
@@ -231,13 +241,21 @@ const complex = getValue<ComplexType>({
 
 ```typescript
 export const ItemBuilder = {
-    forNumber: (value: number, key?: string, render?: (v: number) => number) => ({
+    forNumber: (
+        value: number,
+        key?: string,
+        render?: (v: number) => number,
+    ) => ({
         key: key || `num_${value}`,
         value,
         render,
     }),
 
-    forString: (value: string, key?: string, render: (v: string) => number) => ({
+    forString: (
+        value: string,
+        key?: string,
+        render: (v: string) => number,
+    ) => ({
         key: key || `str_${value}`,
         value,
         render,

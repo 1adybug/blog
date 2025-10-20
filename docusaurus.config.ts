@@ -1,4 +1,4 @@
-import type * as Preset from "@docusaurus/preset-classic"
+import * as Preset from "@docusaurus/preset-classic"
 import npm2yarn from "@docusaurus/remark-plugin-npm2yarn"
 import type { Config } from "@docusaurus/types"
 import { themes as prismThemes } from "prism-react-renderer"
@@ -51,16 +51,52 @@ const config: Config = {
                             {
                                 sync: true,
                                 converters: [
-                                    ["bun", (code: string) => code.replace(/(?<=(^| ))npm(?=( |$))/gim, "bun").replace(/(?<=(^| ))npx(?=( |$))/gim, "bunx")],
-                                    ["pnpm", (code: string) => code.replace(/(?<=(^| ))npm(?=( |$))/gim, "pnpm").replace(/(?<=(^| ))npx(?=( |$))/gim, "pnpx")],
+                                    [
+                                        "bun",
+                                        (code: string) =>
+                                            code
+                                                .replace(
+                                                    /(?<=(^| ))npm(?=( |$))/gim,
+                                                    "bun",
+                                                )
+                                                .replace(
+                                                    /(?<=(^| ))npx(?=( |$))/gim,
+                                                    "bunx",
+                                                ),
+                                    ],
+                                    [
+                                        "pnpm",
+                                        (code: string) =>
+                                            code
+                                                .replace(
+                                                    /(?<=(^| ))npm(?=( |$))/gim,
+                                                    "pnpm",
+                                                )
+                                                .replace(
+                                                    /(?<=(^| ))npx(?=( |$))/gim,
+                                                    "pnpx",
+                                                ),
+                                    ],
                                     [
                                         "yarn",
                                         (code: string) =>
                                             code
-                                                .replace(/(?<=(^| ))npm (i|install)/gim, "yarn add")
-                                                .replace(/(?<=(^| ))npm uninstall/gim, "yarn remove")
-                                                .replace(/(?<=(^| ))npm(?=( |$))/gim, "yarn")
-                                                .replace(/(?<=(^| ))npx(?=( |$))/gim, "yarn dlx"),
+                                                .replace(
+                                                    /(?<=(^| ))npm (i|install)/gim,
+                                                    "yarn add",
+                                                )
+                                                .replace(
+                                                    /(?<=(^| ))npm uninstall/gim,
+                                                    "yarn remove",
+                                                )
+                                                .replace(
+                                                    /(?<=(^| ))npm(?=( |$))/gim,
+                                                    "yarn",
+                                                )
+                                                .replace(
+                                                    /(?<=(^| ))npx(?=( |$))/gim,
+                                                    "yarn dlx",
+                                                ),
                                     ],
                                 ],
                             },
@@ -126,7 +162,11 @@ const config: Config = {
             "@docusaurus/plugin-pwa",
             {
                 debug: true,
-                offlineModeActivationStrategies: ["appInstalled", "standalone", "queryString"],
+                offlineModeActivationStrategies: [
+                    "appInstalled",
+                    "standalone",
+                    "queryString",
+                ],
                 pwaHead: [
                     {
                         tagName: "link",

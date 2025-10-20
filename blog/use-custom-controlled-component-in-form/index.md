@@ -16,6 +16,7 @@ tags: [Form, antd, Ant Design]
 
 ```tsx
 import { ChangeEvent, FC, forwardRef } from "react"
+
 import { Button, Form, Input } from "antd"
 import { useForm } from "antd/es/form/Form"
 import FormItem from "antd/es/form/FormItem"
@@ -33,8 +34,10 @@ type InfoItemProps = {
 
 const InfoItem = forwardRef<HTMLDivElement, InfoItemProps>((props, ref) => {
     const { value, onChange } = props
+
     // 推荐使用 soda-hooks 的 useInputState
     const [name, setName] = useInputState(value?.name)
+
     const [id, setId] = useInputState(value?.id)
 
     function onNameChange(e: ChangeEvent<HTMLInputElement>) {
@@ -69,7 +72,11 @@ const App: FC = () => {
                 <InfoItem />
             </FormItem>
             <FormItem<FormData>>
-                <Button onClick={() => form.setFieldsValue({ info: undefined })}>Reset</Button>
+                <Button
+                    onClick={() => form.setFieldsValue({ info: undefined })}
+                >
+                    Reset
+                </Button>
             </FormItem>
             <FormItem<FormData>>
                 <Button htmlType="submit">Submit</Button>

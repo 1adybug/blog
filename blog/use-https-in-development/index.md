@@ -31,9 +31,11 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout your-key.pem -out yo
 ```typescript
 import { readFileSync } from "fs"
 import { createServer } from "https"
+
 import express from "express"
 
 const app = express()
+
 const server = createServer(
     {
         key: readFileSync("your-key.pem"),

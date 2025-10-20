@@ -34,11 +34,8 @@ tags: []
 1. 所有 `React` 组件必须使用以下形式书写：
 
     ```tsx
-    // 无参数组件
-    import { FC } from "react"
-
     const Component: FC = () => {
-      return <div></div>
+        return <div></div>
     }
 
     export default Component
@@ -49,9 +46,9 @@ tags: []
     export type ComponentProps = {}
 
     const Component: FC<ComponentProps> = props => {
-      const {} = props
+        const {} = props
 
-      return <div></div>
+        return <div></div>
     }
 
     export default Component
@@ -84,7 +81,6 @@ tags: []
 3. CSS 样式优先使用 [Tailwind](https://tailwindcss.com/docs/installation) 实现，其次 [Emotion](https://emotion.sh/docs/introduction) 或者行内样式实现。
 
     :::warning
-
     - [Tailwind](https://tailwindcss.com/docs/installation) 不支持动态属性，如 \`bg-$\{color\}\`
     - 尽量不要在 [Emotion](https://emotion.sh/docs/introduction) 中书写动态样式，[Emotion](https://emotion.sh/docs/introduction) 生成的样式不会被自动清除。如果有动态需求，可以使用 CSS 变量 `var(--name)` 搭配行内样式实现
 

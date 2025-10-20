@@ -12,6 +12,7 @@ tags: []
 
 ```tsx
 import { FC, Fragment } from "react"
+
 import { Button, Form, Input } from "antd"
 import FormItem from "antd/es/form/FormItem"
 import FormList from "antd/es/form/FormList"
@@ -65,6 +66,7 @@ export default App
 
 ```tsx
 import { FC, Fragment } from "react"
+
 import { Button, Form, Input } from "antd"
 import FormItem from "antd/es/form/FormItem"
 import FormList from "antd/es/form/FormList"
@@ -72,7 +74,10 @@ import FormList from "antd/es/form/FormList"
 const App: FC = () => {
     return (
         <Form onFinish={console.dir}>
-            <FormList name="persons" initialValue={[{ name: "Tom", age: "18" }]}>
+            <FormList
+                name="persons"
+                initialValue={[{ name: "Tom", age: "18" }]}
+            >
                 {(fields, { add }) => (
                     <Fragment>
                         {fields.map(({ key, name }) => (

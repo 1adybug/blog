@@ -90,11 +90,13 @@ tags: [Next.js, docker]
 ```typescript
 import { readdir, rm, writeFile } from "fs/promises"
 import { resolve } from "path"
+
 import { spawnAsync, zip } from "soda-nodejs"
 
 const reg = /^--target=(windows|linux)$/
 
-const target = (process.argv.find(item => reg.test(item))?.match(reg)?.[1] ?? "windows") as "windows" | "linux"
+const target = (process.argv.find(item => reg.test(item))?.match(reg)?.[1] ??
+    "windows") as "windows" | "linux"
 
 await rm("scripts/install.ts", { force: true })
 
@@ -219,10 +221,13 @@ main()
 
 await writeFile("scripts/install.ts", script)
 
-await spawnAsync(`bun build --compile --target=bun-${target}-x64 --minify --sourcemap --bytecode scripts/install.ts --outfile installer`, {
-    shell: true,
-    stdio: "inherit",
-})
+await spawnAsync(
+    `bun build --compile --target=bun-${target}-x64 --minify --sourcemap --bytecode scripts/install.ts --outfile installer`,
+    {
+        shell: true,
+        stdio: "inherit",
+    },
+)
 
 await rm("scripts/install.ts", { force: true })
 

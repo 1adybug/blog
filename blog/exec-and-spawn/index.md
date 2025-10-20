@@ -31,6 +31,7 @@ exec("ls", (error, stdout, stderr) => {
         console.error(`执行的错误: ${error}`)
         return
     }
+
     console.log(`stdout: ${stdout}`)
     console.error(`stderr: ${stderr}`)
 })

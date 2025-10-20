@@ -14,5 +14,4 @@ tags: [wsl, docker]
     // 添加这一行
     "WslUpdateRequired": false
 }
-
 ```

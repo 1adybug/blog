@@ -47,7 +47,9 @@ tags: []
 ```javascript
 // 如果一个容器宽度为 200px，但内容实际宽度为 300px
 const container = document.querySelector(".container")
+
 console.log(container.clientWidth) // 200px
+
 console.log(container.scrollWidth) // 300px
 ```
 

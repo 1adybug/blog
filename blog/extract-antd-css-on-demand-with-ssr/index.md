@@ -25,7 +25,8 @@ tags: [ssr, antd, css, remix, react router]
 3. 在 `root.tsx` 中放入 `__ANTD_STYLE_PLACEHOLDER__`：
 
     ```tsx
-    const isBrowser = typeof window !== "undefined" && typeof window.document !== "undefined"
+    const isBrowser =
+        typeof window !== "undefined" && typeof window.document !== "undefined"
 
     const isDev = process.env.NODE_ENV === "development"
 
@@ -33,7 +34,10 @@ tags: [ssr, antd, css, remix, react router]
         <html lang="zh">
             <head>
                 <meta charSet="utf-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
                 <Meta />
                 <Links />
                 {/** 如果需要在开发环境开启，去除 !isDev */}
@@ -59,16 +63,23 @@ tags: [ssr, antd, css, remix, react router]
 4. 修改 `entry.client.tsx`：
 
     ```tsx
-    import { StrictMode, startTransition } from "react"
+    import { startTransition, StrictMode } from "react"
     import { hydrateRoot } from "react-dom/client"
-    import { StyleProvider, legacyLogicalPropertiesTransformer } from "@ant-design/cssinjs"
     import { HydratedRouter } from "react-router/dom"
+
+    import {
+        legacyLogicalPropertiesTransformer,
+        StyleProvider,
+    } from "@ant-design/cssinjs"
 
     startTransition(() => {
         hydrateRoot(
             document,
             <StrictMode>
-                <StyleProvider transformers={[legacyLogicalPropertiesTransformer]} hashPriority="high">
+                <StyleProvider
+                    transformers={[legacyLogicalPropertiesTransformer]}
+                    hashPriority="high"
+                >
                     <HydratedRouter />
                 </StyleProvider>
             </StrictMode>,
@@ -79,12 +90,25 @@ tags: [ssr, antd, css, remix, react router]
 5. 修改 `entry.server.tsx`：
 
     ```tsx
-    import { renderToPipeableStream, type RenderToPipeableStreamOptions } from "react-dom/server"
-    import { PassThrough } from "node:stream"
-    import { StyleProvider, createCache, extractStyle } from "@ant-design/cssinjs"
     import { createReadableStreamFromReadable } from "@react-router/node"
+    import {
+        type RenderToPipeableStreamOptions,
+        renderToPipeableStream,
+    } from "react-dom/server"
+    import {
+        type AppLoadContext,
+        type EntryContext,
+        ServerRouter,
+    } from "react-router"
+
+    import { PassThrough } from "node:stream"
+
+    import {
+        createCache,
+        extractStyle,
+        StyleProvider,
+    } from "@ant-design/cssinjs"
     import { isbot } from "isbot"
-    import { ServerRouter, type AppLoadContext, type EntryContext } from "react-router"
 
     const ABORT_DELAY = 5_000
 
@@ -103,23 +127,35 @@ tags: [ssr, antd, css, remix, react router]
 
             // Ensure requests from bots and SPA Mode renders wait for all content to load before responding
             // https://react.dev/reference/react-dom/server/renderToPipeableStream#waiting-for-all-content-to-load-for-crawlers-and-static-generation
-            const readyOption: keyof RenderToPipeableStreamOptions = (userAgent && isbot(userAgent)) || routerContext.isSpaMode ? "onAllReady" : "onShellReady"
+            const readyOption: keyof RenderToPipeableStreamOptions =
+                (userAgent && isbot(userAgent)) || routerContext.isSpaMode
+                    ? "onAllReady"
+                    : "onShellReady"
 
             const cache = createCache()
 
             const { pipe, abort } = renderToPipeableStream(
                 <StyleProvider cache={cache}>
-                    <ServerRouter context={routerContext} url={request.url} abortDelay={ABORT_DELAY} />
+                    <ServerRouter
+                        context={routerContext}
+                        url={request.url}
+                        abortDelay={ABORT_DELAY}
+                    />
                 </StyleProvider>,
                 {
                     [readyOption]() {
                         shellRendered = true
+
                         const body = new PassThrough({
                             transform(chunk, encoding, callback) {
-                                chunk = String(chunk).replace("__ANTD_STYLE_PLACEHOLDER__", fromBot ? "" : extractStyle(cache))
+                                chunk = String(chunk).replace(
+                                    "__ANTD_STYLE_PLACEHOLDER__",
+                                    fromBot ? "" : extractStyle(cache),
+                                )
                                 callback(null, chunk)
                             },
                         })
+
                         const stream = createReadableStreamFromReadable(body)
 
                         responseHeaders.set("Content-Type", "text/html")
@@ -138,6 +174,7 @@ tags: [ssr, antd, css, remix, react router]
                     },
                     onError(error: unknown) {
                         responseStatusCode = 500
+
                         // Log streaming rendering errors from inside the shell.  Don't log
                         // errors encountered during initial shell rendering since they'll
                         // reject and get logged in handleDocumentRequest.
@@ -168,7 +205,11 @@ tags: [ssr, antd, css, remix, react router]
 
     renderToPipeableStream(
         <StyleProvider cache={cache}>
-            <ServerRouter context={routerContext} url={request.url} abortDelay={ABORT_DELAY} />
+            <ServerRouter
+                context={routerContext}
+                url={request.url}
+                abortDelay={ABORT_DELAY}
+            />
         </StyleProvider>,
     )
 
@@ -178,5 +219,8 @@ tags: [ssr, antd, css, remix, react router]
 3. 将 `__ANTD_STYLE_PLACEHOLDER__` 替换为抽取的 `style` 标签
 
     ```typescript
-    chunk = String(chunk).replace("__ANTD_STYLE_PLACEHOLDER__", fromBot ? "" : extractStyle(cache))
+    chunk = String(chunk).replace(
+        "__ANTD_STYLE_PLACEHOLDER__",
+        fromBot ? "" : extractStyle(cache),
+    )
     ```

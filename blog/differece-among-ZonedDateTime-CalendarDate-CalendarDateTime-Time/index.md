@@ -114,7 +114,7 @@ console.log(localEvent.toString()) // 输出: 2025-10-26T10:00:00
 **示例：**
 
 ```javascript
-import { ZonedDateTime, getLocalTimeZone } from "@internationalized/date"
+import { getLocalTimeZone, ZonedDateTime } from "@internationalized/date"
 
 // 表示在纽约时区 2025 年 11 月 5 日下午 8 点
 const flightDeparture = new ZonedDateTime(

@@ -13,29 +13,23 @@ tags: [react, react-router, remix]
 ## 常见问题
 
 1. `loader` 和 `clientLoader` 有什么区别？
-
     - 执行环境
-
         - `loader`: 在服务器端执行
         - `clientLoader`: 在客户端(浏览器)执行
 
     - 运行时机
-
         - `loader`: 在页面初始加载和每次导航时在服务器上运行
         - `clientLoader`: 在客户端导航时运行，首次页面加载时不执行
 
     - 数据获取能力
-
         - `loader`: 可以访问服务器资源（数据库、文件系统、内部API等）
         - `clientLoader`: 只能访问浏览器可用的资源（如公共API、localStorage等）
 
     - 安全性
-
         - `loader`: 可以包含敏感逻辑和凭证，因为代码不会发送到客户端
         - `clientLoader`: 所有代码会发送到浏览器，不应包含敏感信息
 
     - 用途场景
-
         - `loader`: 适用于需要服务器权限或敏感数据的操作
         - `clientLoader`: 适用于提升客户端导航体验，减轻服务器负担的场景
 
@@ -52,7 +46,10 @@ tags: [react, react-router, remix]
         return fakeDb.getProduct(params.pid)
     }
 
-    export async function clientLoader({ serverLoader, params }: Route.ClientLoaderArgs) {
+    export async function clientLoader({
+        serverLoader,
+        params,
+    }: Route.ClientLoaderArgs) {
         const res = await fetch(`/api/products/${params.pid}`)
         const serverData = await serverLoader()
         return { ...serverData, ...res.json() }
