@@ -161,6 +161,7 @@ export async function downloadFromWinget({
     for (const { InstallerUrl, Architecture } of installers) {
         if (Architecture !== "x64" && Architecture !== "x86") continue
         const filename = await download(InstallerUrl, dir)
+
         result.push({
             filename,
             version: pkg.PackageVersion,
