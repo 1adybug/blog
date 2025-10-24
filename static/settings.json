@@ -197,7 +197,10 @@
     "typescript.preferences.autoImportSpecifierExcludeRegexes": [
         "^(node:)?os$"
     ],
-    "cursor.cpp.disabledLanguages": ["scminput", "ngql"],
+    "cursor.cpp.disabledLanguages": [
+        "scminput",
+        "ngql"
+    ],
     "workbench.activityBar.orientation": "vertical",
     "window.zoomLevel": 1,
     "[yaml]": {
@@ -218,5 +221,9 @@
     },
     "[github-actions-workflow]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "update.mode": "none",
+    "workbench.editorAssociations": {
+        "*.svg": "default"
     }
 }
