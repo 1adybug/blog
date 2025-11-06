@@ -222,8 +222,9 @@
     "[github-actions-workflow]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
-    "update.mode": "none",
     "workbench.editorAssociations": {
         "*.svg": "default"
-    }
+    },
+    "cursor-infinity.autoOpenPanel": false,
+    "update.mode": "none"
 }
