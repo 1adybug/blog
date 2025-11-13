@@ -8,6 +8,7 @@ const config = {
     tabWidth: 4,
     arrowParens: "avoid",
     endOfLine: "lf",
+    printWidth: 160,
     plugins: ["./prettier-plugin-sort-imports.mjs"],
 }
 

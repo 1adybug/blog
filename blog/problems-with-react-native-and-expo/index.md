@@ -60,8 +60,7 @@ function onClick() {
     if (stopValue.current === toValue) return
 
     // 如果动画处于播放状态，暂停动画，并且将当前值赋予给暂停值
-    if (status.current)
-        translateX.stopAnimation(value => (stopValue.current = value))
+    if (status.current) translateX.stopAnimation(value => (stopValue.current = value))
     // 否则播放动画
     else
         Animated.timing(translateX, {

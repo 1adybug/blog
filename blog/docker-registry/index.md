@@ -22,11 +22,7 @@ tags: [docker]
 
     ```json
     {
-        "registry-mirrors": [
-            "https://docker.sunzishaokao.com",
-            "https://hub.hxui.site",
-            "https://docker.1ms.run"
-        ],
+        "registry-mirrors": ["https://docker.sunzishaokao.com", "https://hub.hxui.site", "https://docker.1ms.run"],
         "exec-opts": ["native.cgroupdriver=systemd"]
     }
     ```

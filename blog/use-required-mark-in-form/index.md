@@ -18,30 +18,18 @@ import FormItem from "antd/es/form/FormItem"
 
 type RequiredMark = boolean | "optional" | "customize"
 
-const customizeRequiredMark = (
-    label: React.ReactNode,
-    { required }: { required: boolean },
-) => (
+const customizeRequiredMark = (label: React.ReactNode, { required }: { required: boolean }) => (
     <Fragment>
-        {required ? (
-            <Tag color="error">Required</Tag>
-        ) : (
-            <Tag color="warning">optional</Tag>
-        )}
+        {required ? <Tag color="error">Required</Tag> : <Tag color="warning">optional</Tag>}
         {label}
     </Fragment>
 )
 
 const App: FC = () => {
     const [form] = useForm()
-    const [requiredMark, setRequiredMarkType] =
-        useState<RequiredMark>("optional")
+    const [requiredMark, setRequiredMarkType] = useState<RequiredMark>("optional")
 
-    const onRequiredTypeChange = ({
-        requiredMarkValue,
-    }: {
-        requiredMarkValue: RequiredMark
-    }) => {
+    const onRequiredTypeChange = ({ requiredMarkValue }: { requiredMarkValue: RequiredMark }) => {
         setRequiredMarkType(requiredMarkValue)
     }
 
@@ -51,11 +39,7 @@ const App: FC = () => {
             layout="vertical"
             initialValues={{ requiredMarkValue: requiredMark }}
             onValuesChange={onRequiredTypeChange}
-            requiredMark={
-                requiredMark === "customize"
-                    ? customizeRequiredMark
-                    : requiredMark
-            }
+            requiredMark={requiredMark === "customize" ? customizeRequiredMark : requiredMark}
         >
             <FormItem label="Required Mark" name="requiredMarkValue">
                 <Radio.Group>
@@ -65,11 +49,7 @@ const App: FC = () => {
                     <Radio.Button value="customize">Customize</Radio.Button>
                 </Radio.Group>
             </FormItem>
-            <FormItem
-                label="Field A"
-                required
-                tooltip="This is a required field"
-            >
+            <FormItem label="Field A" required tooltip="This is a required field">
                 <Input placeholder="input placeholder" />
             </FormItem>
             <FormItem

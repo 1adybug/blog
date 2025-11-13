@@ -23,17 +23,13 @@ const readStream = new Readable({
     },
 })
 
-async function* nodeStreamToIterator(
-    stream: ReadStream,
-): AsyncGenerator<Buffer, void, never> {
+async function* nodeStreamToIterator(stream: ReadStream): AsyncGenerator<Buffer, void, never> {
     for await (const chunk of stream) {
         yield chunk
     }
 }
 
-function iteratorToStream(
-    iterator: AsyncGenerator<Buffer, void, never>,
-): ReadableStream {
+function iteratorToStream(iterator: AsyncGenerator<Buffer, void, never>): ReadableStream {
     return new ReadableStream({
         async pull(controller) {
             const { value, done } = await iterator.next()

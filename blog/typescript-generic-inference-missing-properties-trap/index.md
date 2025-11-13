@@ -18,9 +18,7 @@ _以下内容均为 `Claude 4 sonnet` 生成_
 type Item<T> = {
     key: string
     value: T
-} & (T extends number
-    ? { render?: (value: T) => number }
-    : { render: (value: T) => number })
+} & (T extends number ? { render?: (value: T) => number } : { render: (value: T) => number })
 
 function getValue<T>(item: Item<T>): number {
     return item.render ? item.render(item.value) : (item.value as number)
@@ -132,9 +130,7 @@ type ApiResponse<T> = {
 type Item<T> = {
     key?: string // 改为可选属性
     value: T
-} & (T extends number
-    ? { render?: (value: T) => number }
-    : { render: (value: T) => number })
+} & (T extends number ? { render?: (value: T) => number } : { render: (value: T) => number })
 
 // 现在可以正常推断了
 const a = getValue({
@@ -161,9 +157,7 @@ const a = getValue<number>({
 ```typescript
 type ItemCore<T> = {
     value: T
-} & (T extends number
-    ? { render?: (value: T) => number }
-    : { render: (value: T) => number })
+} & (T extends number ? { render?: (value: T) => number } : { render: (value: T) => number })
 
 type Item<T> = ItemCore<T> & { key: string }
 
@@ -178,13 +172,7 @@ function getValueCore<T>(item: ItemCore<T>): number {
 创建辅助函数来构造完整对象：
 
 ```typescript
-function createItem<T>(
-    value: T,
-    render: T extends number
-        ? ((value: T) => number) | undefined
-        : (value: T) => number,
-    key?: string,
-): Item<T> {
+function createItem<T>(value: T, render: T extends number ? ((value: T) => number) | undefined : (value: T) => number, key?: string): Item<T> {
     return {
         key: key || "default",
         value,
@@ -241,21 +229,13 @@ const complex = getValue<ComplexType>({
 
 ```typescript
 export const ItemBuilder = {
-    forNumber: (
-        value: number,
-        key?: string,
-        render?: (v: number) => number,
-    ) => ({
+    forNumber: (value: number, key?: string, render?: (v: number) => number) => ({
         key: key || `num_${value}`,
         value,
         render,
     }),
 
-    forString: (
-        value: string,
-        key?: string,
-        render: (v: string) => number,
-    ) => ({
+    forString: (value: string, key?: string, render: (v: string) => number) => ({
         key: key || `str_${value}`,
         value,
         render,

@@ -32,17 +32,7 @@ tags: [prettier, import]
         return Array.from(new Set(array))
     }
 
-    const jsExts = [
-        ".js",
-        ".jsx",
-        ".ts",
-        ".tsx",
-        ".cjs",
-        ".mjs",
-        ".cts",
-        ".mts",
-        ".vue",
-    ]
+    const jsExts = [".js", ".jsx", ".ts", ".tsx", ".cjs", ".mjs", ".cts", ".mts", ".vue"]
 
     const assetExts = unique(
         globSync("**/*", {
@@ -50,11 +40,7 @@ tags: [prettier, import]
             withFileTypes: true,
             cwd: import.meta.dirname,
         })
-            .filter(
-                path =>
-                    path.isFile() &&
-                    !jsExts.some(ext => path.name.toLowerCase().endsWith(ext)),
-            )
+            .filter(path => path.isFile() && !jsExts.some(ext => path.name.toLowerCase().endsWith(ext)))
             .map(path => parse(path.name).ext.slice(1))
             .filter(ext => ext !== ""),
     )
@@ -93,10 +79,7 @@ tags: [prettier, import]
         tabWidth: 4,
         arrowParens: "avoid",
         printWidth: 160,
-        plugins: [
-            "@ianvs/prettier-plugin-sort-imports",
-            "prettier-plugin-tailwindcss",
-        ],
+        plugins: ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
         importOrder: [
             "<BUILTIN_MODULES>",
             `^@(${namespaces.join("|")})/`,

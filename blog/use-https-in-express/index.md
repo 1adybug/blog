@@ -21,12 +21,8 @@ app.get("/", async (req, res) => {
 https
     .createServer(
         {
-            key: readFileSync(
-                "../root/.acme.sh/a.deep-sea.dynv6.net_ecc/a.deep-sea.dynv6.net.key",
-            ),
-            cert: readFileSync(
-                "../root/.acme.sh/a.deep-sea.dynv6.net_ecc/fullchain.cer",
-            ),
+            key: readFileSync("../root/.acme.sh/a.deep-sea.dynv6.net_ecc/a.deep-sea.dynv6.net.key"),
+            cert: readFileSync("../root/.acme.sh/a.deep-sea.dynv6.net_ecc/fullchain.cer"),
         },
         app,
     )

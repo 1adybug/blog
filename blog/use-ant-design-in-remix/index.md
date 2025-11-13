@@ -37,11 +37,7 @@ import { ConfigProvider } from "antd"
 
 const outputPath = "./app/antd.min.css"
 
-const css = extractStyle(node => (
-    <ConfigProvider theme={{ token: { colorPrimary: "red" } }}>
-        {node}
-    </ConfigProvider>
-))
+const css = extractStyle(node => <ConfigProvider theme={{ token: { colorPrimary: "red" } }}>{node}</ConfigProvider>)
 
 fs.writeFileSync(outputPath, css)
 ```
@@ -53,11 +49,7 @@ import "./antd.min.css"
 如果有自定义主题的需求，只需要传递给 `ConfigProvider` 相应的配置即可：
 
 ```tsx
-const css = extractStyle(node => (
-    <ConfigProvider theme={{ token: { colorPrimary: "red" } }}>
-        {node}
-    </ConfigProvider>
-))
+const css = extractStyle(node => <ConfigProvider theme={{ token: { colorPrimary: "red" } }}>{node}</ConfigProvider>)
 ```
 
 :::warning

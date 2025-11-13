@@ -51,52 +51,16 @@ const config: Config = {
                             {
                                 sync: true,
                                 converters: [
-                                    [
-                                        "bun",
-                                        (code: string) =>
-                                            code
-                                                .replace(
-                                                    /(?<=(^| ))npm(?=( |$))/gim,
-                                                    "bun",
-                                                )
-                                                .replace(
-                                                    /(?<=(^| ))npx(?=( |$))/gim,
-                                                    "bunx",
-                                                ),
-                                    ],
-                                    [
-                                        "pnpm",
-                                        (code: string) =>
-                                            code
-                                                .replace(
-                                                    /(?<=(^| ))npm(?=( |$))/gim,
-                                                    "pnpm",
-                                                )
-                                                .replace(
-                                                    /(?<=(^| ))npx(?=( |$))/gim,
-                                                    "pnpx",
-                                                ),
-                                    ],
+                                    ["bun", (code: string) => code.replace(/(?<=(^| ))npm(?=( |$))/gim, "bun").replace(/(?<=(^| ))npx(?=( |$))/gim, "bunx")],
+                                    ["pnpm", (code: string) => code.replace(/(?<=(^| ))npm(?=( |$))/gim, "pnpm").replace(/(?<=(^| ))npx(?=( |$))/gim, "pnpx")],
                                     [
                                         "yarn",
                                         (code: string) =>
                                             code
-                                                .replace(
-                                                    /(?<=(^| ))npm (i|install)/gim,
-                                                    "yarn add",
-                                                )
-                                                .replace(
-                                                    /(?<=(^| ))npm uninstall/gim,
-                                                    "yarn remove",
-                                                )
-                                                .replace(
-                                                    /(?<=(^| ))npm(?=( |$))/gim,
-                                                    "yarn",
-                                                )
-                                                .replace(
-                                                    /(?<=(^| ))npx(?=( |$))/gim,
-                                                    "yarn dlx",
-                                                ),
+                                                .replace(/(?<=(^| ))npm (i|install)/gim, "yarn add")
+                                                .replace(/(?<=(^| ))npm uninstall/gim, "yarn remove")
+                                                .replace(/(?<=(^| ))npm(?=( |$))/gim, "yarn")
+                                                .replace(/(?<=(^| ))npx(?=( |$))/gim, "yarn dlx"),
                                     ],
                                 ],
                             },
@@ -162,11 +126,7 @@ const config: Config = {
             "@docusaurus/plugin-pwa",
             {
                 debug: true,
-                offlineModeActivationStrategies: [
-                    "appInstalled",
-                    "standalone",
-                    "queryString",
-                ],
+                offlineModeActivationStrategies: ["appInstalled", "standalone", "queryString"],
                 pwaHead: [
                     {
                         tagName: "link",

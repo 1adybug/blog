@@ -46,10 +46,7 @@ tags: [react, react-router, remix]
         return fakeDb.getProduct(params.pid)
     }
 
-    export async function clientLoader({
-        serverLoader,
-        params,
-    }: Route.ClientLoaderArgs) {
+    export async function clientLoader({ serverLoader, params }: Route.ClientLoaderArgs) {
         const res = await fetch(`/api/products/${params.pid}`)
         const serverData = await serverLoader()
         return { ...serverData, ...res.json() }

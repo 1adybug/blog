@@ -18,11 +18,7 @@ tags: [html, meta, redirect]
         <meta http-equiv="refresh" content="0; url=https://www.example.com" />
     </head>
     <body>
-        <p>
-            如果您的浏览器没有自动跳转，请<a href="https://www.example.com"
-                >点击这里</a
-            >。
-        </p>
+        <p>如果您的浏览器没有自动跳转，请<a href="https://www.example.com">点击这里</a>。</p>
     </body>
 </html>
 ```

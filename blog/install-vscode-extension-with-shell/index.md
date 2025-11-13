@@ -30,8 +30,7 @@ function spawnAsync(command: string) {
         const child = spawn(command, { shell: true, stdio: "inherit" })
 
         child.on("exit", code => {
-            if (code !== 0)
-                return reject(new Error(`Command failed with code ${code}`))
+            if (code !== 0) return reject(new Error(`Command failed with code ${code}`))
             resolve()
         })
     })

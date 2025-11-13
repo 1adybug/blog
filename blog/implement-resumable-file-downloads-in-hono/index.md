@@ -55,10 +55,7 @@ app.get("/video", async c => {
     headers.set("Content-Range", `bytes ${start}-${end}/${size}`)
     headers.set("Accept-Ranges", "bytes")
     headers.set("Content-Length", String(chunksize))
-    return c.newResponse(
-        nodeToWebStream(createReadStream(filename, { start, end })),
-        { status: 206, headers },
-    )
+    return c.newResponse(nodeToWebStream(createReadStream(filename, { start, end })), { status: 206, headers })
 })
 
 export default {
