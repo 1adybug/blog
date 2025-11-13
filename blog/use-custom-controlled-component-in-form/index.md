@@ -72,11 +72,7 @@ const App: FC = () => {
                 <InfoItem />
             </FormItem>
             <FormItem<FormData>>
-                <Button
-                    onClick={() => form.setFieldsValue({ info: undefined })}
-                >
-                    Reset
-                </Button>
+                <Button onClick={() => form.setFieldsValue({ info: undefined })}>Reset</Button>
             </FormItem>
             <FormItem<FormData>>
                 <Button htmlType="submit">Submit</Button>

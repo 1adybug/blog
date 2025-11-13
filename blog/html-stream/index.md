@@ -37,6 +37,5 @@ const server = createServer(async (request, response) => {
     response.end()
 })
 
-server.listen(3000, () =>
-    console.log("Server is running on http://localhost:3000"))
+server.listen(3000, () => console.log("Server is running on http://localhost:3000"))
 ```

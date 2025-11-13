@@ -14,27 +14,27 @@ _以下内容均为 `Gemini 2.5 Pro` 生成_
 
 ```typescript
 class Person {
-    name: string;
+    name: string
 
     constructor(name: string) {
-        this.name = name;
+        this.name = name
     }
 
     sayHello() {
-        console.log(`Hello, my name is ${this.name}`);
+        console.log(`Hello, my name is ${this.name}`)
     }
 }
 
 function get(a: Person) {
-    a.sayHello();
+    a.sayHello()
 }
 
 // ✅ 没问题，这符合预期
-get(new Person("Alice")); 
+get(new Person("Alice"))
 
 // ❓ 咦？为什么这也行？！
-get({ name: "Tom" }); 
-// 错误: Property 'sayHello' is missing in type '{ name: string; }' 
+get({ name: "Tom" })
+// 错误: Property 'sayHello' is missing in type '{ name: string; }'
 // but required in type 'Person'.
 ```
 
@@ -44,20 +44,23 @@ _（注：在上面的基础示例中，如果 `Person` 类有 `sayHello` 方法
 
 ```typescript
 class Person {
-    name: string;
-    constructor(name: string) { this.name = name; }
+    name: string
+
+    constructor(name: string) {
+        this.name = name
+    }
 }
 
 function get(a: Person) {
-    console.log(a.name);
+    console.log(a.name)
 }
 
 // ✅ 传入实例
-get(new Person("Alice")); 
+get(new Person("Alice"))
 
 // ❌ 为什么这里不报错？
 // 我传入了一个对象字面量，而不是 Person 的实例！
-get({ name: "Tom" }); 
+get({ name: "Tom" })
 ```
 
 这到底是怎么回事？这其实是 TypeScript 的一个核心特性在起作用，它被称为 **结构化类型（Structural Typing）**，也常被称作“鸭子类型”。
@@ -86,26 +89,26 @@ TypeScript 在比较类型时，并不关心“你叫什么名字”（即名义
 
 ```typescript
 class Person {
-    name: string;
-    
+    name: string
+
     // 👇 **这就是关键！**
     // 我们添加了一个私有的 "品牌" 属性
-    private _brand!: void; 
+    private _brand!: void
 
     constructor(name: string) {
-        this.name = name;
+        this.name = name
     }
 }
 
 function get(a: Person) {
-    console.log(a.name);
+    console.log(a.name)
 }
 
 // ✅ 正确：传入 Person 的实例
-get(new Person("Alice"));
+get(new Person("Alice"))
 
 // ❌ 错误：传入对象字面量
-get({ name: "Tom" });
+get({ name: "Tom" })
 ```
 
 现在，当你尝试传入对象字面量时，TypeScript 编译器会立刻报错：
@@ -115,12 +118,12 @@ get({ name: "Tom" });
 
 **为什么这样能行？**
 
-  * `new Person("Alice")` 创建的实例，其类型签名中**包含** `private _brand: void`。
-  * `{ name: "Tom" }` 这个对象字面量，其类型签名中**不包含** `_brand` 属性。
+- `new Person("Alice")` 创建的实例，其类型签名中**包含** `private _brand: void`。
+- `{ name: "Tom" }` 这个对象字面量，其类型签名中**不包含** `_brand` 属性。
 
 因为 `private` 成员是类结构签名的一部分，而对象字面量无法提供这个私有成员，所以 TypeScript 判定它们的结构不兼容，从而达到了我们的目的。
 
------
+---
 
 ## 零运行时成本的“幽灵属性”
 
@@ -140,11 +143,11 @@ get({ name: "Tom" });
 
 ```typescript
 class Person {
-    name: string;
-    private _brand!: void; 
+    name: string
+    private _brand!: void
 
     constructor(name: string) {
-        this.name = name;
+        this.name = name
     }
 }
 ```
@@ -154,7 +157,7 @@ class Person {
 ```javascript
 class Person {
     constructor(name) {
-        this.name = name;
+        this.name = name
         // 注意：_brand 在这里完全消失了！
     }
 }
@@ -164,9 +167,9 @@ class Person {
 
 ## 总结
 
-  * **问题**：TypeScript 默认使用**结构化类型**，导致对象字面量可以匹配同结构的类。
-  * **目标**：我们想强制使用**名义类型**，只接受类的真实实例。
-  * **解决方案**：在类中添加一个 `private` 属性（如 `private _brand!: void;`）来进行“品牌化”。
-  * **优势**：此方法**零运行时成本**，所有“品牌”标记都在编译为 JavaScript 时被擦除，只在 TypeScript 类型检查阶段发挥作用。
+- **问题**：TypeScript 默认使用**结构化类型**，导致对象字面量可以匹配同结构的类。
+- **目标**：我们想强制使用**名义类型**，只接受类的真实实例。
+- **解决方案**：在类中添加一个 `private` 属性（如 `private _brand!: void;`）来进行“品牌化”。
+- **优势**：此方法**零运行时成本**，所有“品牌”标记都在编译为 JavaScript 时被擦除，只在 TypeScript 类型检查阶段发挥作用。
 
 下次当你需要确保一个参数必须是某个类的实例时，试试这个“私有品牌”技巧吧！

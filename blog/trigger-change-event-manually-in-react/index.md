@@ -32,11 +32,7 @@ const App: FC = () => {
         <div>
             <div>
                 <label htmlFor="input">input:</label>
-                <input
-                    id="input"
-                    value={value}
-                    onChange={e => setValue(e.target.value)}
-                />
+                <input id="input" value={value} onChange={e => setValue(e.target.value)} />
             </div>
             <div>value:{value}</div>
         </div>
@@ -65,10 +61,7 @@ input.dispatchEvent(inputEvent)
 可以看到，下方文本任然没有任何变化，Google 一番终于找到了正确答案 [Simulate React On-Change On Controlled Components](https://hustle.bizongo.in/simulate-react-on-change-on-controlled-components-baa336920e04)：
 
 ```typescript
-const set = Object.getOwnPropertyDescriptor(
-    HTMLInputElement.prototype,
-    "value",
-)?.set
+const set = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value")?.set
 
 set?.call(input, "123456")
 

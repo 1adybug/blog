@@ -15,12 +15,5 @@ tags: [replace, string]
  * 倒数第二个参数为匹配到的字符串的序列号
  * 最后一个参数为原始字符串
  */
-function replacer(
-    match: string,
-    arg1: string,
-    arg2: string,
-    ...args: string[],
-    index: number,
-    str: string,
-): string {}
+function replacer(match: string, arg1: string, arg2: string, ...args: string[], index: number, str: string): string {}
 ```

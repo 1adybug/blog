@@ -28,50 +28,14 @@ const ee = 0.00669342162296594323
  */
 function getCoordinateOffset(coordinate: number[]) {
     const [longitude, latitude] = coordinate
-    let dLng =
-        300.0 +
-        longitude +
-        2.0 * latitude +
-        0.1 * longitude * longitude +
-        0.1 * longitude * latitude +
-        0.1 * Math.sqrt(Math.abs(longitude))
-    dLng +=
-        ((20.0 * Math.sin(6.0 * longitude * PI) +
-            20.0 * Math.sin(2.0 * longitude * PI)) *
-            2.0) /
-        3.0
-    dLng +=
-        ((20.0 * Math.sin(longitude * PI) +
-            40.0 * Math.sin((longitude / 3.0) * PI)) *
-            2.0) /
-        3.0
-    dLng +=
-        ((150.0 * Math.sin((longitude / 12.0) * PI) +
-            300.0 * Math.sin((longitude / 30.0) * PI)) *
-            2.0) /
-        3.0
-    let dLat =
-        -100.0 +
-        2.0 * longitude +
-        3.0 * latitude +
-        0.2 * latitude * latitude +
-        0.1 * longitude * latitude +
-        0.2 * Math.sqrt(Math.abs(longitude))
-    dLat +=
-        ((20.0 * Math.sin(6.0 * longitude * PI) +
-            20.0 * Math.sin(2.0 * longitude * PI)) *
-            2.0) /
-        3.0
-    dLat +=
-        ((20.0 * Math.sin(latitude * PI) +
-            40.0 * Math.sin((latitude / 3.0) * PI)) *
-            2.0) /
-        3.0
-    dLat +=
-        ((160.0 * Math.sin((latitude / 12.0) * PI) +
-            320 * Math.sin((latitude * PI) / 30.0)) *
-            2.0) /
-        3.0
+    let dLng = 300.0 + longitude + 2.0 * latitude + 0.1 * longitude * longitude + 0.1 * longitude * latitude + 0.1 * Math.sqrt(Math.abs(longitude))
+    dLng += ((20.0 * Math.sin(6.0 * longitude * PI) + 20.0 * Math.sin(2.0 * longitude * PI)) * 2.0) / 3.0
+    dLng += ((20.0 * Math.sin(longitude * PI) + 40.0 * Math.sin((longitude / 3.0) * PI)) * 2.0) / 3.0
+    dLng += ((150.0 * Math.sin((longitude / 12.0) * PI) + 300.0 * Math.sin((longitude / 30.0) * PI)) * 2.0) / 3.0
+    let dLat = -100.0 + 2.0 * longitude + 3.0 * latitude + 0.2 * latitude * latitude + 0.1 * longitude * latitude + 0.2 * Math.sqrt(Math.abs(longitude))
+    dLat += ((20.0 * Math.sin(6.0 * longitude * PI) + 20.0 * Math.sin(2.0 * longitude * PI)) * 2.0) / 3.0
+    dLat += ((20.0 * Math.sin(latitude * PI) + 40.0 * Math.sin((latitude / 3.0) * PI)) * 2.0) / 3.0
+    dLat += ((160.0 * Math.sin((latitude / 12.0) * PI) + 320 * Math.sin((latitude * PI) / 30.0)) * 2.0) / 3.0
     return [dLng, dLat]
 }
 
@@ -136,10 +100,7 @@ export function inChina(coordinate: number[]) {
         ],
     ]
 
-    return (
-        region.some(item => inRectangle(coordinate, item[0], item[1])) &&
-        !exclude.some(item => inRectangle(coordinate, item[0], item[1]))
-    )
+    return region.some(item => inRectangle(coordinate, item[0], item[1])) && !exclude.some(item => inRectangle(coordinate, item[0], item[1]))
 }
 
 /**
@@ -156,12 +117,7 @@ function inRectangle(coordinate: number[], start: number[], end: number[]) {
     const maxLng = Math.max(sLng, eLng)
     const minLat = Math.min(sLat, eLat)
     const maxLat = Math.max(sLat, eLat)
-    return (
-        longitude >= minLng &&
-        longitude <= maxLng &&
-        latitude >= minLat &&
-        latitude <= maxLat
-    )
+    return longitude >= minLng && longitude <= maxLng && latitude >= minLat && latitude <= maxLat
 }
 
 /**
@@ -225,12 +181,8 @@ export function BD09ToGCJ02(BDCoordinate: number[]) {
  */
 export function GCJ02ToBD09(GCJCoordinate: number[]) {
     const [GCJLongitude, GCJLatitude] = GCJCoordinate
-    const z =
-        Math.sqrt(GCJLongitude * GCJLongitude + GCJLatitude * GCJLatitude) +
-        0.00002 * Math.sin(GCJLatitude * x_PI)
-    const theta =
-        Math.atan2(GCJLatitude, GCJLongitude) +
-        0.000003 * Math.cos(GCJLongitude * x_PI)
+    const z = Math.sqrt(GCJLongitude * GCJLongitude + GCJLatitude * GCJLatitude) + 0.00002 * Math.sin(GCJLatitude * x_PI)
+    const theta = Math.atan2(GCJLatitude, GCJLongitude) + 0.000003 * Math.cos(GCJLongitude * x_PI)
     const BDLongitude = z * Math.cos(theta) + 0.0065
     const BDLatitude = z * Math.sin(theta) + 0.006
     return [BDLongitude, BDLatitude]

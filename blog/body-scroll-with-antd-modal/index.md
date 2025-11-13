@@ -15,6 +15,5 @@ tags: [antd]
 获取页面滚动条的宽度也很简单：
 
 ```typescript
-const width =
-    document.documentElement.offsetWidth - document.documentElement.clientWidth
+const width = document.documentElement.offsetWidth - document.documentElement.clientWidth
 ```

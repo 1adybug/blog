@@ -194,13 +194,8 @@
     "[mdx]": {
         "editor.defaultFormatter": "unifiedjs.vscode-mdx"
     },
-    "typescript.preferences.autoImportSpecifierExcludeRegexes": [
-        "^(node:)?os$"
-    ],
-    "cursor.cpp.disabledLanguages": [
-        "scminput",
-        "ngql"
-    ],
+    "typescript.preferences.autoImportSpecifierExcludeRegexes": ["^(node:)?os$"],
+    "cursor.cpp.disabledLanguages": ["scminput", "ngql"],
     "workbench.activityBar.orientation": "vertical",
     "window.zoomLevel": 1,
     "[yaml]": {

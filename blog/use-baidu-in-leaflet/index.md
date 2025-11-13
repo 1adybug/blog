@@ -35,10 +35,7 @@ const baiduCrs = new L.Proj.CRS(
     {
         resolutions,
         origin: [0, 0],
-        bounds: L.bounds(
-            [20037508.342789244, 0],
-            [-20037508.342789244, 20037508.342789244],
-        ),
+        bounds: L.bounds([20037508.342789244, 0], [-20037508.342789244, 20037508.342789244]),
     },
 )
 
@@ -53,8 +50,7 @@ const map = new L.Map(document.getElementById("app")!, {
 
 L.tileLayer("/wanda-baidu/{z}/{x}/{y}.png", {
     tms: true,
-    attribution:
-        'Map data &copy; <a href="https://map.baidu.com/">百度地图</a>',
+    attribution: 'Map data &copy; <a href="https://map.baidu.com/">百度地图</a>',
     minZoom: 3,
     // 必须设置最大缩放为 19
     maxZoom: 19,

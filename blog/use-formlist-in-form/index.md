@@ -74,10 +74,7 @@ import FormList from "antd/es/form/FormList"
 const App: FC = () => {
     return (
         <Form onFinish={console.dir}>
-            <FormList
-                name="persons"
-                initialValue={[{ name: "Tom", age: "18" }]}
-            >
+            <FormList name="persons" initialValue={[{ name: "Tom", age: "18" }]}>
                 {(fields, { add }) => (
                     <Fragment>
                         {fields.map(({ key, name }) => (

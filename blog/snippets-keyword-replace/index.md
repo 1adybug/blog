@@ -39,19 +39,12 @@ const replacer = Array(max)
                 (acc.at(-1)?.at(-1) ?? 0) + 1,
                 ...Array(index * 2)
                     .fill(0)
-                    .map(
-                        (item2, index2) =>
-                            (acc.at(-1)?.at(-1) ?? 0) + 1 + index2 + 1,
-                    ),
+                    .map((item2, index2) => (acc.at(-1)?.at(-1) ?? 0) + 1 + index2 + 1),
             ],
         ],
         [],
     )
-    .map(item =>
-        item
-            .map((item2, index2) =>
-                index2 % 2 === 0 ? `$${item2}` : `$\{${item2}:/upcase}`)
-            .join(""))
+    .map(item => item.map((item2, index2) => (index2 % 2 === 0 ? `$${item2}` : `$\{${item2}:/upcase}`)).join(""))
     .join("")
 
 const body = `\${TM_FILENAME_BASE/${regExp}/${replacer}/}`

@@ -90,18 +90,10 @@ export type WingetItem = {
     architecture: string
 }
 
-export async function downloadFromWinget({
-    name,
-    id,
-    dir,
-    architecture = "x64",
-}: WingetDownloadInfo) {
+export async function downloadFromWinget({ name, id, dir, architecture = "x64" }: WingetDownloadInfo) {
     const firstLetter = id[0].toLowerCase()
     const path = id.replace(/\./g, "/")
-    const response = await fetch(
-        `https://api.github.com/repos/microsoft/winget-pkgs/contents/manifests/${firstLetter}/${path}`,
-        { agent },
-    )
+    const response = await fetch(`https://api.github.com/repos/microsoft/winget-pkgs/contents/manifests/${firstLetter}/${path}`, { agent })
     const data: GithubContent[] = (await response.json()) as any
     const reg2 = /^\d+(\.\d+?)*$/
     const stables = data.filter(item => reg2.test(item.name))
@@ -129,30 +121,12 @@ export async function downloadFromWinget({
     const pkg: Winget.Package = YAML.parse(yaml)
 
     const installers = pkg.Installers.filter((item, index) => {
-        if (item.Architecture !== "x64" && item.Architecture !== "x86")
+        if (item.Architecture !== "x64" && item.Architecture !== "x86") return false
+        if (architecture !== "all" && item.Architecture !== architecture) return false
+        if (!item.InstallerUrl.endsWith(".exe") && !item.InstallerUrl.endsWith(".msi")) return false
+        if (item.InstallerUrl.endsWith(".msi") && pkg.Installers.some(item2 => item2.Architecture === item.Architecture && item2.InstallerUrl.endsWith(".exe")))
             return false
-        if (architecture !== "all" && item.Architecture !== architecture)
-            return false
-        if (
-            !item.InstallerUrl.endsWith(".exe") &&
-            !item.InstallerUrl.endsWith(".msi")
-        )
-            return false
-        if (
-            item.InstallerUrl.endsWith(".msi") &&
-            pkg.Installers.some(
-                item2 =>
-                    item2.Architecture === item.Architecture &&
-                    item2.InstallerUrl.endsWith(".exe"),
-            )
-        )
-            return false
-        if (
-            pkg.Installers.findIndex(
-                item2 => item2.Architecture === item.Architecture,
-            ) !== index
-        )
-            return false
+        if (pkg.Installers.findIndex(item2 => item2.Architecture === item.Architecture) !== index) return false
         return true
     })
 
@@ -172,10 +146,7 @@ export async function downloadFromWinget({
 
     for (const { version, filename, architecture, ext } of result) {
         await sleep(100)
-        await rename(
-            join(dir, filename),
-            join(dir, `${name}_${version}_${architecture}.${ext}`),
-        )
+        await rename(join(dir, filename), join(dir, `${name}_${version}_${architecture}.${ext}`))
     }
 }
 ```
