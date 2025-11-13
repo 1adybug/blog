@@ -113,8 +113,8 @@ get({ name: "Tom" })
 
 现在，当你尝试传入对象字面量时，TypeScript 编译器会立刻报错：
 
-> Argument of type '{ name: string; }' is not assignable to parameter of type 'Person'.
-> **Property '\_brand' is missing** in type '{ name: string; }' but required in type 'Person'.
+> Argument of type `{ name: string; }` is not assignable to parameter of type `Person`.
+> **Property `_brand` is missing** in type `{ name: string; }` but required in type `Person`.
 
 **为什么这样能行？**
 
