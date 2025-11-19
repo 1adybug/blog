@@ -159,8 +159,6 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "markdownlint.config": {
         "MD007": false,
-        "MD024": false,
-        "MD030": false,
         "MD033": false,
         "MD036": false,
         "MD040": false
@@ -196,13 +194,8 @@
     "[mdx]": {
         "editor.defaultFormatter": "unifiedjs.vscode-mdx"
     },
-    "typescript.preferences.autoImportSpecifierExcludeRegexes": [
-        "^(node:)?os$"
-    ],
-    "cursor.cpp.disabledLanguages": [
-        "scminput",
-        "ngql"
-    ],
+    "typescript.preferences.autoImportSpecifierExcludeRegexes": ["^(node:)?os$"],
+    "cursor.cpp.disabledLanguages": ["scminput", "ngql"],
     "workbench.activityBar.orientation": "vertical",
     "window.zoomLevel": 1,
     "[yaml]": {
@@ -227,5 +220,6 @@
     "workbench.editorAssociations": {
         "*.svg": "default"
     },
-    "cursor-infinity.autoOpenPanel": false
+    "cursor-infinity.autoOpenPanel": false,
+    "update.mode": "none"
 }
