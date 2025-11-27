@@ -61,9 +61,9 @@ tags: [ssr, antd, css, remix, react router]
     ```tsx
     import { startTransition, StrictMode } from "react"
     import { hydrateRoot } from "react-dom/client"
-    import { HydratedRouter } from "react-router/dom"
 
     import { legacyLogicalPropertiesTransformer, StyleProvider } from "@ant-design/cssinjs"
+    import { HydratedRouter } from "react-router/dom"
 
     startTransition(() => {
         hydrateRoot(
@@ -80,14 +80,14 @@ tags: [ssr, antd, css, remix, react router]
 5. 修改 `entry.server.tsx`：
 
     ```tsx
-    import { createReadableStreamFromReadable } from "@react-router/node"
     import { type RenderToPipeableStreamOptions, renderToPipeableStream } from "react-dom/server"
-    import { type AppLoadContext, type EntryContext, ServerRouter } from "react-router"
 
     import { PassThrough } from "node:stream"
 
     import { createCache, extractStyle, StyleProvider } from "@ant-design/cssinjs"
+    import { createReadableStreamFromReadable } from "@react-router/node"
     import { isbot } from "isbot"
+    import { type AppLoadContext, type EntryContext, ServerRouter } from "react-router"
 
     const ABORT_DELAY = 5_000
 
@@ -147,9 +147,7 @@ tags: [ssr, antd, css, remix, react router]
                         // Log streaming rendering errors from inside the shell.  Don't log
                         // errors encountered during initial shell rendering since they'll
                         // reject and get logged in handleDocumentRequest.
-                        if (shellRendered) {
-                            console.error(error)
-                        }
+                        if (shellRendered) console.error(error)
                     },
                 },
             )

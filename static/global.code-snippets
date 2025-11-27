@@ -16,69 +16,43 @@
     "Print to console": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "l",
-        "body": [
-            "console.log($0)"
-        ],
+        "body": ["console.log($0)"],
         "description": "Log output to console",
     },
     "for i": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "fori",
-        "body": [
-            "for (let i = 0; i < $0; i++) {",
-            "    ",
-            "}"
-        ],
+        "body": ["for (let i = 0; i < $0; i++) {", "    ", "}"],
         "description": "fori",
     },
     "forof": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "forof",
-        "body": [
-            "for (const $1 of $0) {",
-            "    ",
-            "}"
-        ],
+        "body": ["for (const $1 of $0) {", "    ", "}"],
         "description": "foriof",
     },
     "for i of": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "foriof",
-        "body": [
-            "for (const i of $0) {",
-            "    ",
-            "}"
-        ],
+        "body": ["for (const i of $0) {", "    ", "}"],
         "description": "foriof",
     },
     "for j of": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "forjof",
-        "body": [
-            "for (const j of $0) {",
-            "    ",
-            "}"
-        ],
+        "body": ["for (const j of $0) {", "    ", "}"],
         "description": "forjof",
     },
     "for array": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "fora",
-        "body": [
-            "for (let i = 0; i < $0.length; i++) {",
-            "    ",
-            "}"
-        ],
+        "body": ["for (let i = 0; i < $0.length; i++) {", "    ", "}"],
         "description": "fora",
     },
     "for j": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "forj",
-        "body": [
-            "for (let j = 0; j < $0; j++) {",
-            "    ",
-            "}"
-        ],
+        "body": ["for (let j = 0; j < $0; j++) {", "    ", "}"],
         "description": "forj",
     },
     "MutationObserver": {
@@ -100,85 +74,61 @@
     "did": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "did",
-        "body": [
-            "document.getElementById(\"$0\")"
-        ],
+        "body": ["document.getElementById(\"$0\")"],
         "description": "did",
     },
     "dcs": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "dcs",
-        "body": [
-            "document.getElementsByClassName(\"$0\")"
-        ],
+        "body": ["document.getElementsByClassName(\"$0\")"],
         "description": "dcs",
     },
     "dcd": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "dcd",
-        "body": [
-            "document.createElement(\"div\")",
-            "$0"
-        ],
+        "body": ["document.createElement(\"div\")", "$0"],
         "description": "dcd",
     },
     "iexp": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "iexp",
-        "body": [
-            "import express from \"express\"",
-            "$0"
-        ],
+        "body": ["import express from \"express\"", "$0"],
         "description": "NodeJs Expresss Module",
     },
     "require": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "req",
-        "body": [
-            "require(\"$0\")"
-        ],
+        "body": ["require(\"$0\")"],
         "description": "require(something)",
     },
     "ed": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "ed",
-        "body": [
-            "export default $0"
-        ],
+        "body": ["export default $0"],
         "description": "export default",
     },
     "dce": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "dce",
-        "body": [
-            "document.createElement(\"$0\")"
-        ],
+        "body": ["document.createElement(\"$0\")"],
         "description": "document.createElement",
     },
     "dqs": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "dqs",
-        "body": [
-            "document.querySelector(\"$0\")"
-        ],
+        "body": ["document.querySelector(\"$0\")"],
         "description": "document.querySelector",
     },
     "zs": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "zs",
-        "body": [
-            "/** $0 */"
-        ],
+        "body": ["/** $0 */"],
         "description": "TypeScript 注释",
     },
     "expreq": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "expreq",
-        "body": [
-            "async (request, response) => {",
-            "    $0",
-            "}"
-        ],
+        "body": ["async (request, response) => {", "    $0", "}"],
     },
     "export component": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -355,19 +305,7 @@
     "vue": {
         "scope": "vue",
         "prefix": "vue",
-        "body": [
-            "<script setup lang=\"ts\" >",
-            "$0",
-            "</script>",
-            "",
-            "<template>",
-            "    ",
-            "</template>",
-            "",
-            "<style scoped>",
-            "    ",
-            "</style>"
-        ],
+        "body": ["<script setup lang=\"ts\" >", "$0", "</script>", "", "<template>", "    ", "</template>", "", "<style scoped>", "    ", "</style>"],
     },
     "export IonPage": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -533,16 +471,12 @@
     "use client": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "uc",
-        "body": [
-            "\"use client\""
-        ],
+        "body": ["\"use client\""],
     },
     "use server": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "us",
-        "body": [
-            "\"use server\""
-        ],
+        "body": ["\"use server\""],
     },
     "next.js get function": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -574,57 +508,27 @@
     "warning": {
         "scope": "markdown",
         "prefix": "warning",
-        "body": [
-            ":::warning",
-            "",
-            "$0",
-            "",
-            ":::"
-        ],
+        "body": [":::warning", "", "$0", "", ":::"],
     },
     "tip": {
         "scope": "markdown",
         "prefix": "tip",
-        "body": [
-            ":::tip",
-            "",
-            "$0",
-            "",
-            ":::"
-        ],
+        "body": [":::tip", "", "$0", "", ":::"],
     },
     "info": {
         "scope": "markdown",
         "prefix": "info",
-        "body": [
-            ":::info",
-            "",
-            "$0",
-            "",
-            ":::"
-        ],
+        "body": [":::info", "", "$0", "", ":::"],
     },
     "success": {
         "scope": "markdown",
         "prefix": "success",
-        "body": [
-            ":::success",
-            "",
-            "$0",
-            "",
-            ":::"
-        ],
+        "body": [":::success", "", "$0", "", ":::"],
     },
     "danger": {
         "scope": "markdown",
         "prefix": "danger",
-        "body": [
-            ":::danger",
-            "",
-            "$0",
-            "",
-            ":::"
-        ],
+        "body": [":::danger", "", "$0", "", ":::"],
     },
     "action": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -645,13 +549,7 @@
     "main function": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "main",
-        "body": [
-            "async function main() {",
-            "    $0",
-            "}",
-            "",
-            "main()"
-        ],
+        "body": ["async function main() {", "    $0", "}", "", "main()"],
     },
     "markdown image": {
         "scope": "markdown",
@@ -672,19 +570,12 @@
     "import css": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "css",
-        "body": [
-            "import \"./${TM_FILENAME_BASE}.css\""
-        ],
+        "body": ["import \"./${TM_FILENAME_BASE}.css\""],
     },
     "function": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "fn",
-        "body": [
-            "export function ${TM_FILENAME_BASE}() {",
-            "    $0",
-            "}",
-            ""
-        ],
+        "body": ["export function ${TM_FILENAME_BASE}() {", "    $0", "}", ""],
     },
     "function with props": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -697,18 +588,13 @@
             "export function ${TM_FILENAME_BASE}(params: ${TM_FILENAME_BASE/^(.)/${1:/upcase}/}Params) {",
             "    $0",
             "}",
-            ""
+            "",
         ],
     },
     "async function": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "afn",
-        "body": [
-            "export async function ${TM_FILENAME_BASE}() {",
-            "    $0",
-            "}",
-            ""
-        ],
+        "body": ["export async function ${TM_FILENAME_BASE}() {", "    $0", "}", ""],
     },
     "async function with props": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -721,7 +607,7 @@
             "export async function ${TM_FILENAME_BASE}(params: ${TM_FILENAME_BASE/^(.)/${1:/upcase}/}Params) {",
             "    $0",
             "}",
-            ""
+            "",
         ],
     },
     "columns": {
@@ -780,9 +666,7 @@
     "input": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "input",
-        "body": [
-            "<Input allowClear autoComplete=\"off\" />"
-        ],
+        "body": ["<Input allowClear autoComplete=\"off\" />"],
     },
     "select": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -960,8 +844,8 @@
             "}",
             "",
             "export default ${TM_FILENAME_BASE/^([a-zA-Z])/${1:/upcase}/}",
-            ""
-        ]
+            "",
+        ],
     },
     "Editor": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1038,8 +922,8 @@
             "}",
             "",
             "export default ${1}Editor",
-            ""
-        ]
+            "",
+        ],
     },
     "request": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1131,8 +1015,8 @@
             "        throw error",
             "    }",
             "}",
-            ""
-        ]
+            "",
+        ],
     },
     "getDataRequest": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1287,8 +1171,8 @@
             "}",
             "",
             "addRequestEventListener(\"error\", error => (console.error(error), message.error(getErrorMessage(error))))",
-            ""
-        ]
+            "",
+        ],
     },
     "getDataResponse": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1326,16 +1210,13 @@
             "    }",
             "    return { success, data, message }",
             "}",
-            ""
-        ]
+            "",
+        ],
     },
     "server only": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "so",
-        "body": [
-            "import \"server-only\"",
-            ""
-        ],
+        "body": ["import \"server-only\"", ""],
     },
     "server action": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1389,15 +1270,13 @@
             "export type ${TM_FILENAME_BASE/^([a-zA-Z])/${1:/upcase}/}Params = z.infer<typeof ${TM_FILENAME_BASE}Schema>",
             "",
             "export const ${TM_FILENAME_BASE}Parser = getParser(${TM_FILENAME_BASE}Schema)",
-            ""
-        ]
+            "",
+        ],
     },
     "useState snippet": {
         "prefix": "state",
-        "body": [
-            "const [$1, set${1/^([a-z])/${1:/upcase}/}] = useState($2)"
-        ],
-        "description": "Create useState hook with auto-capitalized setState"
+        "body": ["const [$1, set${1/^([a-z])/${1:/upcase}/}] = useState($2)"],
+        "description": "Create useState hook with auto-capitalized setState",
     },
     "getPrismaConfig": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1412,8 +1291,8 @@
             ">(${TM_FILENAME_BASE/^get(.+?)([A-Z][a-z]+)$/${2:/downcase}/}: P): P {",
             "    return ${TM_FILENAME_BASE/^get(.+?)([A-Z][a-z]+)$/${2:/downcase}/}",
             "}",
-            ""
-        ]
+            "",
+        ],
     },
     "AutoInput": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1443,8 +1322,8 @@
             "}",
             "",
             "export default ${TM_FILENAME_BASE/^([a-zA-Z])(.+)Input$/${1:/upcase}$2/}Input",
-            ""
-        ]
+            "",
+        ],
     },
     "AutoSelect": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1472,8 +1351,8 @@
             "}",
             "",
             "export default ${TM_FILENAME_BASE/^([a-zA-Z])(.+)Select$/${1:/upcase}$2/}Select",
-            ""
-        ]
+            "",
+        ],
     },
     "EnumSelect": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1492,8 +1371,8 @@
             "const ${TM_FILENAME_BASE/^([a-zA-Z])(.+)Select$/${1:/upcase}$2/}Select: FC<${TM_FILENAME_BASE/^([a-zA-Z])(.+)Select$/${1:/upcase}$2/}SelectProps> = props => <Select options={getEnumOptions(${TM_FILENAME_BASE/^([a-zA-Z])(.+)Select$/${1:/upcase}$2/})} {...props} />",
             "",
             "export default ${TM_FILENAME_BASE/^([a-zA-Z])(.+)Select$/${1:/upcase}$2/}Select",
-            ""
-        ]
+            "",
+        ],
     },
     "getIp": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1507,8 +1386,8 @@
             "    const headers2 = headers()",
             "    return headers2.get(\"x-forwarded-for\")!",
             "}",
-            ""
-        ]
+            "",
+        ],
     },
     "getUserAgent": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1522,8 +1401,8 @@
             "    const headers2 = headers()",
             "    return headers2.get(\"user-agent\")!",
             "}",
-            ""
-        ]
+            "",
+        ],
     },
     "addErrorLog": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1585,8 +1464,8 @@
             "        console.error(error)",
             "    }",
             "}",
-            ""
-        ]
+            "",
+        ],
     },
     "addOperationLog": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1627,8 +1506,8 @@
             "        console.error(error)",
             "    }",
             "}",
-            ""
-        ]
+            "",
+        ],
     },
     "stringifyParams": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1642,8 +1521,8 @@
             "    } catch (error) {}",
             "    return result",
             "}",
-            ""
-        ]
+            "",
+        ],
     },
     "getParser": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1664,8 +1543,8 @@
             "        return data",
             "    }",
             "}",
-            ""
-        ]
+            "",
+        ],
     },
     "operation": {
         "scope": "prisma",
@@ -1691,13 +1570,13 @@
             "    ip        String? // IP地址",
             "    userAgent String? // User Agent",
             "}",
-            ""
-        ]
+            "",
+        ],
     },
     "do not export to action": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "ne",
-        "body": "\"no export\""
+        "body": "\"no export\"",
     },
     "createServerFn": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1709,151 +1588,96 @@
             "    .validator((v: unknown) => v)",
             "    .handler(async ctx => {",
             "        $0",
-            "    })"
-        ]
+            "    })",
+        ],
     },
     "console.dir": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "dir",
-        "body": "console.dir(${1:data}, { depth: null })"
+        "body": "console.dir(${1:data}, { depth: null })",
     },
     "onSubmit": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "onSubmit",
-        "body": [
-            "function onSubmit(event: FormEvent<HTMLFormElement>) {",
-            "    event.preventDefault()",
-            "    form.handleSubmit()",
-            "}"
-        ]
+        "body": ["function onSubmit(event: FormEvent<HTMLFormElement>) {", "    event.preventDefault()", "    form.handleSubmit()", "}"],
     },
     "Code in JavaScript": {
         "scope": "markdown",
         "prefix": "cj",
-        "body": [
-            "```javascript",
-            "$0",
-            "```"
-        ],
-        "description": "Code in JavaScript"
+        "body": ["```javascript", "$0", "```"],
+        "description": "Code in JavaScript",
     },
     "Code in Html": {
         "scope": "markdown",
         "prefix": "ch",
-        "body": [
-            "```html",
-            "$0",
-            "```"
-        ],
-        "description": "Code in Html"
+        "body": ["```html", "$0", "```"],
+        "description": "Code in Html",
     },
     "Code in MySQL": {
         "scope": "markdown",
         "prefix": "cm",
-        "body": [
-            "```mysql",
-            "$0",
-            "```"
-        ],
-        "description": "Code in MySQL"
+        "body": ["```mysql", "$0", "```"],
+        "description": "Code in MySQL",
     },
     "code in JSX": {
         "scope": "markdown",
         "prefix": "cjsx",
-        "body": [
-            "```jsx",
-            "$0",
-            "```"
-        ],
-        "description": "Code in JSX"
+        "body": ["```jsx", "$0", "```"],
+        "description": "Code in JSX",
     },
     "Code in TypeScript": {
         "scope": "markdown",
         "prefix": "cts",
-        "body": [
-            "```typescript",
-            "$0",
-            "```"
-        ],
-        "description": "Code in TypeScript"
+        "body": ["```typescript", "$0", "```"],
+        "description": "Code in TypeScript",
     },
     "Code in Json": {
         "scope": "markdown",
         "prefix": "cjson",
-        "body": [
-            "```json",
-            "$0",
-            "```"
-        ],
-        "description": "Code in JSON"
+        "body": ["```json", "$0", "```"],
+        "description": "Code in JSON",
     },
     "tj": {
         "scope": "markdown",
         "prefix": "tj",
-        "body": [
-            "在 `$0` 中添加如下内容："
-        ],
-        "description": "添加内容"
+        "body": ["在 `$0` 中添加如下内容："],
+        "description": "添加内容",
     },
     "cg": {
         "scope": "markdown",
         "prefix": "cg",
-        "body": [
-            "```git",
-            "$0",
-            "```"
-        ],
-        "description": "Code in Git"
+        "body": ["```git", "$0", "```"],
+        "description": "Code in Git",
     },
     "code in TSX": {
         "scope": "markdown",
         "prefix": "ctsx",
-        "body": [
-            "```tsx",
-            "$0",
-            "```"
-        ],
-        "description": "Code in TSX"
+        "body": ["```tsx", "$0", "```"],
+        "description": "Code in TSX",
     },
     "code in Shell": {
         "scope": "markdown",
         "prefix": "cshell",
-        "body": [
-            "```shell",
-            "$0",
-            "```"
-        ],
-        "description": "Code in Shell"
+        "body": ["```shell", "$0", "```"],
+        "description": "Code in Shell",
     },
     "code in PowerShell": {
         "scope": "markdown",
         "prefix": "cp",
-        "body": [
-            "```powershell",
-            "$0",
-            "```"
-        ],
-        "description": "Code in PowerShell"
+        "body": ["```powershell", "$0", "```"],
+        "description": "Code in PowerShell",
     },
     "code in vue": {
         "scope": "markdown",
         "prefix": "cv",
-        "body": [
-            "```vue",
-            "$0",
-            "```"
-        ],
-        "description": "Code in Vue"
+        "body": ["```vue", "$0", "```"],
+        "description": "Code in Vue",
     },
     "code in Java": {
         "scope": "markdown",
         "prefix": "cjava",
-        "body": [
-            "```java",
-            "$0",
-            "```"
-        ],
-        "description": "Code in Java"
+        "body": ["```java", "$0", "```"],
+        "description": "Code in Java",
     },
     "react router page route": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1876,8 +1700,8 @@
             "}",
             "",
             "export default Page",
-            ""
-        ]
+            "",
+        ],
     },
     "api router": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1895,8 +1719,8 @@
             "    const output = await ${TM_FILENAME_BASE/^api\\.([^-]+)$|^api\\.([^-]+)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$|^api\\.([^-]+)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)-([^-])([^-]*)$/$1$2${3:/upcase}$4$5${6:/upcase}$7${8:/upcase}$9$10${11:/upcase}$12${13:/upcase}$14${15:/upcase}$16$17${18:/upcase}$19${20:/upcase}$21${22:/upcase}$23${24:/upcase}$25$26${27:/upcase}$28${29:/upcase}$30${31:/upcase}$32${33:/upcase}$34${35:/upcase}$36/}(input)",
             "    return output",
             "}",
-            ""
-        ]
+            "",
+        ],
     },
     "mutation": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1936,8 +1760,8 @@
             "        ...rest,",
             "    })",
             "}",
-            ""
-        ]
+            "",
+        ],
     },
     "api": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1958,8 +1782,8 @@
             "    const response = await request<${TM_FILENAME_BASE/^(.)/${1:/upcase}/}Response>(\"/${TM_FILENAME_BASE}\", { body: params })",
             "    return response",
             "}",
-            ""
-        ]
+            "",
+        ],
     },
     "query": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -1974,8 +1798,8 @@
             "        queryFn: () => ${TM_FILENAME_BASE/^use(.)/${1:/downcase}/}(params),",
             "    })",
             "}",
-            ""
-        ]
+            "",
+        ],
     },
     "use get hook": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -2000,8 +1824,8 @@
             "        enabled,",
             "    })",
             "}",
-            ""
-        ]
+            "",
+        ],
     },
     "cache query": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -2018,8 +1842,8 @@
             "        gcTime: Infinity,",
             "    })",
             "}",
-            ""
-        ]
+            "",
+        ],
     },
     "next query": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -2037,8 +1861,8 @@
             "        queryFn: () => createRequestFn(${TM_FILENAME_BASE/^use(.)/${1:/downcase}/}Action)(params),",
             "    })",
             "}",
-            ""
-        ]
+            "",
+        ],
     },
     "next use get hook": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -2063,8 +1887,8 @@
             "        enabled,",
             "    })",
             "}",
-            ""
-        ]
+            "",
+        ],
     },
     "next cache query": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -2084,7 +1908,7 @@
             "        gcTime: Infinity,",
             "    })",
             "}",
-            ""
-        ]
-    }
+            "",
+        ],
+    },
 }

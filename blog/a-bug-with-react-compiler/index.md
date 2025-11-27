@@ -91,9 +91,7 @@ function onClick() {
 
 ```tsx
 function onClick() {
-    if (info) {
-        console.log(info.name)
-    }
+    if (info) console.log(info.name)
 }
 ```
 

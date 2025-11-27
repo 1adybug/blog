@@ -156,24 +156,22 @@ const selecto = new Selecto({
     cspNonce: "your-csp-nonce",
     checkInput: true,
     preventDragFromInside: false,
-    getElementRect: el => {
+    getElementRect: el =>
         // 自定义获取元素位置的方法
-        return {
+        ({
             left: el.offsetLeft,
             top: el.offsetTop,
             width: el.offsetWidth,
             height: el.offsetHeight,
-        }
-    },
+        }),
     className: "custom-selecto",
     hoverClassName: "selected",
     toggleContinueSelectWithoutDeselect: true,
     preventClickEvent: true,
     appendTo: document.body,
-    dragCondition: e => {
+    dragCondition: e =>
         // 仅当按下左键时允许拖拽选择
-        return e.inputEvent.button === 0
-    },
+        e.inputEvent.button === 0,
 })
 ```
 
