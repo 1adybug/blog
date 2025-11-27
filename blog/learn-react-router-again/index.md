@@ -38,9 +38,10 @@ tags: [react, react-router, remix]
     `loader` 将在你首次打开页面就是这个路由时执行，`clientLoader` 将在你由其他路由导航到这个路由时执行。`clientLoader` 在首次页面加载时不会执行。在 `clientLoader` 中，你可以使用 `serverLoader` 调用 `loader`
 
     ```tsx
+    import type { Route } from "./+types/product"
+
     // route("products/:pid", "./product.tsx");
     import { fakeDb } from "../db"
-    import type { Route } from "./+types/product"
 
     export async function loader({ params }: Route.LoaderArgs) {
         return fakeDb.getProduct(params.pid)

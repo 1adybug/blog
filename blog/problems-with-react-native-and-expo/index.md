@@ -62,13 +62,14 @@ function onClick() {
     // 如果动画处于播放状态，暂停动画，并且将当前值赋予给暂停值
     if (status.current) translateX.stopAnimation(value => (stopValue.current = value))
     // 否则播放动画
-    else
+    else {
         Animated.timing(translateX, {
             toValue,
             duration: (toValue - stopValue.current) / speed,
             useNativeDriver: true,
             easing: Easing.linear,
         }).start(({ finished }) => finished && (stopValue.current = toValue))
+    }
 
     status.current = !status.current
 }

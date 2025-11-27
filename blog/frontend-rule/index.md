@@ -34,9 +34,7 @@ tags: []
 1. 所有 `React` 组件必须使用以下形式书写：
 
     ```tsx
-    const Component: FC = () => {
-        return <div></div>
-    }
+    const Component: FC = () => <div></div>
 
     export default Component
 

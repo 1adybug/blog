@@ -40,9 +40,7 @@ async function main() {
     const dir = await readdir("./")
     const exts = dir.filter(name => name.endsWith(".vsix"))
 
-    for (const ext of exts) {
-        await spawnAsync(`code --install-extension "${ext}"`)
-    }
+    for (const ext of exts) await spawnAsync(`code --install-extension "${ext}"`)
 }
 
 main()
