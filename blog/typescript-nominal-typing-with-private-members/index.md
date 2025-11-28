@@ -6,7 +6,7 @@ date: 2025-11-13
 tags: [typescript]
 ---
 
-_以下内容均为 `Gemini 2.5 Pro` 生成_
+> 以下内容均为 `Gemini 2.5 Pro` 生成
 
 当你在 TypeScript 中定义一个类 (class) 并希望一个函数只接受该类的 _实例_ 时，你可能会遇到一个令人困惑的情况。
 

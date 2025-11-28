@@ -6,7 +6,7 @@ date: 2025-06-23
 tags: [html, enter, claude]
 ---
 
-_以下内容均为 `Claude 4 sonnet` 生成_
+> 以下内容均为 `Claude 4 sonnet` 生成
 
 作为前端开发者，你是否遇到过这样的困惑：有时候在表单输入框中按下 Enter 键会自动提交表单，有时候却没有反应？今天我们就来深入了解一下 HTML 表单中 Enter 键的行为规律。
 

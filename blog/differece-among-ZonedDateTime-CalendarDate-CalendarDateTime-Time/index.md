@@ -6,7 +6,7 @@ date: 2025-07-25
 tags: [gemini, heroui]
 ---
 
-_以下内容均为 `Gemini 2.5 Pro` 生成_
+> 以下内容均为 `Gemini 2.5 Pro` 生成
 
 ## @internationalized/date：深入解析四种核心时间类型
 
