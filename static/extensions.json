@@ -1,6 +1,5 @@
 [
     "ahmadalli.vscode-nginx-conf",
-    "anthropic.claude-code",
     "beardedbear.beardedicons",
     "beardedbear.beardedtheme",
     "bierner.lit-html",
@@ -32,6 +31,7 @@
     "ms-vscode.remote-explorer",
     "ms-vscode.remote-repositories",
     "neo4j-extensions.neo4j-for-vscode",
+    "openai.chatgpt",
     "pkief.material-icon-theme",
     "prisma.prisma",
     "raynigon.nginx-formatter",
