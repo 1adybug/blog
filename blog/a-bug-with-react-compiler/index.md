@@ -6,7 +6,7 @@ date: 2025-09-01
 tags: [react, react-compiler]
 ---
 
-_以下内容均为 `Claude 4 sonnet` 生成_
+> 以下内容均为 `Claude 4 sonnet` 生成
 
 ## 问题背景
 
