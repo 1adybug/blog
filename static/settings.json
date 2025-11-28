@@ -221,6 +221,5 @@
     },
     "workbench.editorAssociations": {
         "*.svg": "default"
-    },
-    "cursor-infinity.autoOpenPanel": false
+    }
 }
