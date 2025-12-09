@@ -33,13 +33,13 @@
         "soda-nodejs": "^0.8.5"
     },
     "devDependencies": {
-        "@1adybug/prettier": "^0.0.10",
+        "@1adybug/prettier": "^0.0.21",
         "@docusaurus/module-type-aliases": "^3.9.2",
         "@docusaurus/tsconfig": "^3.9.2",
         "@docusaurus/types": "^3.9.2",
         "husky": "^9.1.7",
         "lint-staged": "^16.2.7",
-        "prettier": "^3.7.0",
+        "prettier": "^3.7.4",
         "prettier-plugin-lint-md": "^1.0.1",
         "typescript": "~5.9.3"
     },
