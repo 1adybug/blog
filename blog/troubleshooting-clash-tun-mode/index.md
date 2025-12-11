@@ -103,19 +103,17 @@ function main(config, profileName) {
 ```javascript
 function main(config, profileName) {
     // 为所有代理节点添加或设置 'udp: true'
-    if (config.proxies) {
-        config.proxies.forEach(proxy => {
-            proxy.udp = true;
-        });
-    }
+    if (config.proxies) config.proxies.forEach(proxy => (proxy.udp = true))
 
     // 保留原有的添加域名规则的逻辑
-    const name = config['proxy-groups']?.?.name;
-    console.log(name);
-    config.rules.unshift(`DOMAIN-SUFFIX,claude.ai,${name}`);
-    config.rules.unshift(`DOMAIN-SUFFIX,claude.com,${name}`);
+    const name = config["proxy-groups"]?.at(0)?.name
 
-    return config;
+    if (name) {
+        config.rules.unshift(`DOMAIN-SUFFIX,claude.ai,${name}`)
+        config.rules.unshift(`DOMAIN-SUFFIX,claude.com,${name}`)
+    }
+
+    return config
 }
 ```
 
