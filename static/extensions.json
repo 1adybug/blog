@@ -27,7 +27,6 @@
     "ms-python.vscode-python-envs",
     "ms-vscode-remote.remote-ssh",
     "ms-vscode-remote.remote-ssh-edit",
-    "ms-vscode-remote.remote-wsl",
     "ms-vscode.live-server",
     "ms-vscode.remote-explorer",
     "ms-vscode.remote-repositories",
@@ -45,5 +44,6 @@
     "styled-components.vscode-styled-components",
     "techer.open-in-browser",
     "unifiedjs.vscode-mdx",
+    "wusimpl.antigravity-quota-watcher",
     "yzhang.markdown-all-in-one"
 ]

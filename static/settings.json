@@ -222,5 +222,5 @@
     "workbench.editorAssociations": {
         "*.svg": "default"
     },
-    "extensions.gallery.serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery"
+    "json.schemaDownload.enable": true
 }
