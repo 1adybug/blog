@@ -36,7 +36,8 @@
         "*.ngql": "cypher",
         "*.env": "env",
         "*.env.*": "env",
-        "*.acss": "css"
+        "*.acss": "css",
+        "*.mdc": "markdown"
     },
     "emmet.includeLanguages": {
         "wxml": "html"
