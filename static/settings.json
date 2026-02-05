@@ -202,13 +202,15 @@
     "workbench.activityBar.orientation": "vertical",
     "window.zoomLevel": 1,
     "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "cursorpyright.analysis.typeCheckingMode": "strict",
     "files.eol": "\n",
     "[dockercompose]": {
         "editor.insertSpaces": true,
-        "editor.tabSize": 2,
+        "editor.tabSize": 4,
         "editor.autoIndent": "advanced",
         "editor.quickSuggestions": {
             "other": true,
