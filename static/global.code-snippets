@@ -1908,7 +1908,7 @@
             "",
         ],
     },
-    "query": {
+    "query hook": {
         "scope": "javascript,javascriptreact,typescript,typescriptreact",
         "prefix": "query",
         "body": [
@@ -1919,6 +1919,23 @@
             "export const ${TM_FILENAME_BASE} = createUseQuery({",
             "    queryKey: \"${TM_FILENAME_BASE/^use(?=[A-Z])(.*)$/${1:/kebabcase}/}\",",
             "    queryFn: ${TM_FILENAME_BASE/^use(.)/${1:/downcase}/},",
+            "})",
+            "",
+        ],
+    },
+    "infinity query hook": {
+        "scope": "javascript,javascriptreact,typescript,typescriptreact",
+        "prefix": "query",
+        "body": [
+            "import { createUseQuery } from \"soda-tanstack-query\"",
+            "",
+            "import { ${TM_FILENAME_BASE/^use(.)/${1:/downcase}/} } from \"@/apis/${TM_FILENAME_BASE/^use(.)/${1:/downcase}/}\"",
+            "",
+            "export const ${TM_FILENAME_BASE} = createUseQuery({",
+            "    queryKey: \"${TM_FILENAME_BASE/^use(?=[A-Z])(.*)$/${1:/kebabcase}/}\",",
+            "    queryFn: ${TM_FILENAME_BASE/^use(.)/${1:/downcase}/},",
+            "    staleTime: Infinity,",
+            "    gcTime: Infinity,",
             "})",
             "",
         ],
