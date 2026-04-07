@@ -3,6 +3,7 @@ if ((Get-Location).Path -eq $env:USERPROFILE) {
 }
 
 Set-Alias bx bunx
+Set-Alias px pnpx
 Set-Alias c cls
 Set-Alias p pnpm
 Set-Alias y yarn
