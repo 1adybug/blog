@@ -10,6 +10,7 @@ tags: [function]
 
 ```typescript
 function foo() {}
+
 // 打印 "foo"
 console.log(foo.name)
 ```
@@ -18,6 +19,7 @@ console.log(foo.name)
 
 ```typescript
 const foo = (() => function () {})()
+
 // 打印 ""
 console.log(foo.name)
 ```
@@ -26,10 +28,12 @@ console.log(foo.name)
 
 ```typescript
 const foo = function () {}
+
 // 打印 "foo"
 console.log(foo.name)
 
 const bar = () => 0
+
 // 打印 "bar"
 console.log(bar.name)
 ```
@@ -41,8 +45,10 @@ const obj = {
     foo: function () {},
     bar: () => 0,
 }
+
 // 打印 "foo"
 console.log(obj.foo.name)
+
 // 打印 "bar"
 console.log(obj.bar.name)
 ```
@@ -51,12 +57,15 @@ console.log(obj.bar.name)
 
 ```typescript
 const obj = {}
+
 obj.foo = function () {}
+
 // 打印 ""
 console.log(obj.foo.name)
 
 const name = "bar"
 obj[name] = () => 0
+
 // 打印 ""
 console.log(obj.bar.name)
 ```
@@ -65,9 +74,11 @@ console.log(obj.bar.name)
 
 ```typescript
 const name = "foo"
+
 const obj = {
     [name]: function () {},
 }
+
 // 打印 "foo"
 console.log(obj[name].name)
 ```
@@ -77,6 +88,7 @@ console.log(obj[name].name)
 ```typescript
 const foo = function () {}
 Object.defineProperty(foo, "name", { value: "bar" })
+
 // 打印 "bar"
 console.log(foo.name)
 ```

@@ -36,7 +36,8 @@
         "*.ngql": "cypher",
         "*.env": "env",
         "*.env.*": "env",
-        "*.acss": "css"
+        "*.acss": "css",
+        "*.mdc": "markdown"
     },
     "emmet.includeLanguages": {
         "wxml": "html"
@@ -77,14 +78,17 @@
     },
     "workbench.colorCustomizations": {
         "editor.lineHighlightBackground": "#1073cf2d",
-        "editor.lineHighlightBorder": "#9fced11f"
+        "editor.lineHighlightBorder": "#9fced11f",
+        "editorWarning.foreground": "#ffffff66"
     },
     "diffEditor.wordWrap": "off",
     "editor.guides.indentation": false,
     "editor.guides.bracketPairs": false,
     "editor.inlayHints.enabled": "off",
     "editor.language.brackets": [],
-    "editor.codeActionsOnSave": {},
+    "editor.codeActionsOnSave": {
+        "source.organizeImports.biome": "explicit"
+    },
     "editor.accessibilitySupport": "off",
     "window.commandCenter": false,
     "editor.unicodeHighlight.includeStrings": false,
@@ -154,46 +158,37 @@
     },
     "markdown-preview-github-styles.darkTheme": "light",
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "github.copilot.enable": {
-        "*": true,
-        "markdown": true,
-        "scminput": false,
-        "ngql": false,
-        "plaintext": true
-    },
     "markdownlint.config": {
-        "MD033": false
+        "MD007": false,
+        "MD024": false,
+        "MD030": false,
+        "MD033": false,
+        "MD036": false,
+        "MD040": false
     },
     "editor.stickyScroll.enabled": false,
-    "hediet.vscode-drawio.resizeImages": null,
     "json.maxItemsComputed": 1000000,
     "editor.unicodeHighlight.ambiguousCharacters": false,
-    "editor.fontFamily": "'fira code', 'Monaspace Neon Var', 'JetBrains Mono', Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "'Fira Code', 'Monaspace Neon Var', 'JetBrains Mono', Consolas, 'Courier New', monospace",
     "vscodeGitCommit.variables": {
         "prefix": "keke"
     },
     "editor.fontLigatures": true,
-    "github.copilot.editor.enableAutoCompletions": true,
     "git.openRepositoryInParentFolders": "never",
-    "svelte.enable-ts-plugin": true,
     "redhat.telemetry.enabled": false,
     "[nginx]": {
         "editor.defaultFormatter": "raynigon.nginx-formatter"
     },
     "prettier.printWidth": 160,
-    "dart.flutterSdkPath": "C:\\flutter",
     "css.validate": false,
     "npm.autoDetect": "off",
     "git.autofetch": true,
     "editor.quickSuggestions": {
         "strings": "on"
     },
-    "github.copilot.chat.completionContext.typescript.mode": "on",
     "terminal.integrated.env.windows": {},
-    "github.copilot.chat.localeOverride": "zh-CN",
     "workbench.iconTheme": "bearded-icons",
-    "workbench.colorTheme": "Bearded Theme Arc",
-    "github.copilot.chat.copilotDebugCommand.enabled": false,
+    "workbench.colorTheme": "Bearded Theme Arc EolStorm",
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cursorStyleInactive": "none",
     "[snippets]": {
@@ -202,20 +197,33 @@
     "[mdx]": {
         "editor.defaultFormatter": "unifiedjs.vscode-mdx"
     },
-    "typescript.preferences.autoImportSpecifierExcludeRegexes": [
-        "^(node:)?os$"
-    ],
-    "cursor.cpp.disabledLanguages": [
-        "scminput",
-        "ngql"
-    ],
+    "typescript.preferences.autoImportSpecifierExcludeRegexes": ["^(node:)?os$"],
+    "cursor.cpp.disabledLanguages": ["scminput", "ngql"],
     "workbench.activityBar.orientation": "vertical",
     "window.zoomLevel": 1,
     "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "deno.lint": false,
+    "cursorpyright.analysis.typeCheckingMode": "strict",
+    "files.eol": "\n",
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
     "workbench.editorAssociations": {
         "*.svg": "default"
-    }
+    },
+    "json.schemaDownload.enable": true
 }

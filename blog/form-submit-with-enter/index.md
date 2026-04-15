@@ -1,12 +1,12 @@
 ---
 slug: form-submit-with-enter
 title: 回车键提交表单
-authors: [claude]
+authors: [Claude, 1adybug]
 date: 2025-06-23
 tags: [html, enter, claude]
 ---
 
-_以下内容均为 `Claude 4 sonnet` 生成_
+> 以下内容均为 `Claude 4 sonnet` 生成
 
 作为前端开发者，你是否遇到过这样的困惑：有时候在表单输入框中按下 Enter 键会自动提交表单，有时候却没有反应？今天我们就来深入了解一下 HTML 表单中 Enter 键的行为规律。
 
@@ -60,14 +60,12 @@ HTML 表单的 Enter 键行为遵循以下规律：
 - 多输入字段规则
 
     当表单包含多个输入字段时：
-
     - **有提交按钮**：按Enter键会触发提交
     - **无提交按钮**：按Enter键不会触发提交
 
 - 提交按钮的定义
 
     以下元素都被认为是提交按钮：
-
     - `<input type="submit">`
     - `<button type="submit">`
     - `<button>`（默认type为submit）
@@ -77,17 +75,14 @@ HTML 表单的 Enter 键行为遵循以下规律：
 这种看似复杂的行为设计，实际上体现了Web标准制定者的深思熟虑：
 
 - 用户体验优先
-
     - 搜索框这类单字段表单支持Enter快速提交，符合用户习惯
     - 复杂表单需要明确的提交按钮，避免误操作
 
 - 渐进增强
-
     - 简单功能（搜索）开箱即用
     - 复杂功能（多字段表单）需要明确的交互设计
 
 - 向后兼容
-
     - 保持与早期 HTML 标准的兼容性
     - 确保现有网站功能正常
 

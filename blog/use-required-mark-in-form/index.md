@@ -10,6 +10,7 @@ tags: [antd, Ant Design, Form, requiredMark]
 
 ```tsx
 import React, { FC, Fragment, useState } from "react"
+
 import { InfoCircleOutlined } from "@ant-design/icons"
 import { Button, Form, Input, Radio, Tag } from "antd"
 import { useForm } from "antd/es/form/Form"
@@ -51,7 +52,13 @@ const App: FC = () => {
             <FormItem label="Field A" required tooltip="This is a required field">
                 <Input placeholder="input placeholder" />
             </FormItem>
-            <FormItem label="Field B" tooltip={{ title: "Tooltip with customize icon", icon: <InfoCircleOutlined /> }}>
+            <FormItem
+                label="Field B"
+                tooltip={{
+                    title: "Tooltip with customize icon",
+                    icon: <InfoCircleOutlined />,
+                }}
+            >
                 <Input placeholder="input placeholder" />
             </FormItem>
             <FormItem>

@@ -16,29 +16,32 @@
         "typecheck": "tsc",
         "format": "prettier --write .",
         "sync-cursor": "node scripts/syncCursor.mjs",
-        "sc": "npm run sync-cursor"
+        "sc": "npm run sync-cursor",
+        "fg": "npm run format && git add . && git commit -m \"✨feature: format\"",
+        "prepare": "husky"
     },
     "dependencies": {
-        "@docusaurus/core": "^3.8.0",
-        "@docusaurus/plugin-pwa": "^3.8.0",
-        "@docusaurus/preset-classic": "^3.8.0",
-        "@docusaurus/remark-plugin-npm2yarn": "^3.8.0",
-        "@mdx-js/react": "^3.1.0",
+        "@docusaurus/core": "^3.9.2",
+        "@docusaurus/plugin-pwa": "^3.9.2",
+        "@docusaurus/preset-classic": "^3.9.2",
+        "@docusaurus/remark-plugin-npm2yarn": "^3.9.2",
+        "@mdx-js/react": "^3.1.1",
         "clsx": "^2.1.1",
         "prism-react-renderer": "^2.4.1",
-        "react": "^19.1.0",
-        "react-dom": "^19.1.0",
-        "soda-nodejs": "^0.7.1"
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0",
+        "soda-nodejs": "^0.8.5"
     },
     "devDependencies": {
-        "@docusaurus/module-type-aliases": "^3.8.0",
-        "@docusaurus/tsconfig": "^3.8.0",
-        "@docusaurus/types": "^3.8.0",
-        "@ianvs/prettier-plugin-sort-imports": "^4.4.2",
-        "glob": "^11.0.2",
-        "prettier": "^3.5.3",
+        "@1adybug/prettier": "^0.0.21",
+        "@docusaurus/module-type-aliases": "^3.9.2",
+        "@docusaurus/tsconfig": "^3.9.2",
+        "@docusaurus/types": "^3.9.2",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.2.7",
+        "prettier": "^3.7.4",
         "prettier-plugin-lint-md": "^1.0.1",
-        "typescript": "~5.8.3"
+        "typescript": "~5.9.3"
     },
     "browserslist": {
         "production": [
@@ -54,5 +57,8 @@
     },
     "engines": {
         "node": ">=18.0"
+    },
+    "lint-staged": {
+        "**/*": "prettier --write --ignore-unknown"
     }
 }

@@ -7,8 +7,9 @@ tags: [node.js, https, express]
 ---
 
 ```typescript
-import { readFileSync, readdirSync } from "fs"
+import { readFileSync } from "fs"
 import https from "https"
+
 import express from "express"
 
 const app = express()

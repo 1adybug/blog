@@ -31,6 +31,7 @@ npm i cross-env tsx -D
 
 ```tsx
 import fs from "fs"
+
 import { extractStyle } from "@ant-design/static-style-extract"
 import { ConfigProvider } from "antd"
 

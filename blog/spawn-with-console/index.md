@@ -75,7 +75,10 @@ child.on("close", code => {
     import { spawn } from "child_process"
 
     // 注意：这里使用shell: true来确保命令在shell中执行，可能有助于保留颜色输出
-    const child = spawn("git", ["status", "--color=always"], { shell: true, stdio: "inherit" })
+    const child = spawn("git", ["status", "--color=always"], {
+        shell: true,
+        stdio: "inherit",
+    })
 
     child.on("exit", function (code, signal) {
         console.log(`子进程退出，退出码 ${code}`)

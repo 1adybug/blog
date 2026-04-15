@@ -9,19 +9,16 @@ tags: [ResizeObserver, contentRect, contentBoxSize, borderBoxSize]
 这些尺寸属性之间的主要区别如下：
 
 1. contentRect：
-
     - 表示元素的内容区域的尺寸
     - 不包含内边距（padding）和边框（border）
     - 是最内层的测量值
 
 2. contentBoxSize：
-
     - 与contentRect测量相同的区域
     - 同样只包含内容区域的尺寸
     - 主要区别在于返回值的格式不同：contentBoxSize返回一个包含width和height的对象
 
 3. borderBoxSize：
-
     - 测量元素的完整尺寸
     - 包含内容区域、内边距和边框
     - 是最外层的测量值

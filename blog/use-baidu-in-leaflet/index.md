@@ -20,8 +20,9 @@ npm i @types/leaflet @types/proj4 @types/proj4leaflet -D
 ```typescript
 import L from "leaflet"
 
-import "proj4leaflet"
 import "leaflet/dist/leaflet.css"
+import "proj4leaflet"
+
 import "./style.css"
 
 const resolutions = Array(20)

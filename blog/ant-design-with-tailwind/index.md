@@ -12,6 +12,7 @@ tags: [ant design, antd, tailwind]
 
 ```tsx
 import { FC } from "react"
+
 import { StyleProvider } from "@ant-design/cssinjs"
 
 // `hashPriority` 默认为 `low`，配置为 `high` 后，

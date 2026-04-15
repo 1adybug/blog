@@ -59,9 +59,10 @@ tags: [ssr, antd, css, remix, react router]
 4. 修改 `entry.client.tsx`：
 
     ```tsx
-    import { StrictMode, startTransition } from "react"
+    import { startTransition, StrictMode } from "react"
     import { hydrateRoot } from "react-dom/client"
-    import { StyleProvider, legacyLogicalPropertiesTransformer } from "@ant-design/cssinjs"
+
+    import { legacyLogicalPropertiesTransformer, StyleProvider } from "@ant-design/cssinjs"
     import { HydratedRouter } from "react-router/dom"
 
     startTransition(() => {
@@ -79,12 +80,14 @@ tags: [ssr, antd, css, remix, react router]
 5. 修改 `entry.server.tsx`：
 
     ```tsx
-    import { renderToPipeableStream, type RenderToPipeableStreamOptions } from "react-dom/server"
+    import { type RenderToPipeableStreamOptions, renderToPipeableStream } from "react-dom/server"
+
     import { PassThrough } from "node:stream"
-    import { StyleProvider, createCache, extractStyle } from "@ant-design/cssinjs"
+
+    import { createCache, extractStyle, StyleProvider } from "@ant-design/cssinjs"
     import { createReadableStreamFromReadable } from "@react-router/node"
     import { isbot } from "isbot"
-    import { ServerRouter, type AppLoadContext, type EntryContext } from "react-router"
+    import { type AppLoadContext, type EntryContext, ServerRouter } from "react-router"
 
     const ABORT_DELAY = 5_000
 
@@ -114,12 +117,14 @@ tags: [ssr, antd, css, remix, react router]
                 {
                     [readyOption]() {
                         shellRendered = true
+
                         const body = new PassThrough({
                             transform(chunk, encoding, callback) {
                                 chunk = String(chunk).replace("__ANTD_STYLE_PLACEHOLDER__", fromBot ? "" : extractStyle(cache))
                                 callback(null, chunk)
                             },
                         })
+
                         const stream = createReadableStreamFromReadable(body)
 
                         responseHeaders.set("Content-Type", "text/html")
@@ -138,12 +143,11 @@ tags: [ssr, antd, css, remix, react router]
                     },
                     onError(error: unknown) {
                         responseStatusCode = 500
+
                         // Log streaming rendering errors from inside the shell.  Don't log
                         // errors encountered during initial shell rendering since they'll
                         // reject and get logged in handleDocumentRequest.
-                        if (shellRendered) {
-                            console.error(error)
-                        }
+                        if (shellRendered) console.error(error)
                     },
                 },
             )

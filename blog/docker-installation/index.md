@@ -15,7 +15,6 @@ tags: [docker]
 3. 转到 `pool/stable/` 并选择适用的架构（`amd64`、 `armhf`、`arm64` 或 `s390x`）
 
 4. 下载 `Docker Engine`、`CLI`、`containerd` 和 `Docker Compose` 软件包的以下 `deb` 文件：
-
     - `containerd.io_<version>_<arch>.deb`
     - `docker-ce_<version>_<arch>.deb`
     - `docker-ce-cli_<version>_<arch>.deb`

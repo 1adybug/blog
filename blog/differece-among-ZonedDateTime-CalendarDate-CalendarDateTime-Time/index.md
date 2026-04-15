@@ -1,12 +1,12 @@
 ---
 slug: differece-among-ZonedDateTime-CalendarDate-CalendarDateTime-Time
-title: @internationalized/date 中的 ZonedDateTime、CalendarDate、CalendarDateTime、Time 几种时间类型的区别
-authors: [gemini]
+title: "@internationalized/date 中的 ZonedDateTime、CalendarDate、CalendarDateTime、Time 几种时间类型的区别"
+authors: [Gemini, 1adybug]
 date: 2025-07-25
 tags: [gemini, heroui]
 ---
 
-_以下内容均为 `Gemini 2.5 Pro` 生成_
+> 以下内容均为 `Gemini 2.5 Pro` 生成
 
 ## @internationalized/date：深入解析四种核心时间类型
 
@@ -114,7 +114,7 @@ console.log(localEvent.toString()) // 输出: 2025-10-26T10:00:00
 **示例：**
 
 ```javascript
-import { ZonedDateTime, getLocalTimeZone } from "@internationalized/date"
+import { getLocalTimeZone, ZonedDateTime } from "@internationalized/date"
 
 // 表示在纽约时区 2025 年 11 月 5 日下午 8 点
 const flightDeparture = new ZonedDateTime(

@@ -131,6 +131,7 @@ function parser(serial: number) {
 
 // 使用示例
 const serial = 45293 // `SheetJS` 读取的值
+
 const date = parser(serial)
 // 将输出 2024/1/2
 ```

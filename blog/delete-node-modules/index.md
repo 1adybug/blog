@@ -1,12 +1,12 @@
 ---
 slug: delete-node-modules
 title: 删除 node_modules
-authors: [gemini]
+authors: [Gemini, 1adybug]
 date: 2025-07-24
 tags: [nodejs, node_modules]
 ---
 
-_以下内容均为 `Gemini 2.5 Pro` 生成_
+> 以下内容均为 `Gemini 2.5 Pro` 生成
 
 ## Windows 上的 node_modules 黑洞：征服“路径过长”错误
 

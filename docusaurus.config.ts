@@ -1,4 +1,4 @@
-import type * as Preset from "@docusaurus/preset-classic"
+import * as Preset from "@docusaurus/preset-classic"
 import npm2yarn from "@docusaurus/remark-plugin-npm2yarn"
 import type { Config } from "@docusaurus/types"
 import { themes as prismThemes } from "prism-react-renderer"
@@ -44,6 +44,7 @@ const config: Config = {
                     blogSidebarTitle: "所有文章",
                     blogSidebarCount: "ALL",
                     blogTitle: "博客",
+                    showLastUpdateTime: true,
                     remarkPlugins: [
                         [
                             npm2yarn,

@@ -11,6 +11,7 @@ tags: [abortSignal]
 ```typescript
 const controller = new AbortController()
 const signal = controller.signal
+
 fetch(url, { signal })
     .then(response => response.json())
     .then(data => console.log(data))

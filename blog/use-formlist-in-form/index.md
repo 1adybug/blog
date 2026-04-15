@@ -12,29 +12,28 @@ tags: []
 
 ```tsx
 import { FC, Fragment } from "react"
+
 import { Button, Form, Input } from "antd"
 import FormItem from "antd/es/form/FormItem"
 import FormList from "antd/es/form/FormList"
 
-const App: FC = () => {
-    return (
-        <Form onFinish={console.dir}>
-            <FormList name="hobbies" initialValue={["钓鱼"]}>
-                {(fields, { add }) => (
-                    <Fragment>
-                        {fields.map(({ key, name }) => (
-                            <FormItem key={key} name={name}>
-                                <Input />
-                            </FormItem>
-                        ))}
-                        <Button onClick={() => add()}>Add</Button>
-                    </Fragment>
-                )}
-            </FormList>
-            <Button htmlType="submit">Submit</Button>
-        </Form>
-    )
-}
+const App: FC = () => (
+    <Form onFinish={console.dir}>
+        <FormList name="hobbies" initialValue={["钓鱼"]}>
+            {(fields, { add }) => (
+                <Fragment>
+                    {fields.map(({ key, name }) => (
+                        <FormItem key={key} name={name}>
+                            <Input />
+                        </FormItem>
+                    ))}
+                    <Button onClick={() => add()}>Add</Button>
+                </Fragment>
+            )}
+        </FormList>
+        <Button htmlType="submit">Submit</Button>
+    </Form>
+)
 
 export default App
 ```
@@ -65,34 +64,33 @@ export default App
 
 ```tsx
 import { FC, Fragment } from "react"
+
 import { Button, Form, Input } from "antd"
 import FormItem from "antd/es/form/FormItem"
 import FormList from "antd/es/form/FormList"
 
-const App: FC = () => {
-    return (
-        <Form onFinish={console.dir}>
-            <FormList name="persons" initialValue={[{ name: "Tom", age: "18" }]}>
-                {(fields, { add }) => (
-                    <Fragment>
-                        {fields.map(({ key, name }) => (
-                            <Fragment key={key}>
-                                <FormItem name={[name, "name"]} label="姓名">
-                                    <Input />
-                                </FormItem>
-                                <FormItem name={[name, "age"]} label="年龄">
-                                    <Input />
-                                </FormItem>
-                            </Fragment>
-                        ))}
-                        <Button onClick={() => add()}>Add</Button>
-                    </Fragment>
-                )}
-            </FormList>
-            <Button htmlType="submit">Submit</Button>
-        </Form>
-    )
-}
+const App: FC = () => (
+    <Form onFinish={console.dir}>
+        <FormList name="persons" initialValue={[{ name: "Tom", age: "18" }]}>
+            {(fields, { add }) => (
+                <Fragment>
+                    {fields.map(({ key, name }) => (
+                        <Fragment key={key}>
+                            <FormItem name={[name, "name"]} label="姓名">
+                                <Input />
+                            </FormItem>
+                            <FormItem name={[name, "age"]} label="年龄">
+                                <Input />
+                            </FormItem>
+                        </Fragment>
+                    ))}
+                    <Button onClick={() => add()}>Add</Button>
+                </Fragment>
+            )}
+        </FormList>
+        <Button htmlType="submit">Submit</Button>
+    </Form>
+)
 
 export default App
 ```

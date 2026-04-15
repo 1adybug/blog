@@ -10,9 +10,9 @@ tags: [snippets, keyword-replace]
 
 | 烤肉串式命名法 (Kebab-case) | 驼峰式命名法 (CamelCase) |
 | --------------------------- | ------------------------ |
-| `api.my-file`                   | `myFile`             |
-| `api.another-example-file`      | `anotherExampleFile`     |
-| `api.yet-another-one`           | `yetAnotherOne`          |
+| `api.my-file`               | `myFile`                 |
+| `api.another-example-file`  | `anotherExampleFile`     |
+| `api.yet-another-one`       | `yetAnotherOne`          |
 
 这种替换的难点在我们无法确定 `-` 的数量为多少
 

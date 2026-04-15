@@ -28,3 +28,12 @@ test.js
 test.mjs
 test.cjs
 test.ts
+
+node_modules
+bun.lock
+dist
+build
+yarn-error.log
+.yarnrc.yml
+.yarn
+test

@@ -13,11 +13,15 @@ window.addEventListener(
     "error",
     e => {
         const { target } = e
+
         // 判断是否是图片元素的错误
         if (!(target instanceof HTMLImageElement)) return
+
         const url = new URL(target.src)
+
         // 判断是否是第三方的图片
         if (url.origin === location.origin) return
+
         // 添加 data-error-image 属性
         target.dataset.errorImage = ""
     },
