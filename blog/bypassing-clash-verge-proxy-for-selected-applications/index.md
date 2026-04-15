@@ -23,22 +23,26 @@ tags: [微信, clash, clash verge]
 打开「订阅」→「全局扩展覆写配置」，覆盖粘贴：
 
 ```yaml
-profile:
-    store-selected: true
+# Profile Enhancement Merge Template for Clash Verge
 
+profile:
+  store-selected: true
+
+# ✅ 关键：让 Radmin VPN 不被 TUN 接管
 tun:
-    exclude-process:
-        - WeChatAppEx.exe
-        - WeixinUpdate.exe
-        - Weixin.exe
-        - WetypeInstaller.exe
-        - WeixinExt.exe
-        - RvRvpnGui.exe
-        - RvControlSvc.exe
-        - Radmin.exe
-        - drvinst.exe
-        - RvFwHelper.exe
-        - RvGuiStarter.exe
+  exclude-process:
+    - AnyDesk.exe
+    - WeChatAppEx.exe
+    - WeixinUpdate.exe
+    - Weixin.exe
+    - WetypeInstaller.exe
+    - WeixinExt.exe
+    - RvRvpnGui.exe
+    - RvControlSvc.exe
+    - Radmin.exe
+    - drvinst.exe
+    - RvFwHelper.exe
+    - RvGuiStarter.exe
 ```
 
 👉 作用：这些进程不会被 TUN 模式接管
@@ -50,27 +54,37 @@ tun:
 打开「全局扩展脚本」，覆盖粘贴：
 
 ```js
+// Define main function (script entry)
+
 function main(config, profileName) {
-    if (config.proxies) {
-        config.proxies.forEach(proxy => (proxy.udp = true))
-    }
+    // 为所有代理节点添加或设置 'udp: true'
+    if (config.proxies) config.proxies.forEach(proxy => (proxy.udp = true))
 
     config.rules ??= []
 
+    // 保留原有的添加域名规则的逻辑
     const name = config["proxy-groups"]?.at(0)?.name
 
-    const wechatExes = ["WeChatAppEx.exe", "WeixinUpdate.exe", "Weixin.exe", "WetypeInstaller.exe", "WeixinExt.exe"]
-
-    const radminExes = ["RvRvpnGui.exe", "RvControlSvc.exe", "Radmin.exe", "drvinst.exe", "RvFwHelper.exe", "RvGuiStarter.exe"]
+    const excludeProcesses = [
+        "AnyDesk.exe",
+        "WeChatAppEx.exe",
+        "WeixinUpdate.exe",
+        "Weixin.exe",
+        "WetypeInstaller.exe",
+        "WeixinExt.exe",
+        "RvRvpnGui.exe",
+        "RvControlSvc.exe",
+        "Radmin.exe",
+        "drvinst.exe",
+        "RvFwHelper.exe",
+        "RvGuiStarter.exe",
+    ]
 
     if (name) {
         config.rules.unshift(`DOMAIN-SUFFIX,claude.ai,${name}`)
         config.rules.unshift(`DOMAIN-SUFFIX,claude.com,${name}`)
         config.rules.unshift(`IP-CIDR,26.0.0.0/8,DIRECT`)
-
-        wechatExes.forEach(item => config.rules.unshift(`PROCESS-NAME,${item},DIRECT`))
-
-        radminExes.forEach(item => config.rules.unshift(`PROCESS-NAME,${item},DIRECT`))
+        excludeProcesses.forEach(item => (config.rules.unshift(`PROCESS-NAME,${item},DIRECT`)))
     }
 
     return config
