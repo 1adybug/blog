@@ -26,23 +26,23 @@ tags: [微信, clash, clash verge]
 # Profile Enhancement Merge Template for Clash Verge
 
 profile:
-  store-selected: true
+    store-selected: true
 
 # ✅ 关键：让 Radmin VPN 不被 TUN 接管
 tun:
-  exclude-process:
-    - AnyDesk.exe
-    - WeChatAppEx.exe
-    - WeixinUpdate.exe
-    - Weixin.exe
-    - WetypeInstaller.exe
-    - WeixinExt.exe
-    - RvRvpnGui.exe
-    - RvControlSvc.exe
-    - Radmin.exe
-    - drvinst.exe
-    - RvFwHelper.exe
-    - RvGuiStarter.exe
+    exclude-process:
+        - AnyDesk.exe
+        - WeChatAppEx.exe
+        - WeixinUpdate.exe
+        - Weixin.exe
+        - WetypeInstaller.exe
+        - WeixinExt.exe
+        - RvRvpnGui.exe
+        - RvControlSvc.exe
+        - Radmin.exe
+        - drvinst.exe
+        - RvFwHelper.exe
+        - RvGuiStarter.exe
 ```
 
 👉 作用：这些进程不会被 TUN 模式接管
@@ -84,7 +84,7 @@ function main(config, profileName) {
         config.rules.unshift(`DOMAIN-SUFFIX,claude.ai,${name}`)
         config.rules.unshift(`DOMAIN-SUFFIX,claude.com,${name}`)
         config.rules.unshift(`IP-CIDR,26.0.0.0/8,DIRECT`)
-        excludeProcesses.forEach(item => (config.rules.unshift(`PROCESS-NAME,${item},DIRECT`)))
+        excludeProcesses.forEach(item => config.rules.unshift(`PROCESS-NAME,${item},DIRECT`))
     }
 
     return config

@@ -72,7 +72,7 @@ IPv6 unreachable network
 ipv6: false
 
 dns:
-  ipv6: false
+    ipv6: false
 ```
 
 然后重启 Clash 内核。

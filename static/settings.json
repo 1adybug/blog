@@ -225,5 +225,10 @@
     "workbench.editorAssociations": {
         "*.svg": "default"
     },
-    "json.schemaDownload.enable": true
+    "json.schemaDownload.enable": true,
+    "terminal.integrated.initialHint": false,
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "chatgpt.followUpQueueMode": "queue",
+    "git.confirmSync": false,
+    "chatgpt.reviewDelivery": "inline"
 }

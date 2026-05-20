@@ -84,6 +84,8 @@ function minor { npm version minor @args }
 
 function major { npm version major @args }
 
+function pe { pnpm exec @args }
+
 function iall {
     $pm = GetPackageManager
     & $pm add @args
