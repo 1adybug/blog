@@ -230,5 +230,6 @@
     "workbench.secondarySideBar.defaultVisibility": "hidden",
     "chatgpt.followUpQueueMode": "queue",
     "git.confirmSync": false,
-    "chatgpt.reviewDelivery": "inline"
+    "chatgpt.reviewDelivery": "inline",
+    "editor.inlineSuggest.enabled": false
 }
