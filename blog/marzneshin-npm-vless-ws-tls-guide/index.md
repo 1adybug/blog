@@ -2,7 +2,7 @@
 slug: marzneshin-npm-vless-ws-tls-guide
 title: 从零搭建 Marzneshin + Nginx Proxy Manager + VLESS WS TLS 代理服务器
 authors: [1adybug]
-date: 2024-08-30
+date: 2026-05-26
 tags: [marzneshin, vless, clash verge, mihomo]
 ---
 
